@@ -365,6 +365,7 @@ a:visited {
 }
 .header-inner #logo .site-title {
   font-size: 16px;
+  font-family: "Satisfy", cursive;
   display: inline-block;
   vertical-align: top;
   font-weight: 600;
@@ -613,8 +614,9 @@ a:visited {
   text-align: center;
 }
 #profile .inner .base-info #name {
-  font-size: 20px;
+  font-size: 60px;
   font-weight: 600;
+  font-family: "Satisfy", cursive;
 }
 #profile .inner .base-info #location {
   font-size: 12px;
