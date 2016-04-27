@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 
-<title>Category: redis | the kingzez blog</title>
+<title>JavaScript Kata: Find the odd int | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
-<meta property="og:type" content="website">
-<meta property="og:title" content="the kingzez blog">
-<meta property="og:url" content="http://kingzez.com/categories/redis/index.html">
+<meta name="description" content="Description:Given an array, find the int that appears an odd number of times.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Kata: Find the odd int">
+<meta property="og:url" content="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
+<meta property="og:description" content="Description:Given an array, find the int that appears an odd number of times.">
+<meta property="og:updated_time" content="2016-04-26T15:56:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="the kingzez blog">
-<meta name="twitter:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
+<meta name="twitter:title" content="JavaScript Kata: Find the odd int">
+<meta name="twitter:description" content="Description:Given an array, find the int that appears an odd number of times.">
 
 
 
@@ -186,20 +187,16 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">redis</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-JavaScript-Kata-Find-the-odd-int" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2015/09/23/Mac下brew安装运行redis/">Mac下brew安装运行redis</a>
+        <h1 class="article-title" itemprop="name">
+            JavaScript Kata: Find the odd int
         </h1>
     
 
@@ -207,8 +204,8 @@ var _hmt = _hmt || [];
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/09/23/Mac下brew安装运行redis/">
-            <time datetime="2015-09-23T14:32:26.000Z" itemprop="datePublished">2015-09-23</time>
+        <a href="/2016/04/26/JavaScript-Kata-Find-the-odd-int/">
+            <time datetime="2016-04-26T15:30:33.000Z" itemprop="datePublished">2016-04-26</time>
         </a>
     </div>
 
@@ -216,20 +213,135 @@ var _hmt = _hmt || [];
                     
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/redis/">redis</a>
+        <a class="article-category-link" href="/categories/Kata/">Kata</a>
     </div>
 
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Mac/">Mac</a>, <a class="tag-link" href="/tags/redis/">redis</a>
+        <a class="tag-link" href="/tags/Kata/">Kata</a>, <a class="tag-link" href="/tags/js/">js</a>
     </div>
 
                 </div>
-            </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h4><p>Given an array, find the int that appears an odd number of times.<br><a id="more"></a><br>There will always be only one integer that appears an odd number of times.</p>
+<h4 id="My_olution_3A"><a href="#My_olution_3A" class="headerlink" title="My olution:"></a>My olution:</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function findOdd(A) &#123;</span><br><span class="line">  <span class="comment">//happy coding!</span></span><br><span class="line">  <span class="keyword">var</span> <span class="keyword">n</span> = 0;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=0; i&lt;A.length; i++)&#123;</span><br><span class="line">      <span class="keyword">n</span> = <span class="keyword">n</span>^A[i];</span><br><span class="line">   &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">n</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Test_Cases_3A"><a href="#Test_Cases_3A" class="headerlink" title="Test Cases:"></a>Test Cases:</h4><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function doTest(a, n) &#123;</span><br><span class="line">  console.log("<span class="keyword">A</span> = ", a)<span class="comment">;</span></span><br><span class="line">  console.log("n = ", n)<span class="comment">;</span></span><br><span class="line">  Test.assertEquals(findOdd(a), n)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">Test.describe('Example tests', function() &#123;</span><br><span class="line">  doTest([20,1,-1,2,-<span class="number">2,3,3,5</span>,<span class="number">5,1,2,4</span>,20,4,-1,-2,5], 5)<span class="comment">;</span></span><br><span class="line">  doTest([1,1,2,-<span class="number">2,5,2,4</span>,4,-1,-2,5], -1)<span class="comment">;</span></span><br><span class="line">  doTest([<span class="number">20,1,1,2</span>,<span class="number">2,3,3,5</span>,<span class="number">5,4,20,4</span>,5], 5)<span class="comment">;</span></span><br><span class="line">  doTest([10], 10)<span class="comment">;</span></span><br><span class="line">  doTest([<span class="number">1,1,1,1</span>,<span class="number">1,1,10,1</span>,1,1,1], 10)<span class="comment">;</span></span><br><span class="line">  doTest([<span class="number">5,4,3,2</span>,<span class="number">1,5,4,3</span>,2,10,10], 1)<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br><span class="line">Test.describe('Random tests', function() &#123;</span><br><span class="line">  var i, sz, a, j, n<span class="comment">;</span></span><br><span class="line">  for(i = 0<span class="comment">; i &lt; 40; ++i) &#123;</span></span><br><span class="line">    sz = Math.round(Math.random()*1000+50)<span class="comment">;</span></span><br><span class="line">    if (!sz%2) &#123;</span><br><span class="line">      ++sz<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    a = []<span class="comment">;</span></span><br><span class="line">    for(j = 0<span class="comment">; j &lt; sz - 1; j+=2) &#123;</span></span><br><span class="line">      n = Math.round(Math.random()*1000)<span class="comment">;</span></span><br><span class="line">      a.push(n)<span class="comment">;</span></span><br><span class="line">      a.push(n)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    n = Math.round(Math.random()*1000)<span class="comment">;</span></span><br><span class="line">    a.push(n)<span class="comment">;</span></span><br><span class="line">    Test.assertEquals(findOdd(a), n)<span class="comment">;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/" data-id="cinibsyeh002f79he0nmuzx4u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">JavaScript Kata: Sort with Arrow Functions</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -406,11 +518,13 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'kingzez';
     
     
+    var disqus_url = 'http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

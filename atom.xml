@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-04-26T07:37:09.000Z</updated>
+  <updated>2016-04-26T15:56:35.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript Kata: Find the odd int</title>
+    <link href="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/"/>
+    <id>http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/</id>
+    <published>2016-04-26T15:30:33.000Z</published>
+    <updated>2016-04-26T15:56:35.000Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;Description_3A&quot;&gt;&lt;a href=&quot;#Description_3A&quot; class=&quot;headerlink&quot; title=&quot;Description:&quot;&gt;&lt;/a&gt;Description:&lt;/h4&gt;&lt;p&gt;Given an array, find the int that appears an odd number of times.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;There will always be only one integer that appears an odd number of times.&lt;/p&gt;
+&lt;h4 id=&quot;My_olution_3A&quot;&gt;&lt;a href=&quot;#My_olution_3A&quot; class=&quot;headerlink&quot; title=&quot;My olution:&quot;&gt;&lt;/a&gt;My olution:&lt;/h4&gt;&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function findOdd(A) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//happy coding!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;n&lt;/span&gt; = 0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=0; i&amp;lt;A.length; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;n&lt;/span&gt; = &lt;span class=&quot;keyword&quot;&gt;n&lt;/span&gt;^A[i];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;n&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;Test_Cases_3A&quot;&gt;&lt;a href=&quot;#Test_Cases_3A&quot; class=&quot;headerlink&quot; title=&quot;Test Cases:&quot;&gt;&lt;/a&gt;Test Cases:&lt;/h4&gt;&lt;figure class=&quot;highlight dns&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function doTest(a, n) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  console.log(&quot;&lt;span class=&quot;keyword&quot;&gt;A&lt;/span&gt; = &quot;, a)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  console.log(&quot;n = &quot;, n)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Test.assertEquals(findOdd(a), n)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Test.describe(&#39;Example tests&#39;, function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doTest([20,1,-1,2,-&lt;span class=&quot;number&quot;&gt;2,3,3,5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5,1,2,4&lt;/span&gt;,20,4,-1,-2,5], 5)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doTest([1,1,2,-&lt;span class=&quot;number&quot;&gt;2,5,2,4&lt;/span&gt;,4,-1,-2,5], -1)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doTest([&lt;span class=&quot;number&quot;&gt;20,1,1,2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2,3,3,5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5,4,20,4&lt;/span&gt;,5], 5)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doTest([10], 10)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doTest([&lt;span class=&quot;number&quot;&gt;1,1,1,1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1,1,10,1&lt;/span&gt;,1,1,1], 10)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doTest([&lt;span class=&quot;number&quot;&gt;5,4,3,2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1,5,4,3&lt;/span&gt;,2,10,10], 1)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Test.describe(&#39;Random tests&#39;, function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  var i, sz, a, j, n&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  for(i = 0&lt;span class=&quot;comment&quot;&gt;; i &amp;lt; 40; ++i) &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sz = Math.round(Math.random()*1000+50)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if (!sz%2) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      ++sz&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    a = []&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for(j = 0&lt;span class=&quot;comment&quot;&gt;; j &amp;lt; sz - 1; j+=2) &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      n = Math.round(Math.random()*1000)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      a.push(n)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      a.push(n)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n = Math.round(Math.random()*1000)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    a.push(n)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Test.assertEquals(findOdd(a), n)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;Description_3A&quot;&gt;&lt;a href=&quot;#Description_3A&quot; class=&quot;headerlink&quot; title=&quot;Description:&quot;&gt;&lt;/a&gt;Description:&lt;/h4&gt;&lt;p&gt;Given an array, find the int that appears an odd number of times.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Kata" scheme="http://kingzez.com/categories/Kata/"/>
+    
+    
+      <category term="Kata" scheme="http://kingzez.com/tags/Kata/"/>
+    
+      <category term="js" scheme="http://kingzez.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript Kata: Sort with Arrow Functions</title>
@@ -627,32 +654,6 @@ $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;
       <category term="homebrew" scheme="http://kingzez.com/tags/homebrew/"/>
     
       <category term="mongodb" scheme="http://kingzez.com/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>github的静态博客用万网解析</title>
-    <link href="http://kingzez.com/2015/07/14/github%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%A8%E4%B8%87%E7%BD%91%E8%A7%A3%E6%9E%90/"/>
-    <id>http://kingzez.com/2015/07/14/github的静态博客用万网解析/</id>
-    <published>2015-07-13T16:15:21.000Z</published>
-    <updated>2015-12-19T16:40:24.000Z</updated>
-    
-    <content type="html">&lt;p&gt;网上关于github的解析都是一带而过，下面详细说一下步骤&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;1.首先添加解析记录类型A，主机类型默认不填，记录值填写username.github.io所ping&lt;br&gt;的值。&lt;br&gt;2.添加解析记录类型CNAME，主机类型为WWW，记录值填写你的username.github.io&lt;br&gt;3.最后在你的静态博客根目录下创建CNAME文件，文件内容填写你所购买的域名。&lt;br&gt;解析完成。&lt;br&gt;&lt;img src=&quot;http://i1.tietuku.com/0b9e9b3a72812b5b.png&quot; alt=&quot;&quot;&gt;   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i3.tietuku.com/9096e368c62a60c8.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;网上关于github的解析都是一带而过，下面详细说一下步骤&lt;br&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://kingzez.com/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://kingzez.com/tags/git/"/>
-    
-      <category term="github" scheme="http://kingzez.com/tags/github/"/>
     
   </entry>
   
