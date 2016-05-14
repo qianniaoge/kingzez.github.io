@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-04-27T10:29:24.000Z</updated>
+  <updated>2016-05-14T16:41:00.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,104 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>可继承的CSS属性</title>
+    <link href="http://kingzez.com/2016/05/15/%E5%8F%AF%E7%BB%A7%E6%89%BF%E7%9A%84CSS%E5%B1%9E%E6%80%A7/"/>
+    <id>http://kingzez.com/2016/05/15/可继承的CSS属性/</id>
+    <published>2016-05-14T16:35:29.000Z</published>
+    <updated>2016-05-14T16:41:00.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在网上搜集查找相对全一点的可继承的css属性：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;azimuth&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;border-collapse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;border-spacing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caption-side&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;color&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cursor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;direction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;elevation&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;empty-cells&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-family&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-size&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-style&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-variant&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-weight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;letter-spacing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;line-height&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style-image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style-position&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style-type&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;orphans&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pitch-range&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pitch&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;quotes&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;richness&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak-header&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak-numeral&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak-punctuation&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speech-rate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stress&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text-align&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text-indent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text-transform&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;visibility&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;voice-family&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;white-space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;widows&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;word-spacing&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在网上搜集查找相对全一点的可继承的css属性：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://kingzez.com/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://kingzez.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript Kata: Title Case</title>
+    <link href="http://kingzez.com/2016/04/29/JavaScript-Kata-Title-Case/"/>
+    <id>http://kingzez.com/2016/04/29/JavaScript-Kata-Title-Case/</id>
+    <published>2016-04-29T09:32:50.000Z</published>
+    <updated>2016-04-29T09:45:47.000Z</updated>
+    
+    <content type="html">&lt;p&gt;A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.&lt;/p&gt;
+&lt;p&gt;Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string – it should behave in the same way even if the case of the minor word string is changed.&lt;/p&gt;
+&lt;h4 id=&quot;Arguments__28Haskell_29&quot;&gt;&lt;a href=&quot;#Arguments__28Haskell_29&quot; class=&quot;headerlink&quot; title=&quot;Arguments (Haskell)&quot;&gt;&lt;/a&gt;Arguments (Haskell)&lt;/h4&gt;&lt;p&gt;First argument: space-delimited list of minor words that must always be lowercase except for the first word in the string.&lt;br&gt;Second argument: the original string to be converted.&lt;/p&gt;
+&lt;h4 id=&quot;Arguments__28Other_languages_29&quot;&gt;&lt;a href=&quot;#Arguments__28Other_languages_29&quot; class=&quot;headerlink&quot; title=&quot;Arguments (Other languages)&quot;&gt;&lt;/a&gt;Arguments (Other languages)&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;First argument (required): the original string to be converted.&lt;/li&gt;
+&lt;li&gt;Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Example&quot;&gt;&lt;a href=&quot;#Example&quot; class=&quot;headerlink&quot; title=&quot;Example&quot;&gt;&lt;/a&gt;Example&lt;/h4&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;titleCase&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;string&quot;&gt;&#39;a clash of KINGS&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;a an the of&#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// should return: &#39;A Clash of Kings&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;titleCase&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;string&quot;&gt;&#39;THE WIND IN THE WILLOWS&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;The In&#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// should return: &#39;The Wind in the Willows&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;titleCase&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;string&quot;&gt;&#39;the quick brown fox&#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// should return: &#39;The Quick Brown Fox&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Kata" scheme="http://kingzez.com/categories/Kata/"/>
+    
+    
+      <category term="Kata" scheme="http://kingzez.com/tags/Kata/"/>
+    
+      <category term="js" scheme="http://kingzez.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript Kata: Find the odd int</title>
@@ -598,71 +696,6 @@ $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;
     
     
       <category term="MEAN" scheme="http://kingzez.com/tags/MEAN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决Mac下Sublime Text 2/3以新窗口打开文件</title>
-    <link href="http://kingzez.com/2015/07/16/%E8%A7%A3%E5%86%B3Mac%E4%B8%8BSublime%20Text%202%EF%80%A23%E4%BB%A5%E6%96%B0%E7%AA%97%E5%8F%A3%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6/"/>
-    <id>http://kingzez.com/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/</id>
-    <published>2015-07-16T11:27:25.000Z</published>
-    <updated>2016-04-26T07:40:11.000Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;sublime_text_2-x_uFF1A&quot;&gt;&lt;a href=&quot;#sublime_text_2-x_uFF1A&quot; class=&quot;headerlink&quot; title=&quot;sublime text 2.x：&quot;&gt;&lt;/a&gt;sublime text 2.x：&lt;/h4&gt;&lt;p&gt;具体设置：Preferences -&amp;gt; Settings – Default -&amp;gt; 搜索open_files_in_new_window，将其true 改为 false 后重启一下sublime text 2&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;sublime_text_3-x_uFF1A&quot;&gt;&lt;a href=&quot;#sublime_text_3-x_uFF1A&quot; class=&quot;headerlink&quot; title=&quot;sublime text 3.x：&quot;&gt;&lt;/a&gt;sublime text 3.x：&lt;/h4&gt;&lt;p&gt;具体设置：Preferences -&amp;gt; Settings – User -&amp;gt; 添加 “open_files_in_new_window”: false,&lt;br&gt;重启一下sublime text 3&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;sublime_text_2-x_uFF1A&quot;&gt;&lt;a href=&quot;#sublime_text_2-x_uFF1A&quot; class=&quot;headerlink&quot; title=&quot;sublime text 2.x：&quot;&gt;&lt;/a&gt;sublime text 2.x：&lt;/h4&gt;&lt;p&gt;具体设置：Preferences -&amp;gt; Settings – Default -&amp;gt; 搜索open_files_in_new_window，将其true 改为 false 后重启一下sublime text 2&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Mac" scheme="http://kingzez.com/categories/Mac/"/>
-    
-    
-      <category term="Mac" scheme="http://kingzez.com/tags/Mac/"/>
-    
-      <category term="Sublime" scheme="http://kingzez.com/tags/Sublime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接</title>
-    <link href="http://kingzez.com/2015/07/16/Mac%20OSX%2010.10%E4%B8%8B%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85MongoDB%E5%8F%8A%E5%90%AF%E5%8A%A8%E8%BF%9E%E6%8E%A5/"/>
-    <id>http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/</id>
-    <published>2015-07-16T09:45:18.000Z</published>
-    <updated>2016-04-26T07:29:58.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install &lt;em&gt;*&lt;/em&gt;，不用再操心安装过程中软件的依赖问题。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;###Homebrew 安装&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ruby &lt;span class=&quot;operator&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;###MongoDB 安装&lt;/p&gt;
-&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;brew &lt;/span&gt;install mongodb&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;等待安装，我的是之前下载过所以直接安装&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~ w&lt;span class=&quot;variable&quot;&gt;$brew&lt;/span&gt; install mongodb&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;==&amp;gt; Downloading https://homebrew.bintray.com/bottles/mongodb-&lt;span class=&quot;number&quot;&gt;3.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.yosemite.bott&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Already downloaded: /Library/Caches/Homebrew/mongodb-&lt;span class=&quot;number&quot;&gt;3.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.yosemite.bottle.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;==&amp;gt; Pouring mongodb-&lt;span class=&quot;number&quot;&gt;3.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;.yosemite.bottle.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;==&amp;gt; Caveats&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;To have launchd start mongodb at login:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ln -sfv /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/opt/mongodb/*.plist ~/Library/LaunchAgents&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Then to load mongodb now:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Or, &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; you don&lt;span class=&quot;string&quot;&gt;&#39;t want/need launchctl, you can just run:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mongod --config /usr/local/etc/mongod.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;==&amp;gt; Summary&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;🍺  /usr/local/Cellar/mongodb/3.0.2: 17 files, 153M&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;需要测试是否安装成功，用mongod命令进行测试，执行mongod后会返回一顿错误、&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~ w&lt;span class=&quot;variable&quot;&gt;$mongod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;45&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;19.706&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I STORAGE  [initandlisten] exception &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; initAndListen: &lt;span class=&quot;number&quot;&gt;29&lt;/span&gt; Data directory /data/db not found., terminating&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;45&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;19.706&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] dbexit:  rc: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;错误信息是dbpath /data/db不存在，需要创建/data/db这个目录或者使用–dbpath参数项指定一个已经存在的目录，dbpath /data/db这个目录是用来存储MongoDB的数据文件，既然不存在我们就创建&lt;code&gt;/data/db&lt;/code&gt;这个目录或者使用&lt;code&gt;--dbpath&lt;/code&gt;参数项指定一个已经存在的目录。&lt;br&gt;首先在终端输入&lt;code&gt;cd /&lt;/code&gt;命令返回到磁盘根目录&lt;br&gt;然后输入&lt;code&gt;mkdir -p /data/db&lt;/code&gt;创建&lt;code&gt;/data/db&lt;/code&gt;&lt;br&gt;再次输入&lt;code&gt;mongod&lt;/code&gt;命令启动MongoDB的服务&lt;br&gt;又返回一堆错误信息&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/ w&lt;span class=&quot;variable&quot;&gt;$mongod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;10.232&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I STORAGE  [initandlisten] exception &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; initAndListen: &lt;span class=&quot;number&quot;&gt;98&lt;/span&gt; Unable to create/open lock file: /data/db/mongod.lock errno:&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt; Permission denied Is a mongod instance already running?, terminating&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;10.232&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] dbexit:  rc: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;不能创建/打开/data/db/mongod.lock这个文件，原因是Permission denied（权限拒绝），原因是当前用户执行mongod这个命令时，对/data/db没有操作权限，给/data/db加上权限。&lt;br&gt;&lt;figure class=&quot;highlight haskell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;sudo&lt;/span&gt; chown -&lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;  当前登录的用户名 /&lt;span class=&quot;typedef&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;data&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;再次在终端输入&lt;code&gt;mongod&lt;/code&gt;启动MongoDB的服务&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/ w&lt;span class=&quot;variable&quot;&gt;$sudo&lt;/span&gt; chown -R w /data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/ w&lt;span class=&quot;variable&quot;&gt;$mongod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.058&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I JOURNAL  [initandlisten] journal dir=/data/db/journal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.059&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.084&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I JOURNAL  [durability] Durability thread started&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.084&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I JOURNAL  [journal writer] Journal writer thread started&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.085&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] MongoDB starting : pid=&lt;span class=&quot;number&quot;&gt;2473&lt;/span&gt; port=&lt;span class=&quot;number&quot;&gt;27017&lt;/span&gt; dbpath=/data/db &lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;-bit host=W-MacBook-Pro.local&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.085&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] db version v3.&lt;span class=&quot;number&quot;&gt;0.2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.085&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] git version: nogitversion&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.085&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] build info: Darwin yosemitevm.local &lt;span class=&quot;number&quot;&gt;14.3&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; Darwin Kernel Version &lt;span class=&quot;number&quot;&gt;14.3&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;: Mon Mar &lt;span class=&quot;number&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;59&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;05&lt;/span&gt; PDT &lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;; root:xnu-&lt;span class=&quot;number&quot;&gt;2782.20&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;48&lt;/span&gt;~&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;_49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.085&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] allocator: system&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.085&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I CONTROL  [initandlisten] options: &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.086&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.423&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I STORAGE  [FileAllocator] allocating new datafile /data/db/local.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, filling with zeroes...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49.423&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I STORAGE  [FileAllocator] creating directory /data/db/_tmp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;50.063&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I STORAGE  [FileAllocator] &lt;span class=&quot;keyword&quot;&gt;done&lt;/span&gt; allocating datafile /data/db/local.&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, size: &lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;MB,  took &lt;span class=&quot;number&quot;&gt;0.639&lt;/span&gt; secs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;50.412&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I NETWORK  [initandlisten] waiting &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; connections on port &lt;span class=&quot;number&quot;&gt;27017&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;T22:&lt;span class=&quot;number&quot;&gt;56&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;05.218&lt;/span&gt;+&lt;span class=&quot;number&quot;&gt;0800&lt;/span&gt; I NETWORK  [initandlisten] connection accepted from &lt;span class=&quot;number&quot;&gt;127.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;49580&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;#1 (1 connection now open)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;启动成功了，然后再打开一个新的终端窗口输入&lt;code&gt;mongo&lt;/code&gt;命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/ w&lt;span class=&quot;variable&quot;&gt;$mongo&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MongoDB shell version: &lt;span class=&quot;number&quot;&gt;3.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;connecting to: &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;OK 安装完成,可以使用。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install &lt;em&gt;*&lt;/em&gt;，不用再操心安装过程中软件的依赖问题。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Mac" scheme="http://kingzez.com/categories/Mac/"/>
-    
-    
-      <category term="Mac" scheme="http://kingzez.com/tags/Mac/"/>
-    
-      <category term="homebrew" scheme="http://kingzez.com/tags/homebrew/"/>
-    
-      <category term="mongodb" scheme="http://kingzez.com/tags/mongodb/"/>
     
   </entry>
   
