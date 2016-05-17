@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-05-17T14:01:31.000Z</updated>
+  <updated>2016-05-17T15:09:44.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js通过hash方式数组去重</title>
+    <link href="http://kingzez.com/2016/05/17/js%E9%80%9A%E8%BF%87hash%E6%96%B9%E5%BC%8F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"/>
+    <id>http://kingzez.com/2016/05/17/js通过hash方式数组去重/</id>
+    <published>2016-05-17T14:53:15.000Z</published>
+    <updated>2016-05-17T15:09:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight nimrod&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newArr = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;function killArray(arr)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hash = &amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;literal&quot;&gt;result&lt;/span&gt; = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;arr.length; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!hash[arr[i]])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			hash[arr[i]] = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;literal&quot;&gt;result&lt;/span&gt;.push(arr[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;result&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;killArray(newArr); //输出[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;完成~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://kingzez.com/categories/js/"/>
+    
+    
+      <category term="js" scheme="http://kingzez.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>可继承的CSS属性</title>
@@ -323,7 +348,7 @@
     <link href="http://kingzez.com/2015/10/18/CentOS%E4%B8%8B%E6%90%AD%E5%BB%BAgit%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://kingzez.com/2015/10/18/CentOS下搭建git服务器/</id>
     <published>2015-10-18T15:46:02.000Z</published>
-    <updated>2015-12-19T16:38:44.000Z</updated>
+    <updated>2016-05-17T16:44:11.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;CentOS_u4E0B_u642D_u5EFAgit_u670D_u52A1_u5668&quot;&gt;&lt;a href=&quot;#CentOS_u4E0B_u642D_u5EFAgit_u670D_u52A1_u5668&quot; class=&quot;headerlink&quot; title=&quot;CentOS下搭建git服务器&quot;&gt;&lt;/a&gt;CentOS下搭建git服务器&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;通过源码编译安装，git-1.9.5.tar.gz安装git&lt;/li&gt;
@@ -389,7 +414,7 @@
     <link href="http://kingzez.com/2015/09/23/Mac%E4%B8%8Bbrew%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8Credis/"/>
     <id>http://kingzez.com/2015/09/23/Mac下brew安装运行redis/</id>
     <published>2015-09-23T14:32:26.000Z</published>
-    <updated>2015-12-19T16:41:32.000Z</updated>
+    <updated>2016-05-17T16:44:37.000Z</updated>
     
     <content type="html">&lt;p&gt;打开终端&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install redis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -420,7 +445,7 @@
     <link href="http://kingzez.com/2015/09/19/%E5%87%BD%E6%95%B0%E8%87%AA%E8%B0%83%E7%94%A8%E6%97%B6%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/</id>
     <published>2015-09-19T14:46:20.000Z</published>
-    <updated>2016-04-26T07:26:30.000Z</updated>
+    <updated>2016-05-17T16:45:00.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;u51FD_u6570_u81EA_u8C03_u7528_u65F6_u51FD_u6570_u8868_u8FBE_u5F0F_u548C_u51FD_u6570_u58F0_u660E_u7684_u533A_u522B&quot;&gt;&lt;a href=&quot;#u51FD_u6570_u81EA_u8C03_u7528_u65F6_u51FD_u6570_u8868_u8FBE_u5F0F_u548C_u51FD_u6570_u58F0_u660E_u7684_u533A_u522B&quot; class=&quot;headerlink&quot; title=&quot;函数自调用时函数表达式和函数声明的区别&quot;&gt;&lt;/a&gt;函数自调用时函数表达式和函数声明的区别&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;所有的function 开头的都是函数声明，在解释的时候会预处理放入堆栈&lt;br&gt;&lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//or&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -447,7 +472,7 @@
     <link href="http://kingzez.com/2015/09/07/MySQL%E5%86%99%E5%85%A5%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
     <id>http://kingzez.com/2015/09/07/MySQL写入中文乱码/</id>
     <published>2015-09-07T14:09:26.000Z</published>
-    <updated>2016-04-26T07:29:41.000Z</updated>
+    <updated>2016-05-17T16:45:30.000Z</updated>
     
     <content type="html">&lt;p&gt;####MySQL写入中文乱码&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt; MySQL数据库出现中文乱码的原因一般是客户端、服务器、结果集、数据库的字符集不统一造成的，但不是这些都统一就不乱，其中在使用wamp的MySQL时会发现这些都统一还是乱码，全部统一为utf8,这时通过&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;variables like &quot;%char%&quot;;``&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;```&amp;#10;mysql&amp;#62; show variables like &amp;#34;%char%&amp;#34;;&amp;#10;+--------------------------+-----------------------------------------------+&amp;#10;| Variable_name            | Value                                         |&amp;#10;+--------------------------+-----------------------------------------------+&amp;#10;| character_set_client     | utf8                                          |&amp;#10;| character_set_connection | utf8                                          |&amp;#10;| character_set_database   | utf8                                          |&amp;#10;| character_set_filesystem | binary                                        |&amp;#10;| character_set_results    | utf8                                          |&amp;#10;| character_set_server     | latin1                                        |&amp;#10;| character_set_system     | utf8                                          |&amp;#10;| character_sets_dir       | f:\wamp\bin\mysql\mysql5.6.17\share\charsets\ |&amp;#10;+--------------------------+-----------------------------------------------+&amp;#10;8 rows in set&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;其中&lt;code&gt;character_set_server     | latin1&lt;/code&gt;不统一，通过这条语句修改：set character_set_server=’utf8’; 情况不同，这条命令无法修改，&lt;code&gt;character_set_server&lt;/code&gt;如果默认为latin1要永久更改，用set命令是行不通的，所以更改my.ini文件，在[mysqld]段落增加：&lt;code&gt;character_set_server=utf8&lt;/code&gt;重启MySQL服务即可。 &lt;/p&gt;
@@ -471,7 +496,7 @@
     <link href="http://kingzez.com/2015/08/24/DOM%20%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%E5%AE%9E%E7%8E%B0%E5%A4%9A%E9%80%89%E5%8F%8D%E9%80%89/"/>
     <id>http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/</id>
     <published>2015-08-24T15:59:11.000Z</published>
-    <updated>2016-04-26T07:26:52.000Z</updated>
+    <updated>2016-05-17T16:45:50.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;DOM_u7B80_u5355_u64CD_u4F5C_u5B9E_u73B0_u591A_u9009_u53CD_u9009&quot;&gt;&lt;a href=&quot;#DOM_u7B80_u5355_u64CD_u4F5C_u5B9E_u73B0_u591A_u9009_u53CD_u9009&quot; class=&quot;headerlink&quot; title=&quot;DOM简单操作实现多选反选&quot;&gt;&lt;/a&gt;DOM简单操作实现多选反选&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;doctype&quot;&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/html; charset=utf-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;DOM&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          Choose one:&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  音乐&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby2&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  登山&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby3&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  游泳&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby4&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  阅读&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby5&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  打球&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;hobby6&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  跑步 &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;value&lt;/span&gt; = &quot;全选&quot; &lt;span class=&quot;attribute&quot;&gt;onclick&lt;/span&gt; = &quot;&lt;span class=&quot;attribute&quot;&gt;checkall&lt;/span&gt;();&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;value&lt;/span&gt; = &quot;全不选&quot; &lt;span class=&quot;attribute&quot;&gt;onclick&lt;/span&gt; = &quot;&lt;span class=&quot;attribute&quot;&gt;clearall&lt;/span&gt;();&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;input your number，number1 to 6:&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;wb&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;wb&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;ok&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;确定&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;onclick&lt;/span&gt; = &quot;&lt;span class=&quot;attribute&quot;&gt;checkone&lt;/span&gt;();&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkall&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hobby = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;input&quot;&lt;/span&gt;);          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;hobby.length; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(hobby[i].type ==&lt;span class=&quot;string&quot;&gt;&quot;checkbox&quot;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    hobby[i].checked = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;clearall&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hobby = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByName(&lt;span class=&quot;string&quot;&gt;&quot;hobby&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; hobby.length; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    hobby[i].checked =&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkone&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; j=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;wb&quot;&lt;/span&gt;).value;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hobby = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;hobby&quot;&lt;/span&gt; + j);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hobby.checked = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
@@ -494,7 +519,7 @@
     <link href="http://kingzez.com/2015/08/24/%E4%BD%BF%E7%94%A8navigator.userAgent%E7%AE%80%E5%8D%95%E5%88%A4%E6%96%AD%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
     <id>http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/</id>
     <published>2015-08-24T01:41:56.000Z</published>
-    <updated>2016-04-26T07:25:55.000Z</updated>
+    <updated>2016-05-17T16:35:39.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668&quot;&gt;&lt;a href=&quot;#u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668&quot; class=&quot;headerlink&quot; title=&quot;简单使用navigator.userAgent判断浏览器&quot;&gt;&lt;/a&gt;简单使用navigator.userAgent判断浏览器&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;img src=&quot;http://i3.tietuku.com/6d8e1ba88486c179.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -518,7 +543,7 @@
     <link href="http://kingzez.com/2015/08/23/git%20push%E5%86%B2%E7%AA%81%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <id>http://kingzez.com/2015/08/23/git push冲突时解决方法/</id>
     <published>2015-08-23T13:31:42.000Z</published>
-    <updated>2016-04-26T07:27:00.000Z</updated>
+    <updated>2016-05-17T16:41:12.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;git_push_u51B2_u7A81_u65F6_u89E3_u51B3_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#git_push_u51B2_u7A81_u65F6_u89E3_u51B3_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;git push冲突时解决方法&quot;&gt;&lt;/a&gt;&lt;code&gt;git push&lt;/code&gt;冲突时解决方法&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;在使用git中多人同时修改一个文件时，比如A修改test文件并&lt;code&gt;push&lt;/code&gt;到远程仓库，B也修改test文件并&lt;code&gt;push&lt;/code&gt;到远程，这时B&lt;code&gt;git push&lt;/code&gt;会提示相应的冲突错误。  &lt;/p&gt;
@@ -560,7 +585,7 @@
     <link href="http://kingzez.com/2015/08/22/git%E5%88%9B%E5%BB%BAssh%20key/"/>
     <id>http://kingzez.com/2015/08/22/git创建ssh key/</id>
     <published>2015-08-22T07:37:35.000Z</published>
-    <updated>2016-04-26T07:31:51.000Z</updated>
+    <updated>2016-05-17T16:41:35.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A&quot;&gt;&lt;a href=&quot;#u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A&quot; class=&quot;headerlink&quot; title=&quot;一、设置Git的username ，email：&quot;&gt;&lt;/a&gt;一、设置Git的username ，email：&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;kingzez&amp;quot;
 $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;
@@ -593,7 +618,7 @@ $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;
     <link href="http://kingzez.com/2015/08/22/Sublime%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
     <id>http://kingzez.com/2015/08/22/Sublime 常用插件/</id>
     <published>2015-08-22T07:28:21.000Z</published>
-    <updated>2016-04-28T13:56:16.000Z</updated>
+    <updated>2016-05-17T16:42:28.000Z</updated>
     
     <content type="html">&lt;ul&gt;
 &lt;li&gt;Package Control     — 安装包管理&lt;/li&gt;
@@ -639,7 +664,7 @@ $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;
     <link href="http://kingzez.com/2015/08/13/%E5%85%B3%E4%BA%8Ejs%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E4%B9%A6%E5%8D%95/"/>
     <id>http://kingzez.com/2015/08/13/关于js的一部分书单/</id>
     <published>2015-08-13T02:51:12.000Z</published>
-    <updated>2016-01-15T14:50:50.000Z</updated>
+    <updated>2016-05-17T16:43:31.000Z</updated>
     
     <content type="html">&lt;ul&gt;
 &lt;li&gt;PPK ON Javascript&lt;/li&gt;
@@ -664,38 +689,6 @@ $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;
     
     
       <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MEAN Web 开发</title>
-    <link href="http://kingzez.com/2015/07/17/MEAN%20Web%20%E5%BC%80%E5%8F%91/"/>
-    <id>http://kingzez.com/2015/07/17/MEAN Web 开发/</id>
-    <published>2015-07-17T12:37:36.000Z</published>
-    <updated>2016-04-26T07:29:44.000Z</updated>
-    
-    <content type="html">&lt;p&gt;####什么是MEAN ？&lt;br&gt;“MEAN是基于javascript现代web应用全栈开发工具。”&lt;/p&gt;
-&lt;p&gt;这是MEAN的作者对它下的定义。可以看出MEAN是瞄准给前后端的Javascript工程师使用的，这个工具集主要包括下面几个部分&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MongoDB&lt;/li&gt;
-&lt;li&gt;Express&lt;/li&gt;
-&lt;li&gt;AngularJS&lt;/li&gt;
-&lt;li&gt;NodeJS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;数据库使用MongoDB，Web框架使用Express，前端框架使用AngularJS，在NodeJS的平台下四者配合开发的Web应用，全Javascript的Web开发架构。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;####什么是MEAN ？&lt;br&gt;“MEAN是基于javascript现代web应用全栈开发工具。”&lt;/p&gt;
-&lt;p&gt;这是MEAN的作者对它下的定义。可以看出MEAN是瞄准给前后端的Javascript工程师使用的，这个工具集主要包括下面几个部分&lt;br&gt;
-    
-    </summary>
-    
-      <category term="MEAN" scheme="http://kingzez.com/categories/MEAN/"/>
-    
-    
-      <category term="MEAN" scheme="http://kingzez.com/tags/MEAN/"/>
     
   </entry>
   

@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 
-<title>Category: MEAN | the kingzez blog</title>
+<title>js通过hash方式数组去重 | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
-<meta property="og:type" content="website">
-<meta property="og:title" content="the kingzez blog">
-<meta property="og:url" content="http://kingzez.com/categories/MEAN/index.html">
+<meta name="description" content="之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js通过hash方式数组去重">
+<meta property="og:url" content="http://kingzez.com/2016/05/17/js通过hash方式数组去重/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
+<meta property="og:description" content="之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：">
+<meta property="og:updated_time" content="2016-05-17T15:09:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="the kingzez blog">
-<meta name="twitter:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
+<meta name="twitter:title" content="js通过hash方式数组去重">
+<meta name="twitter:description" content="之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：">
 
 
 
@@ -186,20 +187,16 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">MEAN</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-js通过hash方式数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2015/07/17/MEAN Web 开发/">MEAN Web 开发</a>
+        <h1 class="article-title" itemprop="name">
+            js通过hash方式数组去重
         </h1>
     
 
@@ -207,8 +204,8 @@ var _hmt = _hmt || [];
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/07/17/MEAN Web 开发/">
-            <time datetime="2015-07-17T12:37:36.000Z" itemprop="datePublished">2015-07-17</time>
+        <a href="/2016/05/17/js通过hash方式数组去重/">
+            <time datetime="2016-05-17T14:53:15.000Z" itemprop="datePublished">2016-05-17</time>
         </a>
     </div>
 
@@ -216,20 +213,135 @@ var _hmt = _hmt || [];
                     
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/MEAN/">MEAN</a>
+        <a class="article-category-link" href="/categories/js/">js</a>
     </div>
 
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MEAN/">MEAN</a>
+        <a class="tag-link" href="/tags/js/">js</a>
     </div>
 
                 </div>
-            </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：<br><a id="more"></a></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">9</span>];</span><br><span class="line"></span><br><span class="line">function killArray(arr)&#123;</span><br><span class="line">	<span class="keyword">var</span> hash = &#123;&#125;,</span><br><span class="line">		<span class="literal">result</span> = [];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!hash[arr[i]])&#123;</span><br><span class="line">			hash[arr[i]] = <span class="literal">true</span>;</span><br><span class="line">			<span class="literal">result</span>.push(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">killArray(newArr); //输出[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<p>完成~</p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://kingzez.com/2016/05/17/js通过hash方式数组去重/" data-id="ciobksrd9001a6thelip9uhpb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2016/05/17/js通过hash方式数组去重/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2016/05/17/js通过hash方式数组去重/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/05/15/可继承的CSS属性/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">可继承的CSS属性</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -406,11 +518,13 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'kingzez';
     
     
+    var disqus_url = 'http://kingzez.com/2016/05/17/js通过hash方式数组去重/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
