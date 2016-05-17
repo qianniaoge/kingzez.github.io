@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-05-14T16:41:00.000Z</updated>
+  <updated>2016-05-17T14:01:31.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -20,51 +20,51 @@
     <link href="http://kingzez.com/2016/05/15/%E5%8F%AF%E7%BB%A7%E6%89%BF%E7%9A%84CSS%E5%B1%9E%E6%80%A7/"/>
     <id>http://kingzez.com/2016/05/15/可继承的CSS属性/</id>
     <published>2016-05-14T16:35:29.000Z</published>
-    <updated>2016-05-14T16:41:00.000Z</updated>
+    <updated>2016-05-17T14:01:31.000Z</updated>
     
     <content type="html">&lt;p&gt;在网上搜集查找相对全一点的可继承的css属性：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;azimuth&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;border-collapse&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;border-spacing&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;caption-side&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;color&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cursor&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;direction&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;elevation&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;empty-cells&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;font-family&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;font-size&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;font-style&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;font-variant&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;font-weight&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;font&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;letter-spacing&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;line-height&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;list-style-image&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;list-style-position&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;list-style-type&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;list-style&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;orphans&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pitch-range&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pitch&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;quotes&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;richness&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;speak-header&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;speak-numeral&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;speak-punctuation&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;speak&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;speech-rate&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stress&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;text-align&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;text-indent&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;text-transform&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;visibility&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;voice-family&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;white-space&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;widows&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;word-spacing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;azimuth&lt;/code&gt; 设置或检索当前声音的音场角度&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;border-collapse&lt;/code&gt; 设置表格的边框是否被合并为一个单一的边框，还是像在标准的 HTML 中那样分开显示(separate collapse)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;border-spacing&lt;/code&gt; 设置相邻单元格的边框间的距离（length length）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caption-side&lt;/code&gt; 规定表格标题的放置方式(top bottom)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;color&lt;/code&gt; 颜色(…)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cursor&lt;/code&gt; 光标的类型(pointer help wait…)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;direction&lt;/code&gt; 文本方向设置(ltr rtl)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;elevation&lt;/code&gt; 设置或检索当前声音的音源仰角(angle below level above higher lower)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;empty-cells&lt;/code&gt; 设置是否显示表格中的空单元格(hide show)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-family&lt;/code&gt; 字体(…)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-size&lt;/code&gt; 字体大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-style&lt;/code&gt; 字体风格(normal italic oblique)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-variant&lt;/code&gt; 设置小型大写字母的字体显示文本(normal small-caps)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-weight&lt;/code&gt; 粗细&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font&lt;/code&gt; 字体&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;letter-spacing&lt;/code&gt; 字符间距&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;line-height&lt;/code&gt; 行距&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style-image&lt;/code&gt; 使用图像替换列表项的标记&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style-position&lt;/code&gt; 放置列表标记的位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style-type&lt;/code&gt; 列表标记类型(none disc circle square decimal…)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list-style&lt;/code&gt; 设置所有的列表属性&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;orphans&lt;/code&gt; 打印中设置元素放在页面底部时所允许的最少文本行数(number)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pitch-range&lt;/code&gt; 听觉中指定声音的变化(number)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pitch&lt;/code&gt; 听觉中指定说话的声音(frequency x-low low medium high x-high)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;quotes&lt;/code&gt; 设置嵌套引用的引号类型(string string string string)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;richness&lt;/code&gt; 听觉中指定声音的丰富度(number)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak-header&lt;/code&gt; 指定如何处理表头文件(always once)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak-numeral&lt;/code&gt; 指定如何讲数字(digits continous)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak-punctuation&lt;/code&gt; 指定如何讲标点符号(none code)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speak&lt;/code&gt; 指定内容用语音讲出(normal none spell-out)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;speech-rate&lt;/code&gt; 讲话的速度(number x-slow slow fast x-fast faster slower)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stress&lt;/code&gt; 讲话声音中的强调(number)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text-align&lt;/code&gt; 元素中的文本居中&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text-indent&lt;/code&gt; 文本首行的缩进(lenght %)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text-transform&lt;/code&gt; 控制文本的大小写(none captalize uppercase lowercase)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;visibility&lt;/code&gt; 元素是否可见(visible hidden collapse)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;voice-family&lt;/code&gt; 特定声音库名称的优先级(specific-voice generic-voice)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;volume&lt;/code&gt; 讲出的音量(number % silent x-soft medium loud x-loud)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;white-space&lt;/code&gt; 设置处理元素中的空白(normal pre nowrap pre-wrap pre-line)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;widows&lt;/code&gt; 窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;word-spacing&lt;/code&gt; 单词字间距(normal length)&lt;/li&gt;
 &lt;/ol&gt;
 </content>
     
