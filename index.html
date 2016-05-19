@@ -66,6 +66,8 @@ var _hmt = _hmt || [];
                 
                     <a class="main-nav-link" href="/about">About</a>
                 
+                    <a class="main-nav-link" href="https://www.flickr.com/photos/140559763@N05/">Flickr</a>
+                
             </nav>
             
                 
@@ -131,6 +133,8 @@ var _hmt = _hmt || [];
                 
                     <td><a class="main-nav-link" href="/about">About</a></td>
                 
+                    <td><a class="main-nav-link" href="https://www.flickr.com/photos/140559763@N05/">Flickr</a></td>
+                
                 <td>
                     
     <div class="search-form">
@@ -159,7 +163,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                26
+                27
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -187,6 +191,150 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-Blog无图片时添加随机thumbnail" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+<div class="article-gallery">
+    <div class="article-gallery-photos">
+        
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/blog-thumbnail.png" rel="gallery_ciocrve82003ed2hel0bftlr7">
+                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/blog-thumbnail.png" itemprop="image">
+            </a>
+        
+    </div>
+</div>
+
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/18/Blog无图片时添加随机thumbnail/">Blog无图片时添加随机thumbnail</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/18/Blog无图片时添加随机thumbnail/">
+            <time datetime="2016-05-18T11:03:25.000Z" itemprop="datePublished">2016-05-18</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/js/">js</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/js/">js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>有的文章中没有添加如上这种banner图，所以呢，博客右侧的Recent的缩略图只会显示默认的图，有时候连续五篇文章都没有图那就连续五张缩略图一样了，很不美观，不喜欢~所以就把它改成没有缩略图情况下随机变换缩略图，不多说，上代码：<br>首先需要通过Math对象生成出一个随机数，random方法可以生成一个0~1之间的随机数，得到的数再乘10，结果即为0~10之间的一个随机数，再通过round方法对该随机数进行四舍五入得到一个整数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> randomBgIndex = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</span><br></pre></td></tr></table></figure></p>
+<p>再声明一个数组用来存放缩略图的路径<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var thumbnailBg = <span class="string">[]</span>; </span><br><span class="line">	thumbnailBg<span class="string">[0]</span> = <span class="string">"css/images/thumb-default-small.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[1]</span> = <span class="string">"css/images/thumb-default-small1.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[2]</span> = <span class="string">"css/images/thumb-default-small2.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[3]</span> = <span class="string">"css/images/thumb-default-small3.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[4]</span> = <span class="string">"css/images/thumb-default-small4.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[5]</span> = <span class="string">"css/images/thumb-default-small5.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[6]</span> = <span class="string">"css/images/thumb-default-small6.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[7]</span> = <span class="string">"css/images/thumb-default-small7.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[8]</span> = <span class="string">"css/images/thumb-default-small8.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[9]</span> = <span class="string">"css/images/thumb-default-small9.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[10]</span> = <span class="string">"css/images/thumb-default-small10.png"</span>; </span><br><span class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&lt;% %&gt;这里是blog用的ejs语法<code>thumbnailBg[randomBgIndex]</code>用来取随机产生的值。</p>
+<p>完整的代码：<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var randomBgIndex = Math.round(Math.random() * <span class="number">10</span>);</span><br><span class="line">var thumbnailBg = <span class="string">[]</span>; </span><br><span class="line">	thumbnailBg<span class="string">[0]</span> = <span class="string">"css/images/thumb-default-small.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[1]</span> = <span class="string">"css/images/thumb-default-small1.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[2]</span> = <span class="string">"css/images/thumb-default-small2.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[3]</span> = <span class="string">"css/images/thumb-default-small3.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[4]</span> = <span class="string">"css/images/thumb-default-small4.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[5]</span> = <span class="string">"css/images/thumb-default-small5.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[6]</span> = <span class="string">"css/images/thumb-default-small6.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[7]</span> = <span class="string">"css/images/thumb-default-small7.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[8]</span> = <span class="string">"css/images/thumb-default-small8.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[9]</span> = <span class="string">"css/images/thumb-default-small9.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[10]</span> = <span class="string">"css/images/thumb-default-small10.png"</span>; </span><br><span class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>OK~</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kingzez.com/2016/05/18/Blog无图片时添加随机thumbnail/" data-id="ciocrve82003ed2hel0bftlr7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2016/05/18/Blog无图片时添加随机thumbnail/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2016/05/18/Blog无图片时添加随机thumbnail/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-js通过hash方式数组去重" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -240,7 +388,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/05/17/js通过hash方式数组去重/" data-id="ciobksrd9001a6thelip9uhpb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/05/17/js通过hash方式数组去重/" data-id="ciocrve6r001ad2hed1h9c0h8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -371,7 +519,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/05/15/可继承的CSS属性/" data-id="ciobksrcx000p6thevnocgmxn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/05/15/可继承的CSS属性/" data-id="ciocrve6d000pd2helsb19fl2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -502,7 +650,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/04/29/JavaScript-Kata-Title-Case/" data-id="ciobksre7002h6theyz67m3uj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/04/29/JavaScript-Kata-Title-Case/" data-id="ciocrve7h002hd2hedv9iq07j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -633,7 +781,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/" data-id="ciobksreg002r6the5zamd5se" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/" data-id="ciocrve7l002rd2heyjpxraj3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -764,7 +912,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/" data-id="ciobksrec002n6the52gh9aby" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/" data-id="ciocrve7j002nd2hecg186ser" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -884,7 +1032,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/03/29/Mac-Apache/" data-id="ciobksrdw00246thepyyjy2zs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/03/29/Mac-Apache/" data-id="ciocrve780024d2he2rb5ktt9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -962,137 +1110,6 @@ var _hmt = _hmt || [];
 
 
 
-    <article id="post-人称git核弹级 filter-branch" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/12/20/人称git核弹级 filter-branch/">人称git核弹级 filter-branch </a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/12/20/人称git核弹级 filter-branch/">
-            <time datetime="2015-12-20T13:05:59.000Z" itemprop="datePublished">2015-12-20</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/git/">git</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/github/">github</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>都说“占小便宜吃大亏”,一点不假，听说GitHub Education的服务很不错，就用自己的edu.cn邮箱把GitHub的邮箱改了，接着去Get the Student Developer Pack。</p></p>
-            <p class="article-more-link">
-                <a href="/2015/12/20/人称git核弹级 filter-branch/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/" data-id="ciobksrd600156the5agblxto" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1109,12 +1126,61 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/05/18/Blog无图片时添加随机thumbnail/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(css/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
+                            <p class="item-title"><a href="/2016/05/18/Blog无图片时添加随机thumbnail/" class="title">Blog无图片时添加随机thumbnail</a></p>
+                            <p class="item-date"><time datetime="2016-05-18T11:03:25.000Z" itemprop="datePublished">2016-05-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/05/17/js通过hash方式数组去重/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(css/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
+   
+
 
                         </div>
                         
@@ -1131,9 +1197,24 @@ var _hmt = _hmt || [];
                             <a href="/2016/05/15/可继承的CSS属性/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(css/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
+   
+
 
                         </div>
                         
@@ -1150,9 +1231,24 @@ var _hmt = _hmt || [];
                             <a href="/2016/04/29/JavaScript-Kata-Title-Case/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(css/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
+   
+
 
                         </div>
                         
@@ -1169,9 +1265,24 @@ var _hmt = _hmt || [];
                             <a href="/2016/04/26/JavaScript-Kata-Find-the-odd-int/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(css/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
+   
+
 
                         </div>
                         
@@ -1179,25 +1290,6 @@ var _hmt = _hmt || [];
                             <p class="item-category"><a class="article-category-link" href="/categories/Kata/">Kata</a></p>
                             <p class="item-title"><a href="/2016/04/26/JavaScript-Kata-Find-the-odd-int/" class="title">JavaScript Kata: Find the odd int</a></p>
                             <p class="item-date"><time datetime="2016-04-26T15:30:33.000Z" itemprop="datePublished">2016-04-26</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Kata/">Kata</a></p>
-                            <p class="item-title"><a href="/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/" class="title">JavaScript Kata: Sort with Arrow Functions</a></p>
-                            <p class="item-date"><time datetime="2016-04-25T15:38:01.000Z" itemprop="datePublished">2016-04-25</time></p>
                         </div>
                     </li>
                 
@@ -1210,7 +1302,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1219,7 +1311,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1228,7 +1320,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE6/">IE6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kata/">Kata</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitosis/">gitosis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE6/">IE6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kata/">Kata</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitosis/">gitosis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
