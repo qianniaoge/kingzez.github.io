@@ -176,9 +176,11 @@ code {
   -moz-background-size: 40px 40px;
   background-size: 40px 40px;
 }
+.tagcloud a,
 #container {
   position: relative;
 }
+.tagcloud a > .outer,
 #container > .outer {
   margin-bottom: 30px;
 }

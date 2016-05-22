@@ -5,20 +5,17 @@
 
 <title>git创建ssh key | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="一、设置Git的username ，email：$ git config --global user.name &amp;quot;kingzez&amp;quot;
-$ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;">
+<meta name="description" content="一、设置Git的username ，email：12$ git config --global user.name &quot;kingzez&quot;$ git config --global user.email &quot;kingzez@sina.com&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git创建ssh key">
 <meta property="og:url" content="http://kingzez.com/2015/08/22/git创建ssh key/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="一、设置Git的username ，email：$ git config --global user.name &amp;quot;kingzez&amp;quot;
-$ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;">
+<meta property="og:description" content="一、设置Git的username ，email：12$ git config --global user.name &quot;kingzez&quot;$ git config --global user.email &quot;kingzez@sina.com&quot;">
 <meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png">
-<meta property="og:updated_time" content="2016-05-20T16:18:14.000Z">
+<meta property="og:updated_time" content="2016-05-21T07:49:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git创建ssh key">
-<meta name="twitter:description" content="一、设置Git的username ，email：$ git config --global user.name &amp;quot;kingzez&amp;quot;
-$ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;">
+<meta name="twitter:description" content="一、设置Git的username ，email：12$ git config --global user.name &quot;kingzez&quot;$ git config --global user.email &quot;kingzez@sina.com&quot;">
 
 
 
@@ -29,6 +26,7 @@ $ git config --global user.email &amp;quot;kingzez@sina.com&amp;quot;">
 <link rel="stylesheet" href="/vendor/Satisfy/styles.css" type="text/css">
 <link rel="stylesheet" href="/vendor/source-code-pro/styles.css" type="text/css">
 <link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/css/hover.css" type="text/css">
 <script src="/vendor/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
 
     
@@ -70,8 +68,6 @@ var _hmt = _hmt || [];
                     <a class="main-nav-link" href="/tags">Tags</a>
                 
                     <a class="main-nav-link" href="/about">About</a>
-                
-                    <a class="main-nav-link" href="https://www.flickr.com/photos/140559763@N05/">Flickr</a>
                 
             </nav>
             
@@ -138,8 +134,6 @@ var _hmt = _hmt || [];
                 
                     <td><a class="main-nav-link" href="/about">About</a></td>
                 
-                    <td><a class="main-nav-link" href="https://www.flickr.com/photos/140559763@N05/">Flickr</a></td>
-                
                 <td>
                     
     <div class="search-form">
@@ -159,11 +153,11 @@ var _hmt = _hmt || [];
 <aside id="profile">
     <div class="inner profile-inner">
         <div class="base-info profile-block">
-            <img id="avatar" src="/images/avator.png" />
+            <img id="avatar" src="/images/avator.png" class="hvr-bounce-in"/>
             <h2 id="name">kingzez</h2>
             <h3 id="title">Front-End Developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
-            <a id="follow" target="_blank" href="https://github.com/kingzez/">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/kingzez/" class="hvr-wobble-to-top-right">FOLLOW</a>
             <p id="subtitle">step by step and never look back</p>
         </div>
         <div class="article-info profile-block">
@@ -181,15 +175,15 @@ var _hmt = _hmt || [];
             <table>
                 <tr>
                     
-                    <td><a href="http://github.com/kingzez" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    <td><a href="http://github.com/kingzez" target="_blank" title="github"><i class="fa fa-github hvr-bounce-in"></i></a></td>
                     
-                    <td><a href="http://weibo.com/kingzez/" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
+                    <td><a href="http://weibo.com/kingzez/" target="_blank" title="weibo"><i class="fa fa-weibo hvr-bounce-in"></i></a></td>
                     
-                    <td><a href="https://twitter.com/wangzezhi" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td><a href="https://twitter.com/wangzezhi" target="_blank" title="twitter"><i class="fa fa-twitter hvr-bounce-in"></i></a></td>
                     
-                    <td><a href="https://www.flickr.com/photos/140559763@N05/" target="_blank" title="flickr"><i class="fa fa-flickr"></i></a></td>
+                    <td><a href="https://www.flickr.com/photos/140559763@N05/" target="_blank" title="flickr"><i class="fa fa-flickr hvr-bounce-in"></i></a></td>
                     
-                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss hvr-bounce-in"></i></a></td>
                     
                 </tr>
             </table>
@@ -199,14 +193,14 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-git创建ssh key" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-git创建ssh key" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" rel="gallery_ciogl9vx7001gy5heutigjt90">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" rel="gallery_cioiruwnf001g1whe22b9q2va">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" itemprop="image">
             </a>
         
@@ -250,16 +244,10 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A"><a href="#u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A" class="headerlink" title="一、设置Git的username ，email："></a>一、设置Git的username ，email：</h4><pre><code>$ git config --global user.name &quot;kingzez&quot;
-$ git config --global user.email &quot;kingzez@sina.com&quot;
-</code></pre><a id="more"></a>
-<h4 id="u4E8C_u3001_u521B_u5EFAssh_u5BC6_u5319_u8FC7_u7A0B"><a href="#u4E8C_u3001_u521B_u5EFAssh_u5BC6_u5319_u8FC7_u7A0B" class="headerlink" title="二、创建ssh密匙过程"></a>二、创建ssh密匙过程</h4><pre><code>1.查看是否已经有了ssh密钥：cd ~/.ssh
-   如果没有密钥则不会有此文件夹，有则不影响，备份删除都可以
-2.生存密钥：
-   $ ssh-keygen -t rsa -C “kingzez@sina.com”
-   3个回车，密码为空。
-3.操作完成生成 id_rsa和id_rsa.pub
-</code></pre><h4 id="u4E09_u3001_u6DFB_u52A0ssh_key__u5230github__u6216coding_u7B49_u3002"><a href="#u4E09_u3001_u6DFB_u52A0ssh_key__u5230github__u6216coding_u7B49_u3002" class="headerlink" title="三、添加ssh key 到github 或coding等。"></a>三、添加ssh key 到github 或coding等。</h4>
+            <h4 id="u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A"><a href="#u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A" class="headerlink" title="一、设置Git的username ，email："></a>一、设置Git的username ，email：</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user<span class="class">.name</span> <span class="string">"kingzez"</span></span><br><span class="line">$ git config --global user<span class="class">.email</span> <span class="string">"kingzez@sina.com"</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="u4E8C_u3001_u521B_u5EFAssh_u5BC6_u5319_u8FC7_u7A0B"><a href="#u4E8C_u3001_u521B_u5EFAssh_u5BC6_u5319_u8FC7_u7A0B" class="headerlink" title="二、创建ssh密匙过程"></a>二、创建ssh密匙过程</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>查看是否已经有了ssh密钥：cd ~/.ssh</span><br><span class="line">   如果没有密钥则不会有此文件夹，有则不影响，备份删除都可以</span><br><span class="line"><span class="number">2.</span>生存密钥：</span><br><span class="line">   $ ssh-keygen -t rsa -C “kingzez@sina.com”</span><br><span class="line">   <span class="number">3</span>个回车，密码为空。</span><br><span class="line"><span class="number">3.</span>操作完成生成 id_rsa和id_rsa.pub</span><br></pre></td></tr></table></figure>
+<h4 id="u4E09_u3001_u6DFB_u52A0ssh_key__u5230github__u6216coding_u7B49_u3002"><a href="#u4E09_u3001_u6DFB_u52A0ssh_key__u5230github__u6216coding_u7B49_u3002" class="headerlink" title="三、添加ssh key 到github 或coding等。"></a>三、添加ssh key 到github 或coding等。</h4>
         
         </div>
         <footer class="article-footer">
@@ -269,7 +257,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/22/git创建ssh key/" data-id="ciogl9vx7001gy5heutigjt90" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/22/git创建ssh key/" data-id="cioiruwnf001g1whe22b9q2va" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -389,7 +377,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
         <div class="widget">
             <ul id="recent-post" class="">
                 
-                    <li>
+                    <li class="hvr-grow-shadow">
                         
                         <div class="item-thumbnail">
                             <a href="/2016/05/19/undefined和null的区别/" class="thumbnail">
@@ -409,7 +397,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
         
         
         
-        <span style="background-image:url(/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small10.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -424,7 +412,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
                         </div>
                     </li>
                 
-                    <li>
+                    <li class="hvr-grow-shadow">
                         
                         <div class="item-thumbnail">
                             <a href="/2016/05/18/Blog无图片时添加随机thumbnail/" class="thumbnail">
@@ -444,7 +432,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
         
         
         
-        <span style="background-image:url(/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -459,7 +447,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
                         </div>
                     </li>
                 
-                    <li>
+                    <li class="hvr-grow-shadow">
                         
                         <div class="item-thumbnail">
                             <a href="/2016/05/17/js通过hash方式数组去重/" class="thumbnail">
@@ -479,7 +467,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -494,7 +482,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
                         </div>
                     </li>
                 
-                    <li>
+                    <li class="hvr-grow-shadow">
                         
                         <div class="item-thumbnail">
                             <a href="/2016/05/15/可继承的CSS属性/" class="thumbnail">
@@ -514,7 +502,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -529,7 +517,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
                         </div>
                     </li>
                 
-                    <li>
+                    <li class="hvr-grow-shadow">
                         
                         <div class="item-thumbnail">
                             <a href="/2016/04/29/JavaScript-Kata-Title-Case/" class="thumbnail">
@@ -549,7 +537,7 @@ $ git config --global user.email &quot;kingzez@sina.com&quot;
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
