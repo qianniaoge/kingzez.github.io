@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）">
 <meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sass.png">
-<meta property="og:updated_time" content="2016-06-07T07:47:01.000Z">
+<meta property="og:updated_time" content="2016-06-07T09:32:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sass中混合宏、继承、占位符比较">
 <meta name="twitter:description" content="初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）">
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sass.png" rel="gallery_cip558elf001za6he501dv19m">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sass.png" rel="gallery_cip57u0cm001zvhhe33dognr8">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sass.png" itemprop="image">
             </a>
         
@@ -245,9 +245,12 @@ var _hmt = _hmt || [];
         
             
             <p>初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）<a id="more"></a>，省去了class的<figure class="highlight"><figcaption><span>及&#123;&#125; ;```, Scss的书写形式更像是css的写法，关于Sass就说这么多，这不是重点，该篇文章也不是Sass的入门等等，主要作为自己的学习笔记 。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#20851;&#20110;&#28151;&#21512;&#23439;&#12289;&#32487;&#25215;&#21644;&#21344;&#20301;&#31526;&#30340;&#21306;&#21035;&#27604;&#36739;&#65306;&#10;#### &#28151;&#21512;&#23439;</span><br></pre></td></tr></table></figure></p>
-<p>声明方式 @mixin<br>调用方式 @include<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 常用于 相同的代码块需要在不同的环境传递不同的值时，可以通过混合宏来定义重复使用的代码块</span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>不足<span class="keyword">*</span><span class="keyword">*</span>：编译出来的css代码有相同部分的代码块不能自动合并，从而导致代码冗余</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 继承</span></span><br></pre></td></tr></table></figure></p>
-<p>声明方式 .class<br>调用方式 @extend<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;常用于 相同的代码块不需要传递不同的值，且在sass中已定义，这样可以通过Sass继承调用已存在的基类，使用继承可以将调用相同基类的代码合并到一起</span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>不足<span class="keyword">*</span><span class="keyword">*</span>： 即使基类不存在与html的结构中，继承后都会生成基类样式的代码块</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 占位符%placeholder</span></span><br></pre></td></tr></table></figure></p>
-<p>声明方式 %placeholder<br>调用方式 @extend<br>```<br>常用于 占位符与继承基本类型类似，不同的是相同的代码不存在基类中，需要额外声明，如果不调用已声明的占位符，则不会产生其相关代码，如果在不同选择器中调用占位符，那么编译出的css则是合并相同的代码，不会造成代码冗余</p>
+<p>声明方式 @mixin<br>调用方式 @include<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; 常用于 相同的代码块需要在不同的环境传递不同的值时，可以通过混合宏来定义重复使用的代码块</span><br><span class="line"></span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>不足<span class="keyword">*</span><span class="keyword">*</span>：编译出来的css代码有相同部分的代码块不能自动合并，从而导致代码冗余</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 继承</span></span><br></pre></td></tr></table></figure></p>
+<p>声明方式 .class<br>调用方式 @extend<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;常用于 相同的代码块不需要传递不同的值，且在sass中已定义，这样可以通过Sass继承调用已存在的基类，使用继承可以将调用相同基类的代码合并到一起</span><br><span class="line"></span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>不足<span class="keyword">*</span><span class="keyword">*</span>： 即使基类不存在与html的结构中，继承后都会生成基类样式的代码块</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 占位符%placeholder</span></span><br></pre></td></tr></table></figure></p>
+<p>声明方式 %placeholder<br>调用方式 @extend<br>```</p>
+<blockquote>
+<p>常用于 占位符与继承基本类型类似，不同的是相同的代码不存在基类中，需要额外声明，如果不调用已声明的占位符，则不会产生其相关代码，如果在不同选择器中调用占位符，那么编译出的css则是合并相同的代码，不会造成代码冗余</p>
+</blockquote>
 
         
         </div>
@@ -258,7 +261,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/" data-id="cip558elf001za6he501dv19m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/" data-id="cip57u0cm001zvhhe33dognr8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -389,7 +392,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small10.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -424,7 +427,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -459,7 +462,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -494,7 +497,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small6.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -529,7 +532,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
