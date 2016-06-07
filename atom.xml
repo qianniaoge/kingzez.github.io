@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-05-30T15:19:44.000Z</updated>
+  <updated>2016-06-07T07:47:01.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sass中混合宏、继承、占位符比较</title>
+    <link href="http://kingzez.com/2016/06/07/Sass%E4%B8%AD%E6%B7%B7%E5%90%88%E5%AE%8F%E3%80%81%E7%BB%A7%E6%89%BF%E3%80%81%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%AF%94%E8%BE%83/"/>
+    <id>http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/</id>
+    <published>2016-06-07T07:20:37.000Z</published>
+    <updated>2016-06-07T07:47:01.000Z</updated>
+    
+    <content type="html">&lt;p&gt;初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;，省去了class的&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;及&amp;#123;&amp;#125; ;```, Scss的书写形式更像是css的写法，关于Sass就说这么多，这不是重点，该篇文章也不是Sass的入门等等，主要作为自己的学习笔记 。&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#20851;&amp;#20110;&amp;#28151;&amp;#21512;&amp;#23439;&amp;#12289;&amp;#32487;&amp;#25215;&amp;#21644;&amp;#21344;&amp;#20301;&amp;#31526;&amp;#30340;&amp;#21306;&amp;#21035;&amp;#27604;&amp;#36739;&amp;#65306;&amp;#10;#### &amp;#28151;&amp;#21512;&amp;#23439;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;声明方式 @mixin&lt;br&gt;调用方式 @include&lt;br&gt;&lt;figure class=&quot;highlight gherkin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 常用于 相同的代码块需要在不同的环境传递不同的值时，可以通过混合宏来定义重复使用的代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;不足&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;：编译出来的css代码有相同部分的代码块不能自动合并，从而导致代码冗余&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#### 继承&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;声明方式 .class&lt;br&gt;调用方式 @extend&lt;br&gt;&lt;figure class=&quot;highlight gherkin&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;常用于 相同的代码块不需要传递不同的值，且在sass中已定义，这样可以通过Sass继承调用已存在的基类，使用继承可以将调用相同基类的代码合并到一起&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;不足&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;*&lt;/span&gt;： 即使基类不存在与html的结构中，继承后都会生成基类样式的代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#### 占位符%placeholder&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;声明方式 %placeholder&lt;br&gt;调用方式 @extend&lt;br&gt;```&lt;br&gt;常用于 占位符与继承基本类型类似，不同的是相同的代码不存在基类中，需要额外声明，如果不调用已声明的占位符，则不会产生其相关代码，如果在不同选择器中调用占位符，那么编译出的css则是合并相同的代码，不会造成代码冗余&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）
+    
+    </summary>
+    
+      <category term="sass" scheme="http://kingzez.com/categories/sass/"/>
+    
+    
+      <category term="sass" scheme="http://kingzez.com/tags/sass/"/>
+    
+  </entry>
   
   <entry>
     <title>前端资源收集</title>
@@ -5621,30 +5647,6 @@
     <summary type="html">
     
       &lt;h4 id=&quot;DOM_u7B80_u5355_u64CD_u4F5C_u5B9E_u73B0_u591A_u9009_u53CD_u9009&quot;&gt;&lt;a href=&quot;#DOM_u7B80_u5355_u64CD_u4F5C_u5B9E_u73B0_u591A_u9009_u53CD_u9009&quot; class=&quot;headerlink&quot; title=&quot;DOM简单操作实现多选反选&quot;&gt;&lt;/a&gt;DOM简单操作实现多选反选&lt;/h4&gt;
-    
-    </summary>
-    
-      <category term="js" scheme="http://kingzez.com/categories/js/"/>
-    
-    
-      <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用navigator.userAgent简单判断浏览器</title>
-    <link href="http://kingzez.com/2015/08/24/%E4%BD%BF%E7%94%A8navigator.userAgent%E7%AE%80%E5%8D%95%E5%88%A4%E6%96%AD%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    <id>http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/</id>
-    <published>2015-08-24T01:41:56.000Z</published>
-    <updated>2016-05-17T16:35:39.000Z</updated>
-    
-    <content type="html">&lt;h4 id=&quot;u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668&quot;&gt;&lt;a href=&quot;#u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668&quot; class=&quot;headerlink&quot; title=&quot;简单使用navigator.userAgent判断浏览器&quot;&gt;&lt;/a&gt;简单使用navigator.userAgent判断浏览器&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;img src=&quot;http://i3.tietuku.com/6d8e1ba88486c179.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;doctype&quot;&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/html; charset=utf-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;navigator&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;validB&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; u_agent = navigator.userAgent;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b_name = &lt;span class=&quot;string&quot;&gt;&quot;不是想用的主流浏览器! &quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (u_agent.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;Firefox&quot;&lt;/span&gt;)&amp;gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		b_name=&lt;span class=&quot;string&quot;&gt;&quot;Firefox&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (u_agent.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;Chrome&quot;&lt;/span&gt;)&amp;gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		b_name=&lt;span class=&quot;string&quot;&gt;&quot;Chrome&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (u_agent.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;MSIE&quot;&lt;/span&gt;)&amp;gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; &amp;amp;&amp;amp; u_agent.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;Trident&quot;&lt;/span&gt;)&amp;gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		b_name=&lt;span class=&quot;string&quot;&gt;&quot;IE(8-10)&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;浏览器：&quot;&lt;/span&gt;+b_name +&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;u_agent:&quot;&lt;/span&gt; +u_agent);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;查看浏览器&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;onclick&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;validB()&quot;&lt;/span&gt;  &amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668&quot;&gt;&lt;a href=&quot;#u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668&quot; class=&quot;headerlink&quot; title=&quot;简单使用navigator.userAgent判断浏览器&quot;&gt;&lt;/a&gt;简单使用navigator.userAgent判断浏览器&lt;/h4&gt;
     
     </summary>
     
