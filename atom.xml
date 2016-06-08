@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-06-07T09:38:47.000Z</updated>
+  <updated>2016-06-08T05:52:37.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://kingzez.com/2016/06/07/Sass%E4%B8%AD%E6%B7%B7%E5%90%88%E5%AE%8F%E3%80%81%E7%BB%A7%E6%89%BF%E3%80%81%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%AF%94%E8%BE%83/"/>
     <id>http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/</id>
     <published>2016-06-07T07:20:37.000Z</published>
-    <updated>2016-06-07T09:38:47.000Z</updated>
+    <updated>2016-06-08T05:52:37.000Z</updated>
     
-    <content type="html">&lt;p&gt;初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;，省去了class的&lt;code&gt;. {} ;&lt;/code&gt;, Scss的书写形式更像是css的写法，关于Sass就说这么多，这不是重点，该篇文章也不是Sass的入门等等，主要作为自己的学习笔记 。&lt;br&gt;关于混合宏、继承和占位符的区别比较：&lt;/p&gt;
+    <content type="html">&lt;p&gt;初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;，省去了class的&lt;code&gt;. {} ;&lt;/code&gt;, Scss的书写形式更像是css的写法，关于Sass就说这么多，这不是重点，该篇文章也不是Sass的入门等等，主要作为自己的学习笔记 。&lt;br&gt;关于混合宏、继承和占位符的区别比较： &lt;/p&gt;
 &lt;h4 id=&quot;u6DF7_u5408_u5B8F&quot;&gt;&lt;a href=&quot;#u6DF7_u5408_u5B8F&quot; class=&quot;headerlink&quot; title=&quot;混合宏&quot;&gt;&lt;/a&gt;混合宏&lt;/h4&gt;&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;声明方式 &lt;span class=&quot;variable&quot;&gt;@mixin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;调用方式 &lt;span class=&quot;variable&quot;&gt;@include&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;常用于 相同的代码块需要在不同的环境传递不同的值时，可以通过混合宏来定义重复使用的代码块&lt;br&gt;&lt;strong&gt;不足&lt;/strong&gt;：编译出来的css代码有相同部分的代码块不能自动合并，从而导致代码冗余&lt;/p&gt;
