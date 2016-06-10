@@ -5,16 +5,16 @@
 
 <title>apply、call和bind用法区别 | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：1234567891011121314function sum (num1, num">
+<meta name="description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apply、call和bind用法区别">
 <meta property="og:url" content="http://kingzez.com/2016/06/10/apply-call和bind用法区别/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：1234567891011121314function sum (num1, num">
-<meta property="og:updated_time" content="2016-06-10T10:42:31.000Z">
+<meta property="og:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：">
+<meta property="og:updated_time" content="2016-06-10T10:43:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply、call和bind用法区别">
-<meta name="twitter:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：1234567891011121314function sum (num1, num">
+<meta name="twitter:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：">
 
 
 
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>每个函数中都包含两个非继承而来的方法：<code>apply()</code>, <code>call</code>。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，<code>apply()</code>方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall1</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);  <span class="comment">//传入arguments对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall2</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1,num2]);  <span class="comment">//传入数组</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumCall1(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br><span class="line">sumCall2(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
+            <p>每个函数中都包含两个非继承而来的方法：<code>apply()</code>, <code>call</code>。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，<code>apply()</code>方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall1</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);  <span class="comment">//传入arguments对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall2</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1,num2]);  <span class="comment">//传入数组</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumCall1(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br><span class="line">sumCall2(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
 <p>上面例子中，sumCall1()在执行sum()函数时传入了this作为this值（因为是在全局作用域中调用的，所以传入的就是window对象）和arguments对象，然而sumCall2()同样也调用sum()函数，但它传入的则是this和一个参数数组，都返回同样的结果。</p>
 <blockquote>
 <p>在严格模式下，未指定环境对象而调用函数，则this值不会转成window。除非明确把函数添加到某个对象或者调用<code>apply()</code>或<code>call()</code>，否则this值将是undefined。</p>
@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/06/10/apply-call和bind用法区别/" data-id="cip9ltsaz001vfwhe7svfkd6q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/06/10/apply-call和bind用法区别/" data-id="cip9lynd0001vl8hemyftkspm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -419,7 +419,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -454,7 +454,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -489,7 +489,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -524,7 +524,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
