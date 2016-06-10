@@ -3,19 +3,18 @@
 <head>
 <meta charset="utf-8">
 
-<title>函数自调用时函数表达式和函数声明的区别 | the kingzez blog</title>
+<title>apply、call和bind用法区别 | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="函数自调用时函数表达式和函数声明的区别">
+<meta name="description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：1234567891011121314function sum (num1, num">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数自调用时函数表达式和函数声明的区别">
-<meta property="og:url" content="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/index.html">
+<meta property="og:title" content="apply、call和bind用法区别">
+<meta property="og:url" content="http://kingzez.com/2016/06/10/apply-call和bind用法区别/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="函数自调用时函数表达式和函数声明的区别">
-<meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png">
-<meta property="og:updated_time" content="2016-05-17T16:45:00.000Z">
+<meta property="og:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：1234567891011121314function sum (num1, num">
+<meta property="og:updated_time" content="2016-06-10T10:42:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数自调用时函数表达式和函数声明的区别">
-<meta name="twitter:description" content="函数自调用时函数表达式和函数声明的区别">
+<meta name="twitter:title" content="apply、call和bind用法区别">
+<meta name="twitter:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：1234567891011121314function sum (num1, num">
 
 
 
@@ -193,26 +192,16 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-函数自调用时函数表达式和函数声明的区别" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-apply-call和bind用法区别" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" rel="gallery_cip9ltsad000zfwhewrrsvox2">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" itemprop="image">
-            </a>
-        
-    </div>
-</div>
-
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-            函数自调用时函数表达式和函数声明的区别
+            apply、call和bind用法区别
         </h1>
     
 
@@ -220,8 +209,8 @@ var _hmt = _hmt || [];
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/">
-            <time datetime="2015-09-19T14:46:20.000Z" itemprop="datePublished">2015-09-19</time>
+        <a href="/2016/06/10/apply-call和bind用法区别/">
+            <time datetime="2016-06-10T09:48:22.000Z" itemprop="datePublished">2016-06-10</time>
         </a>
     </div>
 
@@ -244,11 +233,16 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="u51FD_u6570_u81EA_u8C03_u7528_u65F6_u51FD_u6570_u8868_u8FBE_u5F0F_u548C_u51FD_u6570_u58F0_u660E_u7684_u533A_u522B"><a href="#u51FD_u6570_u81EA_u8C03_u7528_u65F6_u51FD_u6570_u8868_u8FBE_u5F0F_u548C_u51FD_u6570_u58F0_u660E_u7684_u533A_u522B" class="headerlink" title="函数自调用时函数表达式和函数声明的区别"></a>函数自调用时函数表达式和函数声明的区别</h4><a id="more"></a>
-<p>所有的function 开头的都是函数声明，在解释的时候会预处理放入堆栈<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这种写法的函数声明不会被执行，直到被显示的调用 foo();<br>函数表达式则不同，如：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">+<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">-<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以上即为函数表达式</span></span><br></pre></td></tr></table></figure></p>
-<p>当以表达式(expression)开头时，语句被解释为一个表达式，自然而然会把后面的函数声明当做表达式去处理，这时候，如上，函数声明的部分会当做一个函数返回就像是<code>(return function() {})</code>。也只有这种情况才能在表达式的后面加括号来达到函数自调用的目的<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">+<span class="function"><span class="keyword">function</span><span class="params">()</span> <span class="comment">&#123;</span><br><span class="line">  console.log('will be invoked');</span><br><span class="line">&#125;</span><span class="params">()</span>;</span></span><br><span class="line">-<span class="function"><span class="keyword">function</span><span class="params">()</span> <span class="comment">&#123;</span><br><span class="line">  console.log('will be invoked');</span><br><span class="line">&#125;</span><span class="params">()</span>;</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> <span class="comment">&#123;</span><br><span class="line">  console.log('will be invoked');</span><br><span class="line">&#125;</span>)<span class="params">()</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注意下面的区别</span></span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span> <span class="comment">&#123;</span><br><span class="line">  console.log('won't be invoked');</span><br><span class="line">&#125;</span><span class="params">()</span></span><br><span class="line"><span class="comment">//语句是函数声明，最后面的括号会被忽略</span></span></span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/dayuoba/my_nodejs_book/blob/master/javascripts.md" target="_blank" rel="external">from dayuoba</a></p>
+            <p>每个函数中都包含两个非继承而来的方法：<code>apply()</code>, <code>call</code>。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，<code>apply()</code>方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall1</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);  <span class="comment">//传入arguments对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall2</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1,num2]);  <span class="comment">//传入数组</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumCall1(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br><span class="line">sumCall2(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
+<p>上面例子中，sumCall1()在执行sum()函数时传入了this作为this值（因为是在全局作用域中调用的，所以传入的就是window对象）和arguments对象，然而sumCall2()同样也调用sum()函数，但它传入的则是this和一个参数数组，都返回同样的结果。</p>
+<blockquote>
+<p>在严格模式下，未指定环境对象而调用函数，则this值不会转成window。除非明确把函数添加到某个对象或者调用<code>apply()</code>或<code>call()</code>，否则this值将是undefined。</p>
+</blockquote>
+<p><code>call()</code>方法与<code>apply()</code>方法的作用相同，它们的区别在于接收参数的方式不同，对于<code>call()</code>方法而言，第一个参数是this不变，变化的是其余参数都是直接传递给函数，也就是说在使用<code>call()</code>时，传递函数的参数要一一列举出来，看下面的例子🌰：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(num1, num2)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span><span class="params">(num1, num2)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.call(<span class="keyword">this</span>, num1,num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">callSum(<span class="number">1</span>，<span class="number">3</span>) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
+<p>在使用<code>call()</code>方法的情况下，callSum要传入每一个参数值，结果与使用<code>apply()</code>并没有什么不同。至于是使用<code>apply()</code>还是<code>call()</code>，完全取决于你采用哪种给函数传递参数的方式最方便。如果你打算直接传入arguments对象，或者包含函数中先接收到的也是一个数组，那么使用<code>apply()</code>肯定很方便；否则，选择<code>call()</code>更合适，（再不给函数传递参数的情况下，使用哪个方法都无所谓。）</p>
+<p>事实上，传递参数并非<code>apply()</code>和<code>call()</code>真正用武之地，它们最强大的地方是能够扩充函数的赖以运行的作用域，看下面例子🌰：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</span><br><span class="line"><span class="keyword">var</span> o.color = <span class="string">"blue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayColor();</span><br><span class="line"></span><br><span class="line">sayColor.call(<span class="keyword">this</span>);	<span class="comment">//red</span></span><br><span class="line">sayColor.call(<span class="built_in">window</span>);	<span class="comment">//red</span></span><br><span class="line">sayColor.call(o);		<span class="comment">//blue</span></span><br></pre></td></tr></table></figure></p>
+<p>使用<code>apply()</code>或<code>call()</code>来扩充作用域的最大好处就是对象不需要与方法有任何耦合关系。在ES5中还定义了一个方法<code>bind()</code>。这个方法会创建一个函数的实例，其this值会被绑定到传给<code>bind()</code>函数的值。再来个例子🌰。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</span><br><span class="line"><span class="keyword">var</span> o.color = <span class="string">"blue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objSayColor = sayColor.bind(o);</span><br><span class="line">objSayColor();	<span class="comment">//blue</span></span><br></pre></td></tr></table></figure></p>
+<p>在这里，<code>sayColor()</code>调用<code>bind()</code>并传入对象o，创建了<code>objSayColor()</code>函数，<code>objSayColor()</code>函数this值等于o，因此即使是在全局作用域中调用这个函数，也会看到”blue”。<br>就先说这么多~</p>
 
         
         </div>
@@ -259,7 +253,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/" data-id="cip9ltsad000zfwhewrrsvox2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/06/10/apply-call和bind用法区别/" data-id="cip9ltsaz001vfwhe7svfkd6q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -327,7 +321,7 @@ var _hmt = _hmt || [];
 
             
     
-        <a href="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/">Comments</a>
+        <a href="http://kingzez.com/2016/06/10/apply-call和bind用法区别/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2016/06/10/apply-call和bind用法区别/">Comments</a>
     
 
         </footer>
@@ -336,19 +330,10 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2015/09/23/Mac下brew安装运行redis/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    Mac下brew安装运行redis
-                
-            </div>
-        </a>
     
-    
-        <a href="/2015/09/07/MySQL写入中文乱码/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/06/07/Sass中混合宏、继承、占位符比较/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">MySQL写入中文乱码</div>
+            <div class="article-nav-title">Sass中混合宏、继承、占位符比较</div>
         </a>
     
 </nav>
@@ -613,7 +598,7 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'kingzez';
     
     
-    var disqus_url = 'http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/';
+    var disqus_url = 'http://kingzez.com/2016/06/10/apply-call和bind用法区别/';
     
     (function() {
     var dsq = document.createElement('script');
