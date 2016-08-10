@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2016-08-06T06:43:14.000Z</updated>
+  <updated>2016-08-06T06:46:30.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://kingzez.com/2016/07/26/iterm-2-cd-%E7%A5%9E%E5%99%A8/"/>
     <id>http://kingzez.com/2016/07/26/iterm-2-cd-神器/</id>
     <published>2016-07-26T15:44:32.000Z</published>
-    <updated>2016-08-06T06:43:14.000Z</updated>
+    <updated>2016-08-06T06:46:30.000Z</updated>
     
-    <content type="html">&lt;p&gt;##autojump - 更快的方式来浏览你的文件系统 ##&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;安装通过Homebrew&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;em&gt;autojump - 更快的方式来浏览你的文件系统&lt;/em&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;安装通过Homebrew&lt;/p&gt;
 &lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;brew &lt;/span&gt;install autojump&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在zsh下需要配置zsh文件，在.zshrc下添加命令&lt;br&gt;&lt;figure class=&quot;highlight lua&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$&lt;span class=&quot;string&quot;&gt;[[ -s `brew --prefix`/etc/autojump.sh ]]&lt;/span&gt; &amp;amp;&amp;amp; . `brew &lt;span class=&quot;comment&quot;&gt;--prefix`/etc/autojump.sh&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;保存文件，即可使用。&lt;br&gt;使用方法是&lt;code&gt;j&lt;/code&gt;经常使用或之前使用过的文件夹，即可直接跳到你要浏览的目录，省去中间需要的各种&lt;code&gt;cd&lt;/code&gt;。非常方便。&lt;/p&gt;
@@ -30,7 +30,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;##autojump - 更快的方式来浏览你的文件系统 ##&lt;br&gt;
+      &lt;p&gt;&lt;em&gt;autojump - 更快的方式来浏览你的文件系统&lt;/em&gt;&lt;br&gt;
     
     </summary>
     
