@@ -3,19 +3,17 @@
 <head>
 <meta charset="utf-8">
 
-<title>MySQL写入中文乱码 | the kingzez blog</title>
+<title>Tag: apache | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="####MySQL写入中文乱码">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MySQL写入中文乱码">
-<meta property="og:url" content="http://kingzez.com/2015/09/07/MySQL写入中文乱码/index.html">
+<meta name="description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
+<meta property="og:type" content="website">
+<meta property="og:title" content="the kingzez blog">
+<meta property="og:url" content="http://kingzez.com/tags/apache/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="####MySQL写入中文乱码">
-<meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mysql.png">
-<meta property="og:updated_time" content="2016-05-17T16:45:30.000Z">
+<meta property="og:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL写入中文乱码">
-<meta name="twitter:description" content="####MySQL写入中文乱码">
+<meta name="twitter:title" content="the kingzez blog">
+<meta name="twitter:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
 
 
 
@@ -193,26 +191,20 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-MySQL写入中文乱码" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mysql.png" rel="gallery_citdrzok6002h19hen6ti5mtj">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mysql.png" itemprop="image">
-            </a>
-        
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-tag"></i></span>
+        <h1 class="title">#apache</h1>
     </div>
-</div>
-
-        
-            <header class="article-header">
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            MySQL写入中文乱码
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2016/09/22/MacOS自带Apache的坑/">MacOS自带Apache的坑</a>
         </h1>
     
 
@@ -220,8 +212,8 @@ var _hmt = _hmt || [];
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/09/07/MySQL写入中文乱码/">
-            <time datetime="2015-09-07T14:09:26.000Z" itemprop="datePublished">2015-09-07</time>
+        <a href="/2016/09/22/MacOS自带Apache的坑/">
+            <time datetime="2016-09-22T03:16:02.000Z" itemprop="datePublished">2016-09-22</time>
         </a>
     </div>
 
@@ -229,143 +221,20 @@ var _hmt = _hmt || [];
                     
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+        <a class="article-category-link" href="/categories/Mac/">Mac</a>
     </div>
 
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySQL/">MySQL</a>
+        <a class="tag-link" href="/tags/apache/">apache</a>
     </div>
 
                 </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>####MySQL写入中文乱码<br><a id="more"></a><br> MySQL数据库出现中文乱码的原因一般是客户端、服务器、结果集、数据库的字符集不统一造成的，但不是这些都统一就不乱，其中在使用wamp的MySQL时会发现这些都统一还是乱码，全部统一为utf8,这时通过<figure class="highlight"><figcaption><span>variables like "%char%";``</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```&#10;mysql&#62; show variables like &#34;%char%&#34;;&#10;+--------------------------+-----------------------------------------------+&#10;| Variable_name            | Value                                         |&#10;+--------------------------+-----------------------------------------------+&#10;| character_set_client     | utf8                                          |&#10;| character_set_connection | utf8                                          |&#10;| character_set_database   | utf8                                          |&#10;| character_set_filesystem | binary                                        |&#10;| character_set_results    | utf8                                          |&#10;| character_set_server     | latin1                                        |&#10;| character_set_system     | utf8                                          |&#10;| character_sets_dir       | f:\wamp\bin\mysql\mysql5.6.17\share\charsets\ |&#10;+--------------------------+-----------------------------------------------+&#10;8 rows in set</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>character_set_server     | latin1</code>不统一，通过这条语句修改：set character_set_server=’utf8’; 情况不同，这条命令无法修改，<code>character_set_server</code>如果默认为latin1要永久更改，用set命令是行不通的，所以更改my.ini文件，在[mysqld]段落增加：<code>character_set_server=utf8</code>重启MySQL服务即可。 </p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://kingzez.com/2015/09/07/MySQL写入中文乱码/" data-id="citdrzok6002h19hen6ti5mtj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://kingzez.com/2015/09/07/MySQL写入中文乱码/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/09/07/MySQL写入中文乱码/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    函数自调用时函数表达式和函数声明的区别
-                
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2015/08/24/DOM 简单操作实现多选反选/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">DOM 简单操作实现多选反选</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
-    
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
-    </section>
-
+</div>
 </section>
             
                 <aside id="sidebar">
@@ -610,13 +479,11 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'kingzez';
     
     
-    var disqus_url = 'http://kingzez.com/2015/09/07/MySQL写入中文乱码/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
