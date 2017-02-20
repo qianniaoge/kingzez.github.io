@@ -16,21 +16,22 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM 简单操作实现多选反选">
 <meta name="twitter:description" content="DOM简单操作实现多选反选">
+<meta name="twitter:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png">
 
 
 
     <link rel="icon" href="/images/avator.png" />
 
-<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="/vendor/open-sans/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/Satisfy/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/source-code-pro/styles.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/open-sans/styles.css">
+<link rel="stylesheet" href="/vendor/Satisfy/styles.css">
+<link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/hover.css" type="text/css">
-<script src="/vendor/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
 
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css" type="text/css">
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
     
     
@@ -142,7 +143,7 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js" type="text/javascript"></script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -227,7 +228,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" rel="gallery_cixk04kt60049cfhe2o3ojakk">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" rel="gallery_cizdsh7s20009owhekiwnqg3t">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" itemprop="image">
             </a>
         
@@ -271,8 +272,8 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="DOM_u7B80_u5355_u64CD_u4F5C_u5B9E_u73B0_u591A_u9009_u53CD_u9009"><a href="#DOM_u7B80_u5355_u64CD_u4F5C_u5B9E_u73B0_u591A_u9009_u53CD_u9009" class="headerlink" title="DOM简单操作实现多选反选"></a>DOM简单操作实现多选反选</h4><a id="more"></a>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">title</span>&gt;</span>DOM<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">          Choose one:<span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"hobby"</span> <span class="attribute">id</span>=<span class="value">"hobby1"</span>&gt;</span>  音乐</span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"hobby"</span> <span class="attribute">id</span>=<span class="value">"hobby2"</span>&gt;</span>  登山</span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"hobby"</span> <span class="attribute">id</span>=<span class="value">"hobby3"</span>&gt;</span>  游泳</span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"hobby"</span> <span class="attribute">id</span>=<span class="value">"hobby4"</span>&gt;</span>  阅读</span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"hobby"</span> <span class="attribute">id</span>=<span class="value">"hobby5"</span>&gt;</span>  打球</span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"hobby"</span> <span class="attribute">id</span>=<span class="value">"hobby6"</span>&gt;</span>  跑步 <span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span> = "全选" <span class="attribute">onclick</span> = "<span class="attribute">checkall</span>();"&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span> = "全不选" <span class="attribute">onclick</span> = "<span class="attribute">clearall</span>();"&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">p</span>&gt;</span>input your number，number1 to 6:<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"wb"</span> <span class="attribute">name</span>=<span class="value">"wb"</span> <span class="attribute">type</span>=<span class="value">"text"</span> &gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"ok"</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"确定"</span> <span class="attribute">onclick</span> = "<span class="attribute">checkone</span>();"&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkall</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);          </span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;hobby.length; i++)</span><br><span class="line"><span class="keyword">if</span>(hobby[i].type ==<span class="string">"checkbox"</span>)&#123;</span><br><span class="line">    hobby[i].checked = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearall</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByName(<span class="string">"hobby"</span>);</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; hobby.length; i++)&#123;</span><br><span class="line">    hobby[i].checked =<span class="literal">false</span>;</span><br><span class="line">&#125;         </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkone</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> j=<span class="built_in">document</span>.getElementById(<span class="string">"wb"</span>).value;</span><br><span class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementById(<span class="string">"hobby"</span> + j);</span><br><span class="line">hobby.checked = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+            <h4 id="DOM简单操作实现多选反选"><a href="#DOM简单操作实现多选反选" class="headerlink" title="DOM简单操作实现多选反选"></a>DOM简单操作实现多选反选</h4><a id="more"></a>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">          Choose one:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby1"</span>&gt;</span>  音乐</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby2"</span>&gt;</span>  登山</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby3"</span>&gt;</span>  游泳</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby4"</span>&gt;</span>  阅读</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby5"</span>&gt;</span>  打球</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby6"</span>&gt;</span>  跑步 <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"全选"</span> <span class="attr">onclick</span> = <span class="string">"checkall();"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"全不选"</span> <span class="attr">onclick</span> = <span class="string">"clearall();"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>input your number，number1 to 6:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"wb"</span> <span class="attr">name</span>=<span class="string">"wb"</span> <span class="attr">type</span>=<span class="string">"text"</span> &gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ok"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"确定"</span> <span class="attr">onclick</span> = <span class="string">"checkone();"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkall</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);          </div><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;hobby.length; i++)</div><div class="line"><span class="keyword">if</span>(hobby[i].type ==<span class="string">"checkbox"</span>)&#123;</div><div class="line">    hobby[i].checked = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearall</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByName(<span class="string">"hobby"</span>);</div><div class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; hobby.length; i++)&#123;</div><div class="line">    hobby[i].checked =<span class="literal">false</span>;</div><div class="line">&#125;         </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkone</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> j=<span class="built_in">document</span>.getElementById(<span class="string">"wb"</span>).value;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementById(<span class="string">"hobby"</span> + j);</div><div class="line">hobby.checked = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
         
         </div>
         <footer class="article-footer">
@@ -282,7 +283,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/" data-id="cixk04kt60049cfhe2o3ojakk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/" data-id="cizdsh7s20009owhekiwnqg3t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -457,7 +458,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -492,7 +493,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -527,7 +528,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -650,12 +651,12 @@ var _hmt = _hmt || [];
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
     
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
     </div>
 </body>

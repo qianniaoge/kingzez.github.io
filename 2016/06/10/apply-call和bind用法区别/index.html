@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://kingzez.com/2016/06/10/apply-call和bind用法区别/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：">
-<meta property="og:updated_time" content="2016-06-10T10:43:34.000Z">
+<meta property="og:updated_time" content="2017-02-20T07:28:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply、call和bind用法区别">
 <meta name="twitter:description" content="每个函数中都包含两个非继承而来的方法：apply(), call。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：">
@@ -20,16 +20,16 @@
 
     <link rel="icon" href="/images/avator.png" />
 
-<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="/vendor/open-sans/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/Satisfy/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/source-code-pro/styles.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/open-sans/styles.css">
+<link rel="stylesheet" href="/vendor/Satisfy/styles.css">
+<link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/hover.css" type="text/css">
-<script src="/vendor/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
 
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css" type="text/css">
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
     
     
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js" type="text/javascript"></script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -260,16 +260,17 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>每个函数中都包含两个非继承而来的方法：<code>apply()</code>, <code>call</code>。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，<code>apply()</code>方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall1</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);  <span class="comment">//传入arguments对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall2</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1,num2]);  <span class="comment">//传入数组</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sumCall1(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br><span class="line">sumCall2(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
+            <p>每个函数中都包含两个非继承而来的方法：<code>apply()</code>, <code>call</code>。这两个方法的用途都是在特定的作用域下调用函数，实际上等于设置函数体内this对象的值。首先，<code>apply()</code>方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象，例如：<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall1</span>(<span class="params">num1, num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);  <span class="comment">//传入arguments对象</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumCall2</span>(<span class="params">num1, num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1,num2]);  <span class="comment">//传入数组</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">sumCall1(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></div><div class="line">sumCall2(<span class="number">1</span>,<span class="number">3</span>);  <span class="comment">// 4</span></div></pre></td></tr></table></figure></p>
 <p>上面例子中，sumCall1()在执行sum()函数时传入了this作为this值（因为是在全局作用域中调用的，所以传入的就是window对象）和arguments对象，然而sumCall2()同样也调用sum()函数，但它传入的则是this和一个参数数组，都返回同样的结果。</p>
 <blockquote>
 <p>在严格模式下，未指定环境对象而调用函数，则this值不会转成window。除非明确把函数添加到某个对象或者调用<code>apply()</code>或<code>call()</code>，否则this值将是undefined。</p>
 </blockquote>
-<p><code>call()</code>方法与<code>apply()</code>方法的作用相同，它们的区别在于接收参数的方式不同，对于<code>call()</code>方法而言，第一个参数是this不变，变化的是其余参数都是直接传递给函数，也就是说在使用<code>call()</code>时，传递函数的参数要一一列举出来，看下面的例子🌰：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(num1, num2)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span><span class="params">(num1, num2)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.call(<span class="keyword">this</span>, num1,num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">callSum(<span class="number">1</span>，<span class="number">3</span>) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
+<p><code>call()</code>方法与<code>apply()</code>方法的作用相同，它们的区别在于接收参数的方式不同，对于<code>call()</code>方法而言，第一个参数是this不变，变化的是其余参数都是直接传递给函数，也就是说在使用<code>call()</code>时，传递函数的参数要一一列举出来，看下面的例子🌰：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(num1, num2)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span><span class="params">(num1, num2)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> sum.call(<span class="keyword">this</span>, num1,num2);</div><div class="line">&#125;</div><div class="line"></div><div class="line">callSum(<span class="number">1</span>，<span class="number">3</span>) <span class="comment">// 4</span></div></pre></td></tr></table></figure></p>
 <p>在使用<code>call()</code>方法的情况下，callSum要传入每一个参数值，结果与使用<code>apply()</code>并没有什么不同。至于是使用<code>apply()</code>还是<code>call()</code>，完全取决于你采用哪种给函数传递参数的方式最方便。如果你打算直接传入arguments对象，或者包含函数中先接收到的也是一个数组，那么使用<code>apply()</code>肯定很方便；否则，选择<code>call()</code>更合适，（再不给函数传递参数的情况下，使用哪个方法都无所谓。）</p>
-<p>事实上，传递参数并非<code>apply()</code>和<code>call()</code>真正用武之地，它们最强大的地方是能够扩充函数的赖以运行的作用域，看下面例子🌰：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</span><br><span class="line"><span class="keyword">var</span> o.color = <span class="string">"blue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayColor();</span><br><span class="line"></span><br><span class="line">sayColor.call(<span class="keyword">this</span>);	<span class="comment">//red</span></span><br><span class="line">sayColor.call(<span class="built_in">window</span>);	<span class="comment">//red</span></span><br><span class="line">sayColor.call(o);		<span class="comment">//blue</span></span><br></pre></td></tr></table></figure></p>
-<p>使用<code>apply()</code>或<code>call()</code>来扩充作用域的最大好处就是对象不需要与方法有任何耦合关系。在ES5中还定义了一个方法<code>bind()</code>。这个方法会创建一个函数的实例，其this值会被绑定到传给<code>bind()</code>函数的值。再来个例子🌰。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</span><br><span class="line"><span class="keyword">var</span> o.color = <span class="string">"blue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objSayColor = sayColor.bind(o);</span><br><span class="line">objSayColor();	<span class="comment">//blue</span></span><br></pre></td></tr></table></figure></p>
-<p>在这里，<code>sayColor()</code>调用<code>bind()</code>并传入对象o，创建了<code>objSayColor()</code>函数，<code>objSayColor()</code>函数this值等于o，因此即使是在全局作用域中调用这个函数，也会看到”blue”。<br>就先说这么多~</p>
+<p>事实上，传递参数并非<code>apply()</code>和<code>call()</code>真正用武之地，它们最强大的地方是能够扩充函数的赖以运行的作用域，看下面例子🌰：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</div><div class="line"><span class="keyword">var</span> o.color = <span class="string">"blue"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div><div class="line"></div><div class="line">sayColor();</div><div class="line"></div><div class="line">sayColor.call(<span class="keyword">this</span>);	<span class="comment">//red</span></div><div class="line">sayColor.call(<span class="built_in">window</span>);	<span class="comment">//red</span></div><div class="line">sayColor.call(o);		<span class="comment">//blue</span></div></pre></td></tr></table></figure></p>
+<p>使用<code>apply()</code>或<code>call()</code>来扩充作用域的最大好处就是对象不需要与方法有任何耦合关系。在ES5中还定义了一个方法<code>bind()</code>。这个方法会创建一个函数的实例，其this值会被绑定到传给<code>bind()</code>函数的值。再来个例子🌰。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</div><div class="line"><span class="keyword">var</span> o.color = <span class="string">"blue"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> objSayColor = sayColor.bind(o);</div><div class="line">objSayColor();	<span class="comment">//blue</span></div></pre></td></tr></table></figure></p>
+<p>在这里，<code>sayColor()</code>调用<code>bind()</code>并传入对象o，创建了<code>objSayColor()</code>函数，<code>objSayColor()</code>函数this值等于o，因此即使是在全局作用域中调用这个函数，也会看到”blue”。</p>
+<p>补充：<br>传入的第一个参数为<code>null</code>，函数体内的this会默认指向宿主对象，在浏览器中，如果使用严格模式，则还为null。<br>函数是在非严格模式下，指定为 <code>null</code> 或 <code>undefined</code> 的 this 值会被替换成全局对象，<br>就先说这么多~</p>
 
         
         </div>
@@ -280,7 +281,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/06/10/apply-call和bind用法区别/" data-id="cixk04krt0027cfhe8ka7jgva" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/06/10/apply-call和bind用法区别/" data-id="cizdsh7t8001rowheaupn7c2w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -455,7 +456,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -490,7 +491,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -525,7 +526,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -648,12 +649,12 @@ var _hmt = _hmt || [];
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
     
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
     </div>
 </body>

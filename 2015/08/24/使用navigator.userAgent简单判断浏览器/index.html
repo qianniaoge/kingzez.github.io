@@ -16,21 +16,22 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用navigator.userAgent简单判断浏览器">
 <meta name="twitter:description" content="简单使用navigator.userAgent判断浏览器">
+<meta name="twitter:image" content="http://i3.tietuku.com/6d8e1ba88486c179.png">
 
 
 
     <link rel="icon" href="/images/avator.png" />
 
-<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="/vendor/open-sans/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/Satisfy/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/source-code-pro/styles.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/open-sans/styles.css">
+<link rel="stylesheet" href="/vendor/Satisfy/styles.css">
+<link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/hover.css" type="text/css">
-<script src="/vendor/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
 
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css" type="text/css">
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
     
     
@@ -142,7 +143,7 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js" type="text/javascript"></script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -227,7 +228,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" rel="gallery_cixk04kra001bcfherex0d11x">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" rel="gallery_cizdsh7tx002oowheov9xrcxm">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" itemprop="image">
             </a>
         
@@ -271,9 +272,9 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668"><a href="#u7B80_u5355_u4F7F_u7528navigator-userAgent_u5224_u65AD_u6D4F_u89C8_u5668" class="headerlink" title="简单使用navigator.userAgent判断浏览器"></a>简单使用navigator.userAgent判断浏览器</h4><a id="more"></a>
+            <h4 id="简单使用navigator-userAgent判断浏览器"><a href="#简单使用navigator-userAgent判断浏览器" class="headerlink" title="简单使用navigator.userAgent判断浏览器"></a>简单使用navigator.userAgent判断浏览器</h4><a id="more"></a>
 <p><img src="http://i3.tietuku.com/6d8e1ba88486c179.png" alt=""></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>navigator<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">validB</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  	<span class="keyword">var</span> u_agent = navigator.userAgent;</span><br><span class="line">  	<span class="keyword">var</span> b_name = <span class="string">"不是想用的主流浏览器! "</span></span><br><span class="line">  	<span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Firefox"</span>)&gt;-<span class="number">1</span>) &#123;</span><br><span class="line">  		b_name=<span class="string">"Firefox"</span>;</span><br><span class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Chrome"</span>)&gt;-<span class="number">1</span>) &#123;</span><br><span class="line">  		b_name=<span class="string">"Chrome"</span>;</span><br><span class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"MSIE"</span>)&gt;-<span class="number">1</span> &amp;&amp; u_agent.indexOf(<span class="string">"Trident"</span>)&gt;-<span class="number">1</span>) &#123;</span><br><span class="line">  		b_name=<span class="string">"IE(8-10)"</span>;</span><br><span class="line">  	&#125;;</span><br><span class="line">  	<span class="built_in">document</span>.write(<span class="string">"浏览器："</span>+b_name +<span class="string">'&lt;br&gt;'</span>);</span><br><span class="line">  	<span class="built_in">document</span>.write(<span class="string">"u_agent:"</span> +u_agent);</span><br><span class="line">  &#125; </span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"查看浏览器"</span> <span class="attribute">onclick</span>=<span class="value">"validB()"</span>  &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>navigator<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">validB</span>(<span class="params"></span>)</span>&#123; </div><div class="line">  	<span class="keyword">var</span> u_agent = navigator.userAgent;</div><div class="line">  	<span class="keyword">var</span> b_name = <span class="string">"不是想用的主流浏览器! "</span></div><div class="line">  	<span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Firefox"</span>)&gt;<span class="number">-1</span>) &#123;</div><div class="line">  		b_name=<span class="string">"Firefox"</span>;</div><div class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Chrome"</span>)&gt;<span class="number">-1</span>) &#123;</div><div class="line">  		b_name=<span class="string">"Chrome"</span>;</div><div class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"MSIE"</span>)&gt;<span class="number">-1</span> &amp;&amp; u_agent.indexOf(<span class="string">"Trident"</span>)&gt;<span class="number">-1</span>) &#123;</div><div class="line">  		b_name=<span class="string">"IE(8-10)"</span>;</div><div class="line">  	&#125;;</div><div class="line">  	<span class="built_in">document</span>.write(<span class="string">"浏览器："</span>+b_name +<span class="string">'&lt;br&gt;'</span>);</div><div class="line">  	<span class="built_in">document</span>.write(<span class="string">"u_agent:"</span> +u_agent);</div><div class="line">  &#125; </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"查看浏览器"</span> <span class="attr">onclick</span>=<span class="string">"validB()"</span>  &gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
         
         </div>
         <footer class="article-footer">
@@ -283,7 +284,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/" data-id="cixk04kra001bcfherex0d11x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/" data-id="cizdsh7tx002oowheov9xrcxm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -458,7 +459,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -493,7 +494,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -528,7 +529,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -651,12 +652,12 @@ var _hmt = _hmt || [];
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
     
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
     </div>
 </body>

@@ -16,21 +16,22 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git创建ssh key">
 <meta name="twitter:description" content="一、设置Git的username ，email：12$ git config --global user.name &quot;kingzez&quot;$ git config --global user.email &quot;kingzez@sina.com&quot;">
+<meta name="twitter:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png">
 
 
 
     <link rel="icon" href="/images/avator.png" />
 
-<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="/vendor/open-sans/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/Satisfy/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/source-code-pro/styles.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/open-sans/styles.css">
+<link rel="stylesheet" href="/vendor/Satisfy/styles.css">
+<link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/hover.css" type="text/css">
-<script src="/vendor/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
 
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css" type="text/css">
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
     
     
@@ -142,7 +143,7 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js" type="text/javascript"></script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -227,7 +228,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" rel="gallery_cixk04kro001xcfheipd1j38h">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" rel="gallery_cizdsh7ti0021owhegxvq58vb">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" itemprop="image">
             </a>
         
@@ -271,10 +272,10 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A"><a href="#u4E00_u3001_u8BBE_u7F6EGit_u7684username__uFF0Cemail_uFF1A" class="headerlink" title="一、设置Git的username ，email："></a>一、设置Git的username ，email：</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user<span class="class">.name</span> <span class="string">"kingzez"</span></span><br><span class="line">$ git config --global user<span class="class">.email</span> <span class="string">"kingzez@sina.com"</span></span><br></pre></td></tr></table></figure>
+            <h4 id="一、设置Git的username-，email："><a href="#一、设置Git的username-，email：" class="headerlink" title="一、设置Git的username ，email："></a>一、设置Git的username ，email：</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"kingzez@sina.com"</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h4 id="u4E8C_u3001_u521B_u5EFAssh_u5BC6_u5319_u8FC7_u7A0B"><a href="#u4E8C_u3001_u521B_u5EFAssh_u5BC6_u5319_u8FC7_u7A0B" class="headerlink" title="二、创建ssh密匙过程"></a>二、创建ssh密匙过程</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>查看是否已经有了ssh密钥：cd ~/.ssh</span><br><span class="line">   如果没有密钥则不会有此文件夹，有则不影响，备份删除都可以</span><br><span class="line"><span class="number">2.</span>生存密钥：</span><br><span class="line">   $ ssh-keygen -t rsa -C “kingzez@sina.com”</span><br><span class="line">   <span class="number">3</span>个回车，密码为空。</span><br><span class="line"><span class="number">3.</span>操作完成生成 id_rsa和id_rsa.pub</span><br></pre></td></tr></table></figure>
-<h4 id="u4E09_u3001_u6DFB_u52A0ssh_key__u5230github__u6216coding_u7B49_u3002"><a href="#u4E09_u3001_u6DFB_u52A0ssh_key__u5230github__u6216coding_u7B49_u3002" class="headerlink" title="三、添加ssh key 到github 或coding等。"></a>三、添加ssh key 到github 或coding等。</h4>
+<h4 id="二、创建ssh密匙过程"><a href="#二、创建ssh密匙过程" class="headerlink" title="二、创建ssh密匙过程"></a>二、创建ssh密匙过程</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>查看是否已经有了ssh密钥：cd ~/.ssh</div><div class="line">   如果没有密钥则不会有此文件夹，有则不影响，备份删除都可以</div><div class="line"><span class="number">2.</span>生存密钥：</div><div class="line">   $ ssh-keygen -t rsa -C “kingzez@sina.com”</div><div class="line">   <span class="number">3</span>个回车，密码为空。</div><div class="line"><span class="number">3.</span>操作完成生成 id_rsa和id_rsa.pub</div></pre></td></tr></table></figure>
+<h4 id="三、添加ssh-key-到github-或coding等。"><a href="#三、添加ssh-key-到github-或coding等。" class="headerlink" title="三、添加ssh key 到github 或coding等。"></a>三、添加ssh key 到github 或coding等。</h4>
         
         </div>
         <footer class="article-footer">
@@ -284,7 +285,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/22/git创建ssh key/" data-id="cixk04kro001xcfheipd1j38h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/22/git创建ssh key/" data-id="cizdsh7ti0021owhegxvq58vb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -459,7 +460,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -494,7 +495,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -529,7 +530,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -652,12 +653,12 @@ var _hmt = _hmt || [];
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
     
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
     </div>
 </body>

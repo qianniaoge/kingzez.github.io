@@ -20,16 +20,16 @@
 
     <link rel="icon" href="/images/avator.png" />
 
-<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="/vendor/open-sans/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/Satisfy/styles.css" type="text/css">
-<link rel="stylesheet" href="/vendor/source-code-pro/styles.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/open-sans/styles.css">
+<link rel="stylesheet" href="/vendor/Satisfy/styles.css">
+<link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/hover.css" type="text/css">
-<script src="/vendor/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
 
     
-        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css" type="text/css">
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
     
     
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
-<script src="/js/insight.js" type="text/javascript"></script>
+<script src="/js/insight.js"></script>
 
 </div>
         </div>
@@ -260,10 +260,10 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>有的文章中没有添加如上这种banner图，所以呢，博客右侧的Recent的缩略图只会显示默认的图，<a id="more"></a>有时候连续五篇文章都没有图那就连续五张缩略图一样了，很不美观，不喜欢~所以就把它改成没有缩略图情况下随机变换缩略图，不多说，上代码：<br>首先需要通过Math对象生成出一个随机数，random方法可以生成一个0~1之间的随机数，得到的数再乘10，结果即为0~10之间的一个随机数，再通过round方法对该随机数进行四舍五入得到一个整数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> randomBgIndex = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</span><br></pre></td></tr></table></figure></p>
-<p>再声明一个数组用来存放缩略图的路径<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var thumbnailBg = <span class="string">[]</span>; </span><br><span class="line">	thumbnailBg<span class="string">[0]</span> = <span class="string">"css/images/thumb-default-small.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[1]</span> = <span class="string">"css/images/thumb-default-small1.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[2]</span> = <span class="string">"css/images/thumb-default-small2.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[3]</span> = <span class="string">"css/images/thumb-default-small3.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[4]</span> = <span class="string">"css/images/thumb-default-small4.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[5]</span> = <span class="string">"css/images/thumb-default-small5.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[6]</span> = <span class="string">"css/images/thumb-default-small6.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[7]</span> = <span class="string">"css/images/thumb-default-small7.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[8]</span> = <span class="string">"css/images/thumb-default-small8.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[9]</span> = <span class="string">"css/images/thumb-default-small9.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[10]</span> = <span class="string">"css/images/thumb-default-small10.png"</span>; </span><br><span class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+            <p>有的文章中没有添加如上这种banner图，所以呢，博客右侧的Recent的缩略图只会显示默认的图，<a id="more"></a>有时候连续五篇文章都没有图那就连续五张缩略图一样了，很不美观，不喜欢~所以就把它改成没有缩略图情况下随机变换缩略图，不多说，上代码：<br>首先需要通过Math对象生成出一个随机数，random方法可以生成一个0~1之间的随机数，得到的数再乘10，结果即为0~10之间的一个随机数，再通过round方法对该随机数进行四舍五入得到一个整数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> randomBgIndex = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div></pre></td></tr></table></figure></p>
+<p>再声明一个数组用来存放缩略图的路径<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var thumbnailBg = []<span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">0</span>] = <span class="string">"css/images/thumb-default-small.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">1</span>] = <span class="string">"css/images/thumb-default-small1.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">2</span>] = <span class="string">"css/images/thumb-default-small2.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">3</span>] = <span class="string">"css/images/thumb-default-small3.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">4</span>] = <span class="string">"css/images/thumb-default-small4.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">5</span>] = <span class="string">"css/images/thumb-default-small5.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">6</span>] = <span class="string">"css/images/thumb-default-small6.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">7</span>] = <span class="string">"css/images/thumb-default-small7.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">8</span>] = <span class="string">"css/images/thumb-default-small8.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">9</span>] = <span class="string">"css/images/thumb-default-small9.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">10</span>] = <span class="string">"css/images/thumb-default-small10.png"</span><span class="comment">; </span></div><div class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></p>
 <p>&lt;% %&gt;这里是blog用的ejs语法<code>thumbnailBg[randomBgIndex]</code>用来取随机产生的值。</p>
-<p>完整的代码：<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var randomBgIndex = Math.round(Math.random() * <span class="number">10</span>);</span><br><span class="line">var thumbnailBg = <span class="string">[]</span>; </span><br><span class="line">	thumbnailBg<span class="string">[0]</span> = <span class="string">"css/images/thumb-default-small.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[1]</span> = <span class="string">"css/images/thumb-default-small1.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[2]</span> = <span class="string">"css/images/thumb-default-small2.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[3]</span> = <span class="string">"css/images/thumb-default-small3.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[4]</span> = <span class="string">"css/images/thumb-default-small4.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[5]</span> = <span class="string">"css/images/thumb-default-small5.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[6]</span> = <span class="string">"css/images/thumb-default-small6.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[7]</span> = <span class="string">"css/images/thumb-default-small7.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[8]</span> = <span class="string">"css/images/thumb-default-small8.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[9]</span> = <span class="string">"css/images/thumb-default-small9.png"</span>; </span><br><span class="line">	thumbnailBg<span class="string">[10]</span> = <span class="string">"css/images/thumb-default-small10.png"</span>; </span><br><span class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>完整的代码：<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var randomBgIndex = Math.round(Math.random() * <span class="number">10</span>)<span class="comment">;</span></div><div class="line">var thumbnailBg = []<span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">0</span>] = <span class="string">"css/images/thumb-default-small.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">1</span>] = <span class="string">"css/images/thumb-default-small1.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">2</span>] = <span class="string">"css/images/thumb-default-small2.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">3</span>] = <span class="string">"css/images/thumb-default-small3.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">4</span>] = <span class="string">"css/images/thumb-default-small4.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">5</span>] = <span class="string">"css/images/thumb-default-small5.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">6</span>] = <span class="string">"css/images/thumb-default-small6.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">7</span>] = <span class="string">"css/images/thumb-default-small7.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">8</span>] = <span class="string">"css/images/thumb-default-small8.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">9</span>] = <span class="string">"css/images/thumb-default-small9.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">10</span>] = <span class="string">"css/images/thumb-default-small10.png"</span><span class="comment">; </span></div><div class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></p>
 <p>OK~</p>
 
         
@@ -275,7 +275,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/05/18/Blog无图片时添加随机thumbnail/" data-id="cixk04ktb004kcfhe053r1ag6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2016/05/18/Blog无图片时添加随机thumbnail/" data-id="cizdsh7r80002owhe02oe2vu5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -450,7 +450,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -485,7 +485,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -520,7 +520,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -643,12 +643,12 @@ var _hmt = _hmt || [];
 
 
     
-        <script src="/vendor/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
     
 
 
 <!-- Custom Scripts -->
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
     </div>
 </body>
