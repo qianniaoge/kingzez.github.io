@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset="utf-8">
+
+<title>严格模式·Strict mode | the kingzez blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="严格模式·Strict mode">
+<meta property="og:url" content="http://kingzez.com/2017/03/20/Strict-mode/index.html">
+<meta property="og:site_name" content="the kingzez blog">
+<meta property="og:description" content="ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。">
+<meta property="og:updated_time" content="2017-03-20T15:18:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="严格模式·Strict mode">
+<meta name="twitter:description" content="ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。">
+
+
+
+    <link rel="icon" href="/images/avator.png" />
+
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/open-sans/styles.css">
+<link rel="stylesheet" href="/vendor/Satisfy/styles.css">
+<link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/hover.css" type="text/css">
+<script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?2zYPn6o9x3";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+<!-- growing IO -->
+<script type='text/javascript'>
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', 'a2cdaf57bbf7e228']);
+        (function() {
+          var vds = document.createElement('script');
+          vds.type='text/javascript';
+          vds.async = true;
+          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(vds, s);
+        })();
+      })();
+  </script>
+<!-- GoogleAnalytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89873911-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">the kingzez blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/images/avator.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/images/avator.png" class="hvr-bounce-in"/>
+            <h1 id="name">kingzez</h1>
+            <h3 id="title">JS Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://github.com/kingzez/" class="hvr-wobble-to-top-right">FOLLOW</a>
+            <p id="subtitle">step by step and never look back</p>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                41
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                26
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    <td><a href="http://github.com/kingzez" target="_blank" title="github"><i class="fa fa-github hvr-bounce-in"></i></a></td>
+                    
+                    <td><a href="http://weibo.com/kingzez/" target="_blank" title="weibo"><i class="fa fa-weibo hvr-bounce-in"></i></a></td>
+                    
+                    <td><a href="https://twitter.com/wangzezhi" target="_blank" title="twitter"><i class="fa fa-twitter hvr-bounce-in"></i></a></td>
+                    
+                    <td><a href="https://www.flickr.com/photos/140559763@N05/" target="_blank" title="flickr"><i class="fa fa-flickr hvr-bounce-in"></i></a></td>
+                    
+                    <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss hvr-bounce-in"></i></a></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Strict-mode" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            严格模式·Strict mode
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/20/Strict-mode/">
+            <time datetime="2017-03-20T07:10:23.000Z" itemprop="datePublished">2017-03-20</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/js/">js</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/严格模式/">严格模式</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。<a id="more"></a>不支持严格模式的浏览器与支持严格模式的浏览器行为上也不一样，所以不要在未经严格模式特性测试情况下使用严格模式。严格模式可以与非严格模式共存，所以脚本可以逐渐的选择性加入严格模式。</p>
+<p>严格模式在语义上与正常的JavaScript有一些不同。首先，严格模式会将JavaScript陷阱直接变成明显的错误。其次，严格模式修正了一些引擎难以优化的错误：同样的代码有些时候严格模式下会比非严格模式下更快。第三，严格模式禁用了一些有可能在未来版本中定义的语法。</p>
+<p>如果你想让你的JavaScript代码在严格模式下运行，可以参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode" target="_blank" rel="external">转换成严格模式</a></p>
+<blockquote>
+<p>有时，你会看到符合规范的、非严格模式被称为”懒散模式”，这不是官方术语，但你应该注意到它</p>
+</blockquote>
+<h2 id="开启严格模式"><a href="#开启严格模式" class="headerlink" title="开启严格模式"></a>开启严格模式</h2><p>严格模式可以应用到整个script标签或个别函数中。不要再封闭大括号<code>{}</code>内这样做，在这样的上下文中这么做是没有任何效果的。在<code>eval</code>代码，Function代码，时间处理属性，传入setTimeout方法的字符串和包含整个脚本的块中开启严格模式会如预期一样工作。</p>
+<h3 id="为某个script标签开启严格模式"><a href="#为某个script标签开启严格模式" class="headerlink" title="为某个script标签开启严格模式"></a>为某个script标签开启严格模式</h3><p>为整个script标签开启严格模式，需要在所有语句之前放一个特定语句<code>&quot;use strict&quot;;</code>或<code>&#39;use strict&#39;;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 整个语句都开启严格模式的语法</span></div><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> v = <span class="string">"Hi!  I'm a strict mode script!"</span>;</div></pre></td></tr></table></figure>
+<p>这种语法存在陷阱，不能盲目的合并冲突代码。试想合并一个严格模式的脚本和一个非严格模式的脚本：合并后的脚本代码看起来是严格模式。反之亦然：非严格合并严格看起来是非严格的。合并均为严格模式的脚本或均为非严格模式的都没问题，只有在合并严格模式与非严格模式有可能有问题。建议按一个个函数去开启严格模式（至少在学习的过渡期要这样做）。</p>
+<p>您也可以将整个脚本的内容用一个函数包括起来，然后在这个外部函数中使用严格模式。这样做就可以消除合并的问题，但是这就意味着您必须要在函数作用域外声明一个全局变量。</p>
+<h3 id="为某个函数开启严格模式"><a href="#为某个函数开启严格模式" class="headerlink" title="为某个函数开启严格模式"></a>为某个函数开启严格模式</h3><p>同样的，要给某个函数开启严格模式，得把<code>&quot;use strict&quot;</code>;  (或 <code>&#39;use strict&#39;;</code> )声明一字不漏地放在函数体所有语句之前。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strict</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 函数级别严格模式语法</span></div><div class="line"><span class="meta">  	'use strict'</span>;</div><div class="line">  	<span class="function"><span class="keyword">function</span> <span class="title">nested</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  		<span class="keyword">return</span> <span class="string">"And so am I!"</span>;</div><div class="line">  	&#125;</div><div class="line">  	<span class="keyword">return</span> <span class="string">"Hi!  I'm a strict mode function!  "</span> + nested();</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">notStrict</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">"I'm not strict."</span>; &#125;</div></pre></td></tr></table></figure>
+<h2 id="严格模式有哪些不同"><a href="#严格模式有哪些不同" class="headerlink" title="严格模式有哪些不同"></a>严格模式有哪些不同</h2><p>严格模式同时改变了语法及运行时行为。变化通常分为这几类：将问题直接转化为错误（如语法错误或运行时错误）, 简化了如何为给定名称的特定变量计算，简化了 <code>eval</code> 以及 <code>arguments</code>, 将写”安全“JavaScript的步骤变得更简单，以及改变了预测未来ECMAScript行为的方式。</p>
+<h3 id="将拼写错转成异常"><a href="#将拼写错转成异常" class="headerlink" title="将拼写错转成异常"></a>将拼写错转成异常</h3><p>在严格模式下, 先前被接受的拼写错误将会被认为是异常. JavaScript被设计为能使新人开发者更易于上手, 所以有时候会给本来错误操作赋予新的不报错误的语义(non-error semantics). 有时候这可以解决当前的问题, 但有时候却会给以后留下更大的问题. 严格模式则把这些失误当成错误, 以便可以发现并立即将其改正.</p>
+<p>首先，严格模式下无法在意外创建全局变量。在普通的JavaScript里面给一个拼写错误的变量名赋值会使全局对象新增一个属性并继续“工作”（尽管后面可能出错：在现在的JavaScript中有可能）。严格模式中意外创建全局变量被抛出错误替代：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line">                       <span class="comment">// 假如有一个全局变量叫做mistypedVariable</span></div><div class="line">mistypedVaraible = <span class="number">17</span>; <span class="comment">// 因为变量名拼写错误</span></div><div class="line">                       <span class="comment">// 这一行代码就会抛出 ReferenceError</span></div></pre></td></tr></table></figure></p>
+<p>其次，严格模式会引起静默失败（silently fail，注：不报错也没有任何效果）的赋值操作抛出异常。例如NaN是一个不可写的全局变量，在正常模式下，给NaN赋值不会产生任何作用，开发者也不会受到任何错误反馈。但在严格模式下，给NaN赋值会抛出异常，任何在正常模式下引起静默失败的赋值操作（给不可写属性赋值，给只读属性（getter-only）赋值，给不可扩展对象（non-extensible object）的新属性赋值）都会抛出异常。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"></div><div class="line"><span class="comment">// 给不可写属性赋值</span></div><div class="line"><span class="keyword">var</span> obj1 = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(obj1, <span class="string">"x"</span>, &#123; <span class="attr">value</span>: <span class="number">42</span>, <span class="attr">writable</span>: <span class="literal">false</span> &#125;);</div><div class="line">obj1.x = <span class="number">9</span>; <span class="comment">// 抛出TypeError错误</span></div><div class="line"></div><div class="line"><span class="comment">// 给只读属性赋值</span></div><div class="line"><span class="keyword">var</span> obj2 = &#123; get x() &#123; <span class="keyword">return</span> <span class="number">17</span>; &#125; &#125;;</div><div class="line">obj2.x = <span class="number">5</span>; <span class="comment">// 抛出TypeError错误</span></div><div class="line"></div><div class="line"><span class="comment">// 给不可扩展对象的新属性赋值</span></div><div class="line"><span class="keyword">var</span> fixed = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.preventExtensions(fixed);</div><div class="line">fixed.newProp = <span class="string">"ohai"</span>; <span class="comment">// 抛出TypeError错误</span></div></pre></td></tr></table></figure></p>
+<p>第三, 在严格模式下, 试图删除不可删除的属性时会抛出异常(之前这种操作不会产生任何效果):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"use strcit"</span>;</div><div class="line"><span class="keyword">delete</span> <span class="built_in">Object</span>.prototype; <span class="comment">// 抛出TypeError错误</span></div></pre></td></tr></table></figure></p>
+<p>第四，在Gecko版本34之前，严格模式要求一个对象内的所有属性名在对象内必须唯一。正常模式下重名属性是允许的，最后一个重名的属性决定其属性值。因为只有最后一个属性起作用，当代码要去改变属性值而不是修改最后一个重名属性的时候，复制这个对象就产生一连串的bug。在严格模式下，重名属性被认为是语法错误：</p>
+<blockquote>
+<p>这个问题在ECMAScript6中已经不存在</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">p</span>: <span class="number">1</span>, <span class="attr">p</span>:<span class="number">2</span>&#125;; <span class="comment">//语法错误</span></div></pre></td></tr></table></figure>
+<p>第五，严格模式要求函数的参数名唯一，在正常模式下，最后一个重名参数名会掩盖之前的重名参数，之前的参数仍然可以通过<code>arguments[i]</code>来访问，还不是因为完全无法访问，然而在这种隐藏毫无意义而且可能是意料之外的（比如它可能本来是打错的），所以在严格模式下重名参数被认为是语法错误：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, a, c</span>)</span>&#123; <span class="comment">// !!! 语法错误</span></div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  <span class="keyword">return</span> a + b + c; <span class="comment">// 代码运行到这里会出错</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第六, 严格模式禁止八进制数字语法. ECMAScript并不包含八进制语法, 但所有的浏览器都支持这种以零(0)开头的八进制语法: 0644 === 420 还有 “\045” === “%”.在ECMAScript 6中支持为一个数字加”0o”的前缀来表示八进制数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  a = <span class="number">0o10</span>; <span class="comment">//ES6: 八进制</span></div></pre></td></tr></table></figure></p>
+<p>有些新手开发者认为数字的前导零没有语法意义, 所以他们会用作对齐措施 — 但其实这会改变数字的意义! 八进制语法很少有用并且可能会错误使用, 所以严格模式下八进制语法会引起语法错误:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> sum = <span class="number">015</span> + <span class="comment">// !!! 语法错误</span></div><div class="line">          <span class="number">197</span> +</div><div class="line">          <span class="number">142</span>;</div></pre></td></tr></table></figure></p>
+<p>第七，ECMAScript 6中的严格模式禁止设置primitive值的属性.不采用严格模式,设置属性将会简单忽略(no-op),采用严格模式,将抛出TypeError错误<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="literal">false</span>.true = <span class="string">""</span>;		<span class="comment">//TypeError</span></div><div class="line">	(<span class="number">14</span>).sailing = <span class="string">"home"</span>;		<span class="comment">//TypeError</span></div><div class="line">	<span class="string">"with"</span>.you = <span class="string">"far away"</span>;	<span class="comment">//TypeError</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h3 id="简化变量的使用"><a href="#简化变量的使用" class="headerlink" title="简化变量的使用"></a>简化变量的使用</h3><p>ddd</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kingzez.com/2017/03/20/Strict-mode/" data-id="cj0i9a5la001e9eheomsg4ly9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2017/03/20/Strict-mode/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2017/03/20/Strict-mode/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/03/20/git-pull-强制覆盖local/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    git pull 强制覆盖本地文件
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/03/03/DataTables-1-10-x使用指南/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">DataTables 1.10.x使用指南</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/20/git-pull-强制覆盖local/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/git/">git</a></p>
+                            <p class="item-title"><a href="/2017/03/20/git-pull-强制覆盖local/" class="title">git pull 强制覆盖本地文件</a></p>
+                            <p class="item-date"><time datetime="2017-03-20T14:55:46.000Z" itemprop="datePublished">2017-03-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/20/Strict-mode/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
+                            <p class="item-title"><a href="/2017/03/20/Strict-mode/" class="title">严格模式·Strict mode</a></p>
+                            <p class="item-date"><time datetime="2017-03-20T07:10:23.000Z" itemprop="datePublished">2017-03-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/03/DataTables-1-10-x使用指南/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small6.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
+                            <p class="item-title"><a href="/2017/03/03/DataTables-1-10-x使用指南/" class="title">DataTables 1.10.x使用指南</a></p>
+                            <p class="item-date"><time datetime="2017-03-03T04:51:16.000Z" itemprop="datePublished">2017-03-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/15/初试Mithril-js/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
+                            <p class="item-title"><a href="/2016/11/15/初试Mithril-js/" class="title">初试Mithril.js</a></p>
+                            <p class="item-date"><time datetime="2016-11-15T06:00:01.000Z" itemprop="datePublished">2016-11-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
+                            <p class="item-title"><a href="/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/" class="title">Yarn A new package manager for JavaScript</a></p>
+                            <p class="item-date"><time datetime="2016-10-18T13:44:14.000Z" itemprop="datePublished">2016-10-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frontend/">Frontend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE6/">IE6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kata/">Kata</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDL/">MDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitosis/">gitosis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterm2/">iterm2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-datatables/">js datatables</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mithril-js/">mithril.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/严格模式/">严格模式</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CentOS/" style="font-size: 14px;">CentOS</a> <a href="/tags/Frontend/" style="font-size: 10px;">Frontend</a> <a href="/tags/IE6/" style="font-size: 12px;">IE6</a> <a href="/tags/Kata/" style="font-size: 14px;">Kata</a> <a href="/tags/MDL/" style="font-size: 10px;">MDL</a> <a href="/tags/MEAN/" style="font-size: 10px;">MEAN</a> <a href="/tags/Mac/" style="font-size: 16px;">Mac</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Sublime/" style="font-size: 12px;">Sublime</a> <a href="/tags/angularjs/" style="font-size: 12px;">angularjs</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/gitosis/" style="font-size: 10px;">gitosis</a> <a href="/tags/homebrew/" style="font-size: 10px;">homebrew</a> <a href="/tags/iterm2/" style="font-size: 10px;">iterm2</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/js-datatables/" style="font-size: 10px;">js datatables</a> <a href="/tags/mithril-js/" style="font-size: 10px;">mithril.js</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/严格模式/" style="font-size: 10px;">严格模式</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy;2015 - 2017 kingzez<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'kingzez';
+    
+    
+    var disqus_url = 'http://kingzez.com/2017/03/20/Strict-mode/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

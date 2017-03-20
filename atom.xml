@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2017-03-03T05:09:51.000Z</updated>
+  <updated>2017-03-20T15:02:25.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git pull 强制覆盖本地文件</title>
+    <link href="http://kingzez.com/2017/03/20/git-pull-%E5%BC%BA%E5%88%B6%E8%A6%86%E7%9B%96local/"/>
+    <id>http://kingzez.com/2017/03/20/git-pull-强制覆盖local/</id>
+    <published>2017-03-20T14:55:46.000Z</published>
+    <updated>2017-03-20T15:02:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>git pull 强制覆盖本地文件<br><a id="more"></a>一旦远程主机的版本库有了更新（Git术语叫做commit），需要将这些更新取回本地，这时就要用到<code>git fetch</code>命令。<code>git fetch</code>命令通常用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响。<br>默认情况下，<code>git fetch</code>取回所有分支（branch）的更新。如果只想取回特定分支的更新，可以指定分支名。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git fetch --all</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard origin/master</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull</div></pre></td></tr></table></figure>
+<p>Done!😄</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git pull 强制覆盖本地文件&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://kingzez.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://kingzez.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>严格模式·Strict mode</title>
+    <link href="http://kingzez.com/2017/03/20/Strict-mode/"/>
+    <id>http://kingzez.com/2017/03/20/Strict-mode/</id>
+    <published>2017-03-20T07:10:23.000Z</published>
+    <updated>2017-03-20T15:18:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。<a id="more"></a>不支持严格模式的浏览器与支持严格模式的浏览器行为上也不一样，所以不要在未经严格模式特性测试情况下使用严格模式。严格模式可以与非严格模式共存，所以脚本可以逐渐的选择性加入严格模式。</p>
+<p>严格模式在语义上与正常的JavaScript有一些不同。首先，严格模式会将JavaScript陷阱直接变成明显的错误。其次，严格模式修正了一些引擎难以优化的错误：同样的代码有些时候严格模式下会比非严格模式下更快。第三，严格模式禁用了一些有可能在未来版本中定义的语法。</p>
+<p>如果你想让你的JavaScript代码在严格模式下运行，可以参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode" target="_blank" rel="external">转换成严格模式</a></p>
+<blockquote>
+<p>有时，你会看到符合规范的、非严格模式被称为”懒散模式”，这不是官方术语，但你应该注意到它</p>
+</blockquote>
+<h2 id="开启严格模式"><a href="#开启严格模式" class="headerlink" title="开启严格模式"></a>开启严格模式</h2><p>严格模式可以应用到整个script标签或个别函数中。不要再封闭大括号<code>{}</code>内这样做，在这样的上下文中这么做是没有任何效果的。在<code>eval</code>代码，Function代码，时间处理属性，传入setTimeout方法的字符串和包含整个脚本的块中开启严格模式会如预期一样工作。</p>
+<h3 id="为某个script标签开启严格模式"><a href="#为某个script标签开启严格模式" class="headerlink" title="为某个script标签开启严格模式"></a>为某个script标签开启严格模式</h3><p>为整个script标签开启严格模式，需要在所有语句之前放一个特定语句<code>&quot;use strict&quot;;</code>或<code>&#39;use strict&#39;;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 整个语句都开启严格模式的语法</span></div><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> v = <span class="string">"Hi!  I'm a strict mode script!"</span>;</div></pre></td></tr></table></figure>
+<p>这种语法存在陷阱，不能盲目的合并冲突代码。试想合并一个严格模式的脚本和一个非严格模式的脚本：合并后的脚本代码看起来是严格模式。反之亦然：非严格合并严格看起来是非严格的。合并均为严格模式的脚本或均为非严格模式的都没问题，只有在合并严格模式与非严格模式有可能有问题。建议按一个个函数去开启严格模式（至少在学习的过渡期要这样做）。</p>
+<p>您也可以将整个脚本的内容用一个函数包括起来，然后在这个外部函数中使用严格模式。这样做就可以消除合并的问题，但是这就意味着您必须要在函数作用域外声明一个全局变量。</p>
+<h3 id="为某个函数开启严格模式"><a href="#为某个函数开启严格模式" class="headerlink" title="为某个函数开启严格模式"></a>为某个函数开启严格模式</h3><p>同样的，要给某个函数开启严格模式，得把<code>&quot;use strict&quot;</code>;  (或 <code>&#39;use strict&#39;;</code> )声明一字不漏地放在函数体所有语句之前。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strict</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 函数级别严格模式语法</span></div><div class="line"><span class="meta">  	'use strict'</span>;</div><div class="line">  	<span class="function"><span class="keyword">function</span> <span class="title">nested</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  		<span class="keyword">return</span> <span class="string">"And so am I!"</span>;</div><div class="line">  	&#125;</div><div class="line">  	<span class="keyword">return</span> <span class="string">"Hi!  I'm a strict mode function!  "</span> + nested();</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">notStrict</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">"I'm not strict."</span>; &#125;</div></pre></td></tr></table></figure>
+<h2 id="严格模式有哪些不同"><a href="#严格模式有哪些不同" class="headerlink" title="严格模式有哪些不同"></a>严格模式有哪些不同</h2><p>严格模式同时改变了语法及运行时行为。变化通常分为这几类：将问题直接转化为错误（如语法错误或运行时错误）, 简化了如何为给定名称的特定变量计算，简化了 <code>eval</code> 以及 <code>arguments</code>, 将写”安全“JavaScript的步骤变得更简单，以及改变了预测未来ECMAScript行为的方式。</p>
+<h3 id="将拼写错转成异常"><a href="#将拼写错转成异常" class="headerlink" title="将拼写错转成异常"></a>将拼写错转成异常</h3><p>在严格模式下, 先前被接受的拼写错误将会被认为是异常. JavaScript被设计为能使新人开发者更易于上手, 所以有时候会给本来错误操作赋予新的不报错误的语义(non-error semantics). 有时候这可以解决当前的问题, 但有时候却会给以后留下更大的问题. 严格模式则把这些失误当成错误, 以便可以发现并立即将其改正.</p>
+<p>首先，严格模式下无法在意外创建全局变量。在普通的JavaScript里面给一个拼写错误的变量名赋值会使全局对象新增一个属性并继续“工作”（尽管后面可能出错：在现在的JavaScript中有可能）。严格模式中意外创建全局变量被抛出错误替代：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line">                       <span class="comment">// 假如有一个全局变量叫做mistypedVariable</span></div><div class="line">mistypedVaraible = <span class="number">17</span>; <span class="comment">// 因为变量名拼写错误</span></div><div class="line">                       <span class="comment">// 这一行代码就会抛出 ReferenceError</span></div></pre></td></tr></table></figure></p>
+<p>其次，严格模式会引起静默失败（silently fail，注：不报错也没有任何效果）的赋值操作抛出异常。例如NaN是一个不可写的全局变量，在正常模式下，给NaN赋值不会产生任何作用，开发者也不会受到任何错误反馈。但在严格模式下，给NaN赋值会抛出异常，任何在正常模式下引起静默失败的赋值操作（给不可写属性赋值，给只读属性（getter-only）赋值，给不可扩展对象（non-extensible object）的新属性赋值）都会抛出异常。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"></div><div class="line"><span class="comment">// 给不可写属性赋值</span></div><div class="line"><span class="keyword">var</span> obj1 = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(obj1, <span class="string">"x"</span>, &#123; <span class="attr">value</span>: <span class="number">42</span>, <span class="attr">writable</span>: <span class="literal">false</span> &#125;);</div><div class="line">obj1.x = <span class="number">9</span>; <span class="comment">// 抛出TypeError错误</span></div><div class="line"></div><div class="line"><span class="comment">// 给只读属性赋值</span></div><div class="line"><span class="keyword">var</span> obj2 = &#123; get x() &#123; <span class="keyword">return</span> <span class="number">17</span>; &#125; &#125;;</div><div class="line">obj2.x = <span class="number">5</span>; <span class="comment">// 抛出TypeError错误</span></div><div class="line"></div><div class="line"><span class="comment">// 给不可扩展对象的新属性赋值</span></div><div class="line"><span class="keyword">var</span> fixed = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.preventExtensions(fixed);</div><div class="line">fixed.newProp = <span class="string">"ohai"</span>; <span class="comment">// 抛出TypeError错误</span></div></pre></td></tr></table></figure></p>
+<p>第三, 在严格模式下, 试图删除不可删除的属性时会抛出异常(之前这种操作不会产生任何效果):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"use strcit"</span>;</div><div class="line"><span class="keyword">delete</span> <span class="built_in">Object</span>.prototype; <span class="comment">// 抛出TypeError错误</span></div></pre></td></tr></table></figure></p>
+<p>第四，在Gecko版本34之前，严格模式要求一个对象内的所有属性名在对象内必须唯一。正常模式下重名属性是允许的，最后一个重名的属性决定其属性值。因为只有最后一个属性起作用，当代码要去改变属性值而不是修改最后一个重名属性的时候，复制这个对象就产生一连串的bug。在严格模式下，重名属性被认为是语法错误：</p>
+<blockquote>
+<p>这个问题在ECMAScript6中已经不存在</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">p</span>: <span class="number">1</span>, <span class="attr">p</span>:<span class="number">2</span>&#125;; <span class="comment">//语法错误</span></div></pre></td></tr></table></figure>
+<p>第五，严格模式要求函数的参数名唯一，在正常模式下，最后一个重名参数名会掩盖之前的重名参数，之前的参数仍然可以通过<code>arguments[i]</code>来访问，还不是因为完全无法访问，然而在这种隐藏毫无意义而且可能是意料之外的（比如它可能本来是打错的），所以在严格模式下重名参数被认为是语法错误：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, a, c</span>)</span>&#123; <span class="comment">// !!! 语法错误</span></div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  <span class="keyword">return</span> a + b + c; <span class="comment">// 代码运行到这里会出错</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第六, 严格模式禁止八进制数字语法. ECMAScript并不包含八进制语法, 但所有的浏览器都支持这种以零(0)开头的八进制语法: 0644 === 420 还有 “\045” === “%”.在ECMAScript 6中支持为一个数字加”0o”的前缀来表示八进制数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  a = <span class="number">0o10</span>; <span class="comment">//ES6: 八进制</span></div></pre></td></tr></table></figure></p>
+<p>有些新手开发者认为数字的前导零没有语法意义, 所以他们会用作对齐措施 — 但其实这会改变数字的意义! 八进制语法很少有用并且可能会错误使用, 所以严格模式下八进制语法会引起语法错误:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> sum = <span class="number">015</span> + <span class="comment">// !!! 语法错误</span></div><div class="line">          <span class="number">197</span> +</div><div class="line">          <span class="number">142</span>;</div></pre></td></tr></table></figure></p>
+<p>第七，ECMAScript 6中的严格模式禁止设置primitive值的属性.不采用严格模式,设置属性将会简单忽略(no-op),采用严格模式,将抛出TypeError错误<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="literal">false</span>.true = <span class="string">""</span>;		<span class="comment">//TypeError</span></div><div class="line">	(<span class="number">14</span>).sailing = <span class="string">"home"</span>;		<span class="comment">//TypeError</span></div><div class="line">	<span class="string">"with"</span>.you = <span class="string">"far away"</span>;	<span class="comment">//TypeError</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h3 id="简化变量的使用"><a href="#简化变量的使用" class="headerlink" title="简化变量的使用"></a>简化变量的使用</h3><p>ddd</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。
+    
+    </summary>
+    
+      <category term="js" scheme="http://kingzez.com/categories/js/"/>
+    
+    
+      <category term="严格模式" scheme="http://kingzez.com/tags/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>DataTables 1.10.x使用指南</title>
@@ -5705,59 +5781,6 @@
       <category term="js" scheme="http://kingzez.com/tags/js/"/>
     
       <category term="Kata" scheme="http://kingzez.com/tags/Kata/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac Apache</title>
-    <link href="http://kingzez.com/2016/03/29/Mac-Apache/"/>
-    <id>http://kingzez.com/2016/03/29/Mac-Apache/</id>
-    <published>2016-03-29T11:06:14.000Z</published>
-    <updated>2016-03-29T11:07:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>./configure –prefix=/usr/local/apache2 –enable-mods-shared=most</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;./configure –prefix=/usr/local/apache2 –enable-mods-shared=most&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>人称git核弹级 filter-branch </title>
-    <link href="http://kingzez.com/2015/12/20/%E4%BA%BA%E7%A7%B0git%E6%A0%B8%E5%BC%B9%E7%BA%A7%20filter-branch/"/>
-    <id>http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/</id>
-    <published>2015-12-20T13:05:59.000Z</published>
-    <updated>2016-05-20T16:18:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>都说“占小便宜吃大亏”,一点不假，听说GitHub Education的服务很不错，就用自己的edu.cn邮箱把GitHub的邮箱改了，接着去Get the Student Developer Pack。</p>
-<a id="more"></a>
-<p>静待回馈email，But！！！被拒绝了，原因是不认edu.cn的邮箱，好吧算了被拒绝也没什么好说的了，回到我的GitHub主页，顿时眼前一白，我的contributions图消失了，虽说不是很多但也是代表自己的contributions，好了不说废话了，解决竟是git的核弹级的 filter-branch。解决方法为全局性地更换电子邮件地址代码如下</p>
-<figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">filter</span>-branch --commit-<span class="keyword">filter</span> '</div><div class="line">        <span class="keyword">if</span> [ <span class="string">"$GIT_AUTHOR_EMAIL"</span> = w<span class="meta">@W</span>-MacBook-Pro.<span class="keyword">local</span> ];</div><div class="line">        <span class="keyword">then</span></div><div class="line">                GIT_AUTHOR_NAME=kingzez;</div><div class="line">                GIT_AUTHOR_EMAIL=kingzez<span class="meta">@sina</span>.com;</div><div class="line">                git commit-tree <span class="string">"$@"</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">                git commit-tree <span class="string">"$@"</span>;</div><div class="line">        fi' HEAD</div></pre></td></tr></table></figure>
-<p>接下来解释一下代码含义：这次的一个失误让我也发现了一个容易忽视的问题，在重装Mac后忘记了配置本地的git config，所以造成了我本地不合法的git用户邮箱（w@W-MacBook-Pro.local）其中上传的部分内容不在contributions上显示，（另外还有我的edu.cn的邮箱，针对我个人而言需要修改两次，）原因是contributions图是对应git用户配置显示的，这是我更改了邮箱后图消失的原因，Github系统找不到现在邮箱的git用户，所以我现在要操作的是</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">git</span> <span class="selector-tag">config</span> <span class="selector-tag">--global</span> <span class="selector-tag">user</span><span class="selector-class">.email</span> "<span class="selector-tag">kingzez</span>@<span class="keyword">sina</span>.<span class="keyword">com</span>"</div></pre></td></tr></table></figure>
-<p>操作后为了安全起见，在检查一遍<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config <span class="comment">--list</span></div></pre></td></tr></table></figure></p>
-<p>然后操作核弹级的<code>filter-branch --commit-filter</code> 这个必须要小心，千万要确认自己修改的邮箱是正确的，这个会遍历并重写所有提交历史到你新的邮箱上，命令完成后需要强推 <code>git push -f</code>，到Github主页刷新，我的contributions图又回来了，但是其中可能是以前的操作不当恢复的不是很完整，能恢复大部分已经很好了，原本只是改了一个邮箱，结果折腾这么一大圈。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;都说“占小便宜吃大亏”,一点不假，听说GitHub Education的服务很不错，就用自己的edu.cn邮箱把GitHub的邮箱改了，接着去Get the Student Developer Pack。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://kingzez.com/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://kingzez.com/tags/git/"/>
-    
-      <category term="github" scheme="http://kingzez.com/tags/github/"/>
     
   </entry>
   
