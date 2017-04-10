@@ -53,16 +53,22 @@
     <link href="http://kingzez.com/2017/04/10/Git-%E5%BF%BD%E7%95%A5%E5%B7%B2%E8%B7%9F%E8%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%94%B9%E5%8A%A8/"/>
     <id>http://kingzez.com/2017/04/10/Git-忽略已跟踪文件的改动/</id>
     <published>2017-04-10T07:13:59.000Z</published>
-    <updated>2017-04-10T07:26:24.000Z</updated>
+    <updated>2017-04-10T07:53:36.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下命令：<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --assume-unchanged</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p>在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下步骤：<br><a id="more"></a></p>
+<ul>
+<li>从 Git 的数据库中删除对于该文件的追踪；</li>
+<li>把对应的规则写入 .gitignore，让忽略真正生效；</li>
+<li>commit＋push。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --assume-unchanged</div></pre></td></tr></table></figure>
 <p>作用是将此文件移出版本控制，git不会记录此文件的修改，这样再将该文件加到<code>.ignore</code>中，与之对应的是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --no-assume-unchanged</div></pre></td></tr></table></figure></p>
 <p>如果是操作失误，即将操作失误移出版本控制的文件重新标识为git可记录的文件</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下命令：&lt;br&gt;
+      &lt;p&gt;在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下步骤：&lt;br&gt;
     
     </summary>
     
