@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2017-03-20T15:02:25.000Z</updated>
+  <updated>2017-04-10T07:27:25.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git使用相关集锦</title>
+    <link href="http://kingzez.com/2017/04/10/git%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3%E9%9B%86%E9%94%A6/"/>
+    <id>http://kingzez.com/2017/04/10/git使用相关集锦/</id>
+    <published>2017-04-10T07:30:38.000Z</published>
+    <updated>2017-04-10T07:27:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>总结之前写过的git相关文章，编成目录，也方便自己查看<br><a id="more"></a></p>
+<ol>
+<li><a href="/2015/08/22/git创建ssh key/">Git创建ssh key</a></li>
+<li><a href="/2015/08/23/git push冲突时解决方法/">git push冲突时解决方法或通过fetch来更新分支代码</a></li>
+<li><a href="/2015/10/18/CentOS下搭建git服务器/">CentOS下搭建Git服务器</a></li>
+<li><a href="/2015/10/19/如何完全删除gitosis/">如何完全删除gitosis</a></li>
+<li><a href="/2015/12/20/人称git核弹级 filter-branch/">人称Git核弹级 filter-branch</a></li>
+<li><a href="/2017/03/20/git-pull-强制覆盖local/">git-pull-强制覆盖local</a></li>
+<li><a href="/2017/04/10/git重写最近一次历史/">Git重写最近一次历史</a></li>
+<li><a href="/2017/04/10/Git-忽略已跟踪文件的改动/">Git忽略已跟踪文件的改动</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结之前写过的git相关文章，编成目录，也方便自己查看&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://kingzez.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://kingzez.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git忽略已跟踪文件的改动</title>
+    <link href="http://kingzez.com/2017/04/10/Git-%E5%BF%BD%E7%95%A5%E5%B7%B2%E8%B7%9F%E8%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%94%B9%E5%8A%A8/"/>
+    <id>http://kingzez.com/2017/04/10/Git-忽略已跟踪文件的改动/</id>
+    <published>2017-04-10T07:13:59.000Z</published>
+    <updated>2017-04-10T07:26:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下命令：<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --assume-unchanged</div></pre></td></tr></table></figure></p>
+<p>作用是将此文件移出版本控制，git不会记录此文件的修改，这样再将该文件加到<code>.ignore</code>中，与之对应的是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --no-assume-unchanged</div></pre></td></tr></table></figure></p>
+<p>如果是操作失误，即将操作失误移出版本控制的文件重新标识为git可记录的文件</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下命令：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://kingzez.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://kingzez.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git重写最近一次历史</title>
+    <link href="http://kingzez.com/2017/04/10/git%E9%87%8D%E5%86%99%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E5%8E%86%E5%8F%B2/"/>
+    <id>http://kingzez.com/2017/04/10/git重写最近一次历史/</id>
+    <published>2017-04-10T07:01:56.000Z</published>
+    <updated>2017-04-10T07:16:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>假设你刚刚提交的一个commit中有个错误，想修改一下commit的message，但是又不想在修改无意义的文件再次commit，这时需要使用命令<code>--amend</code>即重写最近的一次commit历史。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit --amend</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit --amend -m <span class="string">"your new commit message"</span></div></pre></td></tr></table></figure></p>
+<p>在amend之后，commit的时间不会被重写，如果想要重写commit的时间需要使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit --amend --reset-author</div></pre></td></tr></table></figure></p>
+<p>其中需要注意的是amend命令重写上一个commit，所以在已经push了上一个commit的情况下，尽可能的不要使用amend。如果你执意要amend已经push的commit，一定要保证这个commit所在的分支只有你一个人，否则将给其他人带来毁灭性的打击，在amend之后使用<code>git push --force</code>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设你刚刚提交的一个commit中有个错误，想修改一下commit的message，但是又不想在修改无意义的文件再次commit，这时需要使用命令&lt;code&gt;--amend&lt;/code&gt;即重写最近的一次commit历史。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://kingzez.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://kingzez.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>git pull 强制覆盖本地文件</title>
@@ -5705,106 +5789,6 @@
     
     
       <category term="CSS" scheme="http://kingzez.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript Kata: Title Case</title>
-    <link href="http://kingzez.com/2016/04/29/JavaScript-Kata-Title-Case/"/>
-    <id>http://kingzez.com/2016/04/29/JavaScript-Kata-Title-Case/</id>
-    <published>2016-04-29T09:32:50.000Z</published>
-    <updated>2016-04-29T09:45:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first<br><a id="more"></a><br>letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.</p>
-<p>Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string – it should behave in the same way even if the case of the minor word string is changed.</p>
-<h4 id="Arguments-Haskell"><a href="#Arguments-Haskell" class="headerlink" title="Arguments (Haskell)"></a>Arguments (Haskell)</h4><p>First argument: space-delimited list of minor words that must always be lowercase except for the first word in the string.<br>Second argument: the original string to be converted.</p>
-<h4 id="Arguments-Other-languages"><a href="#Arguments-Other-languages" class="headerlink" title="Arguments (Other languages)"></a>Arguments (Other languages)</h4><ul>
-<li>First argument (required): the original string to be converted.</li>
-<li>Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused.</li>
-</ul>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">titleCase</span><span class="params">(<span class="string">'a clash of KINGS'</span>, <span class="string">'a an the of'</span>)</span></span> <span class="comment">// should return: 'A Clash of Kings'</span></div><div class="line"><span class="function"><span class="title">titleCase</span><span class="params">(<span class="string">'THE WIND IN THE WILLOWS'</span>, <span class="string">'The In'</span>)</span></span> <span class="comment">// should return: 'The Wind in the Willows'</span></div><div class="line"><span class="function"><span class="title">titleCase</span><span class="params">(<span class="string">'the quick brown fox'</span>)</span></span> <span class="comment">// should return: 'The Quick Brown Fox'</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Kata" scheme="http://kingzez.com/categories/Kata/"/>
-    
-    
-      <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-      <category term="Kata" scheme="http://kingzez.com/tags/Kata/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript Kata: Find the odd int</title>
-    <link href="http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/"/>
-    <id>http://kingzez.com/2016/04/26/JavaScript-Kata-Find-the-odd-int/</id>
-    <published>2016-04-26T15:30:33.000Z</published>
-    <updated>2016-04-27T10:29:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h4><p>Given an array, find the int that appears an odd number of times.<br><a id="more"></a><br>There will always be only one integer that appears an odd number of times.</p>
-<h4 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findOdd</span><span class="params">(A)</span> </span>&#123;</div><div class="line">  <span class="comment">//happy coding!</span></div><div class="line">  <span class="keyword">var</span> n = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;A.length; i++)&#123;</div><div class="line">      n = n^A[i];</div><div class="line">   &#125;</div><div class="line">  <span class="keyword">return</span> n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="Test-Cases"><a href="#Test-Cases" class="headerlink" title="Test Cases:"></a>Test Cases:</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function doTest(a, n) &#123;</div><div class="line">  console.log(<span class="string">"A = "</span>, a);</div><div class="line">  console.log(<span class="string">"n = "</span>, n);</div><div class="line">  Test.assertEquals(findOdd(a), n);</div><div class="line">&#125;</div><div class="line">Test.describe('Example tests', function() &#123;</div><div class="line">  doTest([<span class="number">20</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">2</span>,<span class="number">-2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">20</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">5</span>], <span class="number">5</span>);</div><div class="line">  doTest([<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">-2</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">5</span>], <span class="number">-1</span>);</div><div class="line">  doTest([<span class="number">20</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">20</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">5</span>);</div><div class="line">  doTest([<span class="number">10</span>], <span class="number">10</span>);</div><div class="line">  doTest([<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>], <span class="number">10</span>);</div><div class="line">  doTest([<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">10</span>], <span class="number">1</span>);</div><div class="line">&#125;);</div><div class="line">Test.describe('Random tests', function() &#123;</div><div class="line">  var i, sz, a, j, n;</div><div class="line">  for(i = <span class="number">0</span>; i &lt; <span class="number">40</span>; ++i) &#123;</div><div class="line">    sz = Math.round(Math.random()*<span class="number">1000</span>+<span class="number">50</span>);</div><div class="line">    if (!sz%<span class="number">2</span>) &#123;</div><div class="line">      ++sz;</div><div class="line">    &#125;</div><div class="line">    a = [];</div><div class="line">    for(j = <span class="number">0</span>; j &lt; sz - <span class="number">1</span>; j+=<span class="number">2</span>) &#123;</div><div class="line">      n = Math.round(Math.random()*<span class="number">1000</span>);</div><div class="line">      a.push(n);</div><div class="line">      a.push(n);</div><div class="line">    &#125;</div><div class="line">    n = Math.round(Math.random()*<span class="number">1000</span>);</div><div class="line">    a.push(n);</div><div class="line">    Test.assertEquals(findOdd(a), n);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description:&quot;&gt;&lt;/a&gt;Description:&lt;/h4&gt;&lt;p&gt;Given an array, find the int that appears an odd number of times.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Kata" scheme="http://kingzez.com/categories/Kata/"/>
-    
-    
-      <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-      <category term="Kata" scheme="http://kingzez.com/tags/Kata/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript Kata: Sort with Arrow Functions</title>
-    <link href="http://kingzez.com/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/"/>
-    <id>http://kingzez.com/2016/04/25/JavaScript-Kata-Sort-with-Arrow-Functions/</id>
-    <published>2016-04-25T15:38:01.000Z</published>
-    <updated>2016-04-26T07:37:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Sort and Order people by their age using Arrow Functions</p>
-<a id="more"></a>
-<ul>
-<li>Task</li>
-</ul>
-<p>Your task is to order a list containg people objects by age using the new Javascript Arrow Functions</p>
-<ul>
-<li>Input</li>
-</ul>
-<p>Input will be a valid array with People objects containing an Age and Name</p>
-<ul>
-<li>Output</li>
-</ul>
-<p>Output will be a valid sorted array with People objects sorted by Age in ascending order</p>
-<ul>
-<li>Answer Is</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> OrderPeople = <span class="function"><span class="keyword">function</span>(<span class="params">people</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> people.sort( <span class="function">(<span class="params">obj1,obj2</span>) =&gt;</span> obj1.age - obj2.age ); </div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Sort and Order people by their age using Arrow Functions&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Kata" scheme="http://kingzez.com/categories/Kata/"/>
-    
-    
-      <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-      <category term="Kata" scheme="http://kingzez.com/tags/Kata/"/>
     
   </entry>
   

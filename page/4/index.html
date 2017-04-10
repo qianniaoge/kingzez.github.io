@@ -187,7 +187,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                41
+                44
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -219,6 +219,429 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-函数自调用时函数表达式和函数声明的区别" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+<div class="article-gallery">
+    <div class="article-gallery-photos">
+        
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" rel="gallery_cj1bsuzkd003lj4hes0cy9955">
+                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" itemprop="image">
+            </a>
+        
+    </div>
+</div>
+
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/">函数自调用时函数表达式和函数声明的区别</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/">
+            <time datetime="2015-09-19T14:46:20.000Z" itemprop="datePublished">2015-09-19</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/js/">js</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/js/">js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="函数自调用时函数表达式和函数声明的区别"><a href="#函数自调用时函数表达式和函数声明的区别" class="headerlink" title="函数自调用时函数表达式和函数声明的区别"></a>函数自调用时函数表达式和函数声明的区别</h4></p>
+            <p class="article-more-link">
+                <a href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/" data-id="cj1bsuzkd003lj4hes0cy9955" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/09/19/函数自调用时函数表达式和函数声明的区别/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-MySQL写入中文乱码" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+<div class="article-gallery">
+    <div class="article-gallery-photos">
+        
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mysql.png" rel="gallery_cj1bsuzih001gj4hew3d2bldz">
+                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mysql.png" itemprop="image">
+            </a>
+        
+    </div>
+</div>
+
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/09/07/MySQL写入中文乱码/">MySQL写入中文乱码</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/09/07/MySQL写入中文乱码/">
+            <time datetime="2015-09-07T14:09:26.000Z" itemprop="datePublished">2015-09-07</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySQL/">MySQL</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>####MySQL写入中文乱码<br></p>
+            <p class="article-more-link">
+                <a href="/2015/09/07/MySQL写入中文乱码/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kingzez.com/2015/09/07/MySQL写入中文乱码/" data-id="cj1bsuzih001gj4hew3d2bldz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2015/09/07/MySQL写入中文乱码/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/09/07/MySQL写入中文乱码/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-DOM 简单操作实现多选反选" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+<div class="article-gallery">
+    <div class="article-gallery-photos">
+        
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" rel="gallery_cj1bsuzhd0009j4he9v3bfxx3">
+                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" itemprop="image">
+            </a>
+        
+    </div>
+</div>
+
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/08/24/DOM 简单操作实现多选反选/">DOM 简单操作实现多选反选</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/08/24/DOM 简单操作实现多选反选/">
+            <time datetime="2015-08-24T15:59:11.000Z" itemprop="datePublished">2015-08-24</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/js/">js</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/js/">js</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="DOM简单操作实现多选反选"><a href="#DOM简单操作实现多选反选" class="headerlink" title="DOM简单操作实现多选反选"></a>DOM简单操作实现多选反选</h4></p>
+            <p class="article-more-link">
+                <a href="/2015/08/24/DOM 简单操作实现多选反选/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/" data-id="cj1bsuzhd0009j4he9v3bfxx3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-使用navigator.userAgent简单判断浏览器" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -226,7 +649,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" rel="gallery_cj0ix5xzb002zynhensxmm3g2">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" rel="gallery_cj1bsuzjw0035j4heyiw7dk9z">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" itemprop="image">
             </a>
         
@@ -282,7 +705,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/" data-id="cj0ix5xzb002zynhensxmm3g2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/" data-id="cj1bsuzjw0035j4heyiw7dk9z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -367,7 +790,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-push.png" rel="gallery_cj0ix5xyf0020ynhed9xqdmi8">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-push.png" rel="gallery_cj1bsuzj30023j4hejiw74i9a">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-push.png" itemprop="image">
             </a>
         
@@ -423,7 +846,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/23/git push冲突时解决方法/" data-id="cj0ix5xyf0020ynhed9xqdmi8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/23/git push冲突时解决方法/" data-id="cj1bsuzj30023j4hejiw74i9a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -508,7 +931,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" rel="gallery_cj0ix5xym0028ynheo3qo6hvn">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" rel="gallery_cj1bsuzji002jj4heok9l2zqo">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/git-ssh.png" itemprop="image">
             </a>
         
@@ -520,7 +943,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2015/08/22/git创建ssh key/">git创建ssh key</a>
+            <a class="article-title" href="/2015/08/22/git创建ssh key/">Git创建ssh key</a>
         </h1>
     
 
@@ -551,7 +974,9 @@ var _hmt = _hmt || [];
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h4 id="一、设置Git的username-，email："><a href="#一、设置Git的username-，email：" class="headerlink" title="一、设置Git的username ，email："></a>一、设置Git的username ，email：</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"kingzez@sina.com"</span></div></pre></td></tr></table></figure></p>
+            <p><h4 id="一、设置Git的username-，email："><a href="#一、设置Git的username-，email：" class="headerlink" title="一、设置Git的username ，email："></a>一、设置Git的username ，email：</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"kingzez@sina.com"</span></div></pre></td></tr></table></figure>
+<h4 id="二、如何针对每个repo单独设定username和email？"><a href="#二、如何针对每个repo单独设定username和email？" class="headerlink" title="二、如何针对每个repo单独设定username和email？"></a>二、如何针对每个repo单独设定username和email？</h4><p>有时，你可能想为不同的 repo（比如公司的项目和个人项目）设置不同的 commit 信息，很简单：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div><div class="line">git config user<span class="selector-class">.email</span> <span class="string">"kingzez@sina.com"</span></div></pre></td></tr></table></figure></p>
+<p>可以看出，在使用 git config 时，默认修改的是当前 repo 的配置，如果添加 –global 则会修改全局的配置。<br></p>
             <p class="article-more-link">
                 <a href="/2015/08/22/git创建ssh key/#more">Read More</a>
             </p>
@@ -564,7 +989,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/22/git创建ssh key/" data-id="cj0ix5xym0028ynheo3qo6hvn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/22/git创建ssh key/" data-id="cj1bsuzji002jj4heok9l2zqo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -649,7 +1074,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text-plugin.png" rel="gallery_cj0ix5xxv001gynheukkob96w">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text-plugin.png" rel="gallery_cj1bsuzir001pj4he990cercx">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text-plugin.png" itemprop="image">
             </a>
         
@@ -709,7 +1134,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/22/Sublime 常用插件/" data-id="cj0ix5xxv001gynheukkob96w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/22/Sublime 常用插件/" data-id="cj1bsuzir001pj4he990cercx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -794,7 +1219,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/javascript-books.png" rel="gallery_cj0ix5xz8002wynhem1uw3qbv">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/javascript-books.png" rel="gallery_cj1bsuzk3003dj4heple3n0s2">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/javascript-books.png" itemprop="image">
             </a>
         
@@ -853,7 +1278,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/13/关于js的一部分书单/" data-id="cj0ix5xz8002wynhem1uw3qbv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/08/13/关于js的一部分书单/" data-id="cj1bsuzk3003dj4heple3n0s2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -938,7 +1363,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mean.png" rel="gallery_cj0ix5xxe000wynhea7wh1fmu">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mean.png" rel="gallery_cj1bsuzi40011j4hefdsi8c5s">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/mean.png" itemprop="image">
             </a>
         
@@ -995,7 +1420,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/07/17/MEAN Web 开发/" data-id="cj0ix5xxe000wynhea7wh1fmu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/07/17/MEAN Web 开发/" data-id="cj1bsuzi40011j4hefdsi8c5s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1080,7 +1505,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text.png" rel="gallery_cj0ix5xzs003nynhe77d8ct0d">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text.png" rel="gallery_cj1bsuzkm0040j4hetf7y8cbz">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text.png" itemprop="image">
             </a>
         
@@ -1136,7 +1561,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/" data-id="cj0ix5xzs003nynhe77d8ct0d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/" data-id="cj1bsuzkm0040j4hetf7y8cbz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1214,429 +1639,6 @@ var _hmt = _hmt || [];
 
 
 
-    <article id="post-Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cj0ix5xxh000yynhe54nu79pr">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" itemprop="image">
-            </a>
-        
-    </div>
-</div>
-
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/">Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/">
-            <time datetime="2015-07-16T09:45:18.000Z" itemprop="datePublished">2015-07-16</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Mac/">Mac</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Mac/">Mac</a>, <a class="tag-link" href="/tags/homebrew/">homebrew</a>, <a class="tag-link" href="/tags/mongodb/">mongodb</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install <em>*</em>，不用再操心安装过程中软件的依赖问题。<br></p>
-            <p class="article-more-link">
-                <a href="/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/" data-id="cj0ix5xxh000yynhe54nu79pr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-github的静态博客用万网解析" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/github-pages.png" rel="gallery_cj0ix5xyj0023ynheor8k36xo">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/github-pages.png" itemprop="image">
-            </a>
-        
-    </div>
-</div>
-
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2015/07/14/github的静态博客用万网解析/">github的静态博客用万网解析</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2015/07/14/github的静态博客用万网解析/">
-            <time datetime="2015-07-13T16:15:21.000Z" itemprop="datePublished">2015-07-14</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/git/">git</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/github/">github</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>网上关于github的解析都是一带而过，下面详细说一下步骤<br></p>
-            <p class="article-more-link">
-                <a href="/2015/07/14/github的静态博客用万网解析/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://kingzez.com/2015/07/14/github的静态博客用万网解析/" data-id="cj0ix5xyj0023ynheor8k36xo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://kingzez.com/2015/07/14/github的静态博客用万网解析/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/07/14/github的静态博客用万网解析/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-IE6常见Bug" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-bug.png" rel="gallery_cj0ix5xx2000lynhee9hwxoxm">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-bug.png" itemprop="image">
-            </a>
-        
-    </div>
-</div>
-
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2014/08/30/IE6常见Bug/">IE6常见Bug</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2014/08/30/IE6常见Bug/">
-            <time datetime="2014-08-30T11:39:39.000Z" itemprop="datePublished">2014-08-30</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/IE/">IE</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/IE6/">IE6</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>1、IE6怪异解析之padding与border算入宽高<br>原因：未加文档声明造成非盒模型解析<br>解决方法：加入文档声明<br></p>
-            <p class="article-more-link">
-                <a href="/2014/08/30/IE6常见Bug/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://kingzez.com/2014/08/30/IE6常见Bug/" data-id="cj0ix5xx2000lynhee9hwxoxm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://kingzez.com/2014/08/30/IE6常见Bug/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2014/08/30/IE6常见Bug/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
@@ -1649,6 +1651,111 @@ var _hmt = _hmt || [];
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/10/git使用相关集锦/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/git/">git</a></p>
+                            <p class="item-title"><a href="/2017/04/10/git使用相关集锦/" class="title">Git使用相关集锦</a></p>
+                            <p class="item-date"><time datetime="2017-04-10T07:30:38.000Z" itemprop="datePublished">2017-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/10/Git-忽略已跟踪文件的改动/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/git/">git</a></p>
+                            <p class="item-title"><a href="/2017/04/10/Git-忽略已跟踪文件的改动/" class="title">Git忽略已跟踪文件的改动</a></p>
+                            <p class="item-date"><time datetime="2017-04-10T07:13:59.000Z" itemprop="datePublished">2017-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/10/git重写最近一次历史/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/git/">git</a></p>
+                            <p class="item-title"><a href="/2017/04/10/git重写最近一次历史/" class="title">Git重写最近一次历史</a></p>
+                            <p class="item-date"><time datetime="2017-04-10T07:01:56.000Z" itemprop="datePublished">2017-04-10</time></p>
+                        </div>
+                    </li>
                 
                     <li class="hvr-grow-shadow">
                         
@@ -1670,7 +1777,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -1705,7 +1812,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small10.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -1720,111 +1827,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li class="hvr-grow-shadow">
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/03/DataTables-1-10-x使用指南/" class="thumbnail">
-    
-    
-    	
-    	
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-   
-
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
-                            <p class="item-title"><a href="/2017/03/03/DataTables-1-10-x使用指南/" class="title">DataTables 1.10.x使用指南</a></p>
-                            <p class="item-date"><time datetime="2017-03-03T04:51:16.000Z" itemprop="datePublished">2017-03-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li class="hvr-grow-shadow">
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/15/初试Mithril-js/" class="thumbnail">
-    
-    
-    	
-    	
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <span style="background-image:url(/images/thumb-default-small10.png)"  class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-   
-
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
-                            <p class="item-title"><a href="/2016/11/15/初试Mithril-js/" class="title">初试Mithril.js</a></p>
-                            <p class="item-date"><time datetime="2016-11-15T06:00:01.000Z" itemprop="datePublished">2016-11-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li class="hvr-grow-shadow">
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/" class="thumbnail">
-    
-    
-    	
-    	
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <span style="background-image:url(/images/thumb-default-small10.png)"  class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-   
-
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
-                            <p class="item-title"><a href="/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/" class="title">Yarn A new package manager for JavaScript</a></p>
-                            <p class="item-date"><time datetime="2016-10-18T13:44:14.000Z" itemprop="datePublished">2016-10-18</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1834,7 +1836,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1843,7 +1845,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1852,7 +1854,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frontend/">Frontend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE6/">IE6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kata/">Kata</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDL/">MDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitosis/">gitosis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterm2/">iterm2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-datatables/">js datatables</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mithril-js/">mithril.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/严格模式/">严格模式</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frontend/">Frontend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE6/">IE6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kata/">Kata</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDL/">MDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitosis/">gitosis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterm2/">iterm2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-datatables/">js datatables</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mithril-js/">mithril.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/严格模式/">严格模式</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
