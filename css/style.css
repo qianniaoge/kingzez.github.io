@@ -141,7 +141,7 @@ code {
   background-color: #f8f8f8;
 }
 .outer {
-  max-width: 1320px;
+  max-width: 1620px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -190,16 +190,16 @@ code {
   #main {
     display: inline;
     float: left;
-    width: 52.307692307692314%;
-    margin: 0 0.769230769230769%;
+    width: 61.25000000000001%;
+    margin: 0 0.625%;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   #main {
     display: inline;
     float: left;
-    width: 67.6923076923077%;
-    margin: 0 0.769230769230769%;
+    width: 55.00000000000001%;
+    margin: 0 0.625%;
   }
 }
 .archive-article-header a,
@@ -640,8 +640,8 @@ code {
 #profile {
   display: inline;
   float: left;
-  width: 21.53846153846154%;
-  margin: 0 0.769230769230769%;
+  width: 17.5%;
+  margin: 0 0.625%;
   display: none;
 }
 @media screen and (min-width: 1200px) {
@@ -656,8 +656,8 @@ code {
 #profile .inner .base-info #avatar {
   display: block;
   margin: 10px auto 20px;
-  width: 128px;
-  height: 128px;
+  width: 120px;
+  height: 120px;
 }
 #profile .inner .base-info #name,
 #profile .inner .base-info #title,
@@ -667,7 +667,7 @@ code {
 }
 #profile .inner .base-info #name {
   font-family: "Satisfy", cursive;
-  font-size: 60px;
+  font-size: 45px;
   margin-bottom: 30px;
 }
 #profile .inner .base-info #location {
@@ -680,11 +680,11 @@ code {
 }
 #profile .inner .base-info #follow {
   color: #fff;
-  width: 150px;
-  height: 40px;
+  width: 130px;
+  height: 30px;
   display: block;
-  font-size: 14px;
-  line-height: 40px;
+  font-size: 13px;
+  line-height: 31px;
   text-align: center;
   margin: 20px auto 10px;
   background: #38b7ea;
@@ -1672,16 +1672,16 @@ ol.toc {
   #sidebar {
     display: inline;
     float: left;
-    width: 21.53846153846154%;
-    margin: 0 0.769230769230769%;
+    width: 17.5%;
+    margin: 0 0.625%;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   #sidebar {
     display: inline;
     float: left;
-    width: 29.230769230769234%;
-    margin: 0 0.769230769230769%;
+    width: 23.75%;
+    margin: 0 0.625%;
   }
 }
 .widget {
@@ -2097,72 +2097,49 @@ ol.toc {
   margin: 1.6em 0;
 }
 .highlight {
-  color: #333;
-  background: #f8f8f8;
+  color: #c5c8c6;
+  background: #1d1f21;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #998;
-  font-style: italic;
+  color: #969896;
 }
-.highlight .code .keyword,
-.highlight .code .selector-tag,
-.highlight .code .subst {
-  color: #333;
-  font-weight: bold;
-}
-.highlight .code .number,
-.highlight .code .literal,
 .highlight .code .variable,
 .highlight .code .template-variable,
-.highlight .code .tag .attr {
-  color: #008080;
-}
-.highlight .code .string,
-.highlight .code .doctag {
-  color: #d14;
-}
-.highlight .code .title,
-.highlight .code .section,
-.highlight .code .selector-id {
-  color: #900;
-  font-weight: bold;
-}
-.highlight .code .subst {
-  font-weight: normal;
-}
-.highlight .code .type,
-.highlight .code .class .title {
-  color: #458;
-  font-weight: bold;
-}
 .highlight .code .tag,
 .highlight .code .name,
-.highlight .code .attribute {
-  color: #000080;
-  font-weight: normal;
-}
+.highlight .code .selector-id,
+.highlight .code .selector-class,
 .highlight .code .regexp,
-.highlight .code .link {
-  color: #009926;
-}
-.highlight .code .symbol,
-.highlight .code .bullet {
-  color: #990073;
-}
-.highlight .code .built_in,
-.highlight .code .builtin-name {
-  color: #0086b3;
-}
-.highlight .code .meta {
-  color: #999;
-  font-weight: bold;
-}
 .highlight .code .deletion {
-  background: #fdd;
+  color: #c66;
 }
+.highlight .code .number,
+.highlight .code .built_in,
+.highlight .code .builtin-name,
+.highlight .code .literal,
+.highlight .code .type,
+.highlight .code .params,
+.highlight .code .meta,
+.highlight .code .link {
+  color: #de935f;
+}
+.highlight .code .attribute {
+  color: #f0c674;
+}
+.highlight .code .string,
+.highlight .code .symbol,
+.highlight .code .bullet,
 .highlight .code .addition {
-  background: #dfd;
+  color: #b5bd68;
+}
+.highlight .code .title,
+.highlight .code .section {
+  color: #81a2be;
+}
+.highlight .code .keyword,
+.highlight .code .selector-tag {
+  color: #b294bb;
 }
 .highlight .code .emphasis {
   font-style: italic;
