@@ -187,11 +187,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                44
+                45
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                26
+                27
                 <span>tags</span>
             </div>
         </div>
@@ -203,8 +203,6 @@ var _hmt = _hmt || [];
                     <td><a href="http://github.com/kingzez" target="_blank" title="github"><i class="fa fa-github hvr-bounce-in"></i></a></td>
                     
                     <td><a href="http://weibo.com/kingzez/" target="_blank" title="weibo"><i class="fa fa-weibo hvr-bounce-in"></i></a></td>
-                    
-                    <td><a href="https://twitter.com/wangzezhi" target="_blank" title="twitter"><i class="fa fa-twitter hvr-bounce-in"></i></a></td>
                     
                     <td><a href="https://www.flickr.com/photos/140559763@N05/" target="_blank" title="flickr"><i class="fa fa-flickr hvr-bounce-in"></i></a></td>
                     
@@ -219,6 +217,147 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-解决Mac下Sublime Text 23以新窗口打开文件" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+<div class="article-gallery">
+    <div class="article-gallery-photos">
+        
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text.png" rel="gallery_cj1d4js5f0043b5hea8n1k6i8">
+                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/sublime-text.png" itemprop="image">
+            </a>
+        
+    </div>
+</div>
+
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/">解决Mac下Sublime Text 2/3以新窗口打开文件</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/">
+            <time datetime="2015-07-16T11:27:25.000Z" itemprop="datePublished">2015-07-16</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Mac/">Mac</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Mac/">Mac</a>, <a class="tag-link" href="/tags/Sublime/">Sublime</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h4 id="sublime-text-2-x："><a href="#sublime-text-2-x：" class="headerlink" title="sublime text 2.x："></a>sublime text 2.x：</h4><p>具体设置：Preferences -&gt; Settings – Default -&gt; 搜索open_files_in_new_window，将其true 改为 false 后重启一下sublime text 2<br></p>
+            <p class="article-more-link">
+                <a href="/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://kingzez.com/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/" data-id="cj1d4js5f0043b5hea8n1k6i8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://kingzez.com/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/07/16/解决Mac下Sublime Text 23以新窗口打开文件/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -226,7 +365,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cj1btnaao0015qwhe3ow9pmeg">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cj1d4js360012b5heezws08hl">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" itemprop="image">
             </a>
         
@@ -282,7 +421,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/" data-id="cj1btnaao0015qwhe3ow9pmeg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/" data-id="cj1d4js360012b5heezws08hl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -367,7 +506,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/github-pages.png" rel="gallery_cj1btnabo0023qwhej2c82w0p">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/github-pages.png" rel="gallery_cj1d4js420028b5he68qn90h9">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/github-pages.png" itemprop="image">
             </a>
         
@@ -423,7 +562,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/07/14/github的静态博客用万网解析/" data-id="cj1btnabo0023qwhej2c82w0p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2015/07/14/github的静态博客用万网解析/" data-id="cj1d4js420028b5he68qn90h9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -508,7 +647,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-bug.png" rel="gallery_cj1btnaa7000kqwheq0v1bnvo">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-bug.png" rel="gallery_cj1d4js31000rb5henzmbp35j">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-bug.png" itemprop="image">
             </a>
         
@@ -564,7 +703,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2014/08/30/IE6常见Bug/" data-id="cj1btnaa7000kqwheq0v1bnvo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2014/08/30/IE6常见Bug/" data-id="cj1d4js31000rb5henzmbp35j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -649,7 +788,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-png.png" rel="gallery_cj1btnaa1000eqwhewt19e8nc">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-png.png" rel="gallery_cj1d4js2n000eb5hexfo2kf5p">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/ie-png.png" itemprop="image">
             </a>
         
@@ -705,7 +844,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2014/08/22/IE6 PNG透明问题/" data-id="cj1btnaa1000eqwhewt19e8nc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2014/08/22/IE6 PNG透明问题/" data-id="cj1d4js2n000eb5hexfo2kf5p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -799,7 +938,7 @@ var _hmt = _hmt || [];
                     <li class="hvr-grow-shadow">
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/04/10/git使用相关集锦/" class="thumbnail">
+                            <a href="/2017/04/11/深入浅出this的理解/" class="thumbnail">
     
     
     	
@@ -817,6 +956,41 @@ var _hmt = _hmt || [];
         
         
         <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+   
+
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
+                            <p class="item-title"><a href="/2017/04/11/深入浅出this的理解/" class="title">深入浅出this的理解</a></p>
+                            <p class="item-date"><time datetime="2017-04-11T02:45:18.000Z" itemprop="datePublished">2017-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li class="hvr-grow-shadow">
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/10/git使用相关集锦/" class="thumbnail">
+    
+    
+    	
+    	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -886,7 +1060,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -921,7 +1095,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -936,41 +1110,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li class="hvr-grow-shadow">
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/20/Strict-mode/" class="thumbnail">
-    
-    
-    	
-    	
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-   
-
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/js/">js</a></p>
-                            <p class="item-title"><a href="/2017/03/20/Strict-mode/" class="title">严格模式·Strict mode</a></p>
-                            <p class="item-date"><time datetime="2017-03-20T07:10:23.000Z" itemprop="datePublished">2017-03-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -980,7 +1119,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IE/">IE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kata/">Kata</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MEAN/">MEAN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime/">Sublime</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -989,16 +1128,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frontend/">Frontend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE6/">IE6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kata/">Kata</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MDL/">MDL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime/">Sublime</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitosis/">gitosis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterm2/">iterm2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-datatables/">js datatables</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mithril-js/">mithril.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yarn/">yarn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/严格模式/">严格模式</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1007,7 +1137,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CentOS/" style="font-size: 14px;">CentOS</a> <a href="/tags/Frontend/" style="font-size: 10px;">Frontend</a> <a href="/tags/IE6/" style="font-size: 12px;">IE6</a> <a href="/tags/Kata/" style="font-size: 14px;">Kata</a> <a href="/tags/MDL/" style="font-size: 10px;">MDL</a> <a href="/tags/MEAN/" style="font-size: 10px;">MEAN</a> <a href="/tags/Mac/" style="font-size: 16px;">Mac</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Sublime/" style="font-size: 12px;">Sublime</a> <a href="/tags/angularjs/" style="font-size: 12px;">angularjs</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/gitosis/" style="font-size: 10px;">gitosis</a> <a href="/tags/homebrew/" style="font-size: 10px;">homebrew</a> <a href="/tags/iterm2/" style="font-size: 10px;">iterm2</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/js-datatables/" style="font-size: 10px;">js datatables</a> <a href="/tags/mithril-js/" style="font-size: 10px;">mithril.js</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/严格模式/" style="font-size: 10px;">严格模式</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CentOS/" style="font-size: 14px;">CentOS</a> <a href="/tags/Frontend/" style="font-size: 10px;">Frontend</a> <a href="/tags/IE6/" style="font-size: 12px;">IE6</a> <a href="/tags/Kata/" style="font-size: 14px;">Kata</a> <a href="/tags/MDL/" style="font-size: 10px;">MDL</a> <a href="/tags/MEAN/" style="font-size: 10px;">MEAN</a> <a href="/tags/Mac/" style="font-size: 16px;">Mac</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Sublime/" style="font-size: 12px;">Sublime</a> <a href="/tags/angularjs/" style="font-size: 12px;">angularjs</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/gitosis/" style="font-size: 10px;">gitosis</a> <a href="/tags/homebrew/" style="font-size: 10px;">homebrew</a> <a href="/tags/iterm2/" style="font-size: 10px;">iterm2</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/js-datatables/" style="font-size: 10px;">js datatables</a> <a href="/tags/mithril-js/" style="font-size: 10px;">mithril.js</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/yarn/" style="font-size: 10px;">yarn</a> <a href="/tags/严格模式/" style="font-size: 10px;">严格模式</a>
         </div>
     </div>
 

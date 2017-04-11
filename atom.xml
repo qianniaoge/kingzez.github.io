@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2017-04-10T07:27:25.000Z</updated>
+  <updated>2017-04-11T05:47:28.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入浅出this的理解</title>
+    <link href="http://kingzez.com/2017/04/11/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAthis%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://kingzez.com/2017/04/11/深入浅出this的理解/</id>
+    <published>2017-04-11T02:45:18.000Z</published>
+    <updated>2017-04-11T05:47:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>this</code>在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的<code>this</code>。<br><a id="more"></a>首先引入<a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">秘密花园</a>中对this的工作原理，文中指出有五种情况，分别是：</p>
+<ul>
+<li><p>全局范围内</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>;	<span class="comment">//在全局范围内使用`this`，它将会指向全局对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>函数调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">foo();	<span class="comment">//this指向全局对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>方法调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">test.foo();	<span class="comment">//this指向test对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>调用构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> foo();	<span class="comment">//函数与new一块使用即构造函数，this指向新创建的对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>显式的设置this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, c</span>) </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bar = &#123;&#125;;</div><div class="line">foo.apply(bar, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);	<span class="comment">//this被设置成bar</span></div><div class="line">foo.call(bar, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);	<span class="comment">//this被设置成bar</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="从函数调用理解this"><a href="#从函数调用理解this" class="headerlink" title="从函数调用理解this"></a>从函数调用理解this</h4><p>有这样一道题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = obj.func;</div><div class="line">obj.func() <span class="comment">//this是obj</span></div><div class="line">foo() <span class="comment">//this是window</span></div></pre></td></tr></table></figure></p>
+<p>解释函数结果为什么不一样？</p>
+<p>这道题可以从函数调用来理解，从我看到的博文中有这样的解释，秘密花园中的函数调用，方法调用，显式的设置this都属于函数调用，相当于函数调用的三种方式，可以写成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params);</div><div class="line">obj.child.foo(params);</div><div class="line">foo.call(context, params); <span class="comment">//apply同理</span></div></pre></td></tr></table></figure></p>
+<p>而且前两种都可以写成第三种形式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params); =&gt;&gt; foo.call(<span class="literal">undefined</span>, params);</div><div class="line"></div><div class="line">obj.child.foo(); =&gt;&gt; obj.child.foo.call(obj.child, params);</div></pre></td></tr></table></figure></p>
+<p>所以说函数调用都是<code>foo.call(context, params)</code>的变体，即函数调用只有一种。这样<code>this</code>的值就是文中的<code>context</code>，<code>this</code>就是你函数调用时传入的<code>context</code>。</p>
+<p>举例代码中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo();</div></pre></td></tr></table></figure></p>
+<p>当你无法确认<code>this</code>指代的值时，转化成<code>call</code>形式会更好理解<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo.call(<span class="literal">undefined</span>); <span class="comment">//or foo.call();</span></div></pre></td></tr></table></figure></p>
+<p>函数执行结果为<code>window</code>，在浏览器中有一条规定，传入<code>context</code>为<code>null</code>或<code>undefined</code>时，则为全局对象（window对象）；严格模式下<code>context</code>为<code>undefined</code>。</p>
+<p>举例代码中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.foo();</div></pre></td></tr></table></figure></p>
+<p>转化为<code>call</code>形式为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.foo.call(obj);</div></pre></td></tr></table></figure></p>
+<p>很明显，<code>this</code>指代obj。</p>
+<h4 id="Event-Handler-中的this"><a href="#Event-Handler-中的this" class="headerlink" title="Event Handler 中的this"></a>Event Handler 中的this</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">btn.addEventListener(<span class="string">'click'</span> ,<span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// 请问这里的 this 是什么</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>handler 中的<code>this</code>是什么？用上面的方法好像没法转化了，因为不知道<code>addEventListener</code>内源码实现，查看文档<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#The_value_of_this_within_the_handler" target="_blank" rel="external">MDN</a></p>
+<blockquote>
+<p>通常来说this的值是触发事件的元素的引用，这种特性在多个相似的元素使用同一个通用事件监听器时非常让人满意。</p>
+<p>当使用 addEventListener() 为一个元素注册事件的时候，句柄里的 this 值是该元素的引用。其与传递给句柄的 event 参数的 currentTarget 属性的值一样。</p>
+</blockquote>
+<p>所以可以假设浏览器addEventListener是这样实现的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当事件被触发时</span></div><div class="line">handler.call(event.currentTarget, event) <span class="comment">// this =&gt; event.currentTarget</span></div></pre></td></tr></table></figure></p>
+<p>以上就是对<code>this</code>的理解。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;this&lt;/code&gt;在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的&lt;code&gt;this&lt;/code&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://kingzez.com/categories/js/"/>
+    
+    
+      <category term="this" scheme="http://kingzez.com/tags/this/"/>
+    
+  </entry>
   
   <entry>
     <title>Git使用相关集锦</title>
@@ -53,15 +112,15 @@
     <link href="http://kingzez.com/2017/04/10/Git-%E5%BF%BD%E7%95%A5%E5%B7%B2%E8%B7%9F%E8%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E6%94%B9%E5%8A%A8/"/>
     <id>http://kingzez.com/2017/04/10/Git-忽略已跟踪文件的改动/</id>
     <published>2017-04-10T07:13:59.000Z</published>
-    <updated>2017-04-10T07:53:36.000Z</updated>
+    <updated>2017-04-11T01:10:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>在实际使用中，有时候不可避免会有操作失误，将系统文件添加到版本库中，这时要怎么忽略已跟踪的文件？通过以下步骤：<br><a id="more"></a></p>
 <ul>
 <li>从 Git 的数据库中删除对于该文件的追踪；</li>
 <li>把对应的规则写入 .gitignore，让忽略真正生效；</li>
-<li>commit＋push。</li>
+<li>commit＋push。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --assume-unchanged</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --assume-unchanged</div></pre></td></tr></table></figure>
 <p>作用是将此文件移出版本控制，git不会记录此文件的修改，这样再将该文件加到<code>.ignore</code>中，与之对应的是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git update-index --no-assume-unchanged</div></pre></td></tr></table></figure></p>
 <p>如果是操作失误，即将操作失误移出版本控制的文件重新标识为git可记录的文件</p>
 ]]></content>
@@ -5729,72 +5788,6 @@
     
     
       <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>可继承的CSS属性</title>
-    <link href="http://kingzez.com/2016/05/15/%E5%8F%AF%E7%BB%A7%E6%89%BF%E7%9A%84CSS%E5%B1%9E%E6%80%A7/"/>
-    <id>http://kingzez.com/2016/05/15/可继承的CSS属性/</id>
-    <published>2016-05-14T16:35:29.000Z</published>
-    <updated>2016-05-17T14:01:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在网上搜集查找相对全一点的可继承的css属性：<br><a id="more"></a></p>
-<ol>
-<li><code>azimuth</code> 设置或检索当前声音的音场角度</li>
-<li><code>border-collapse</code> 设置表格的边框是否被合并为一个单一的边框，还是像在标准的 HTML 中那样分开显示(separate collapse)</li>
-<li><code>border-spacing</code> 设置相邻单元格的边框间的距离（length length）</li>
-<li><code>caption-side</code> 规定表格标题的放置方式(top bottom)</li>
-<li><code>color</code> 颜色(…)</li>
-<li><code>cursor</code> 光标的类型(pointer help wait…)</li>
-<li><code>direction</code> 文本方向设置(ltr rtl)</li>
-<li><code>elevation</code> 设置或检索当前声音的音源仰角(angle below level above higher lower)</li>
-<li><code>empty-cells</code> 设置是否显示表格中的空单元格(hide show)</li>
-<li><code>font-family</code> 字体(…)</li>
-<li><code>font-size</code> 字体大小</li>
-<li><code>font-style</code> 字体风格(normal italic oblique)</li>
-<li><code>font-variant</code> 设置小型大写字母的字体显示文本(normal small-caps)</li>
-<li><code>font-weight</code> 粗细</li>
-<li><code>font</code> 字体</li>
-<li><code>letter-spacing</code> 字符间距</li>
-<li><code>line-height</code> 行距</li>
-<li><code>list-style-image</code> 使用图像替换列表项的标记</li>
-<li><code>list-style-position</code> 放置列表标记的位置</li>
-<li><code>list-style-type</code> 列表标记类型(none disc circle square decimal…)</li>
-<li><code>list-style</code> 设置所有的列表属性</li>
-<li><code>orphans</code> 打印中设置元素放在页面底部时所允许的最少文本行数(number)</li>
-<li><code>pitch-range</code> 听觉中指定声音的变化(number)</li>
-<li><code>pitch</code> 听觉中指定说话的声音(frequency x-low low medium high x-high)</li>
-<li><code>quotes</code> 设置嵌套引用的引号类型(string string string string)</li>
-<li><code>richness</code> 听觉中指定声音的丰富度(number)</li>
-<li><code>speak-header</code> 指定如何处理表头文件(always once)</li>
-<li><code>speak-numeral</code> 指定如何讲数字(digits continous)</li>
-<li><code>speak-punctuation</code> 指定如何讲标点符号(none code)</li>
-<li><code>speak</code> 指定内容用语音讲出(normal none spell-out)</li>
-<li><code>speech-rate</code> 讲话的速度(number x-slow slow fast x-fast faster slower)</li>
-<li><code>stress</code> 讲话声音中的强调(number)</li>
-<li><code>text-align</code> 元素中的文本居中</li>
-<li><code>text-indent</code> 文本首行的缩进(lenght %)</li>
-<li><code>text-transform</code> 控制文本的大小写(none captalize uppercase lowercase)</li>
-<li><code>visibility</code> 元素是否可见(visible hidden collapse)</li>
-<li><code>voice-family</code> 特定声音库名称的优先级(specific-voice generic-voice)</li>
-<li><code>volume</code> 讲出的音量(number % silent x-soft medium loud x-loud)</li>
-<li><code>white-space</code> 设置处理元素中的空白(normal pre nowrap pre-wrap pre-line)</li>
-<li><code>widows</code> 窗口</li>
-<li><code>word-spacing</code> 单词字间距(normal length)</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在网上搜集查找相对全一点的可继承的css属性：&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://kingzez.com/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="http://kingzez.com/tags/CSS/"/>
     
   </entry>
   

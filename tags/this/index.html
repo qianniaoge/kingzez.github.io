@@ -3,20 +3,17 @@
 <head>
 <meta charset="utf-8">
 
-<title>DOM 简单操作实现多选反选 | the kingzez blog</title>
+<title>Tag: this | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="DOM简单操作实现多选反选">
-<meta property="og:type" content="article">
-<meta property="og:title" content="DOM 简单操作实现多选反选">
-<meta property="og:url" content="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/index.html">
+<meta name="description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
+<meta property="og:type" content="website">
+<meta property="og:title" content="the kingzez blog">
+<meta property="og:url" content="http://kingzez.com/tags/this/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="DOM简单操作实现多选反选">
-<meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png">
-<meta property="og:updated_time" content="2016-05-17T16:45:50.000Z">
+<meta property="og:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM 简单操作实现多选反选">
-<meta name="twitter:description" content="DOM简单操作实现多选反选">
-<meta name="twitter:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png">
+<meta name="twitter:title" content="the kingzez blog">
+<meta name="twitter:description" content="kingzez,blog,wangzezhi,vincent.w，王泽知">
 
 
 
@@ -219,26 +216,20 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-DOM 简单操作实现多选反选" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" rel="gallery_cj1d4js2e0008b5heb0afj9gk">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" itemprop="image">
-            </a>
-        
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-tag"></i></span>
+        <h1 class="title">#this</h1>
     </div>
-</div>
-
-        
-            <header class="article-header">
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            DOM 简单操作实现多选反选
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2017/04/11/深入浅出this的理解/">深入浅出this的理解</a>
         </h1>
     
 
@@ -246,8 +237,8 @@ var _hmt = _hmt || [];
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/08/24/DOM 简单操作实现多选反选/">
-            <time datetime="2015-08-24T15:59:11.000Z" itemprop="datePublished">2015-08-24</time>
+        <a href="/2017/04/11/深入浅出this的理解/">
+            <time datetime="2017-04-11T02:45:18.000Z" itemprop="datePublished">2017-04-11</time>
         </a>
     </div>
 
@@ -261,136 +252,14 @@ var _hmt = _hmt || [];
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/js/">js</a>
+        <a class="tag-link" href="/tags/this/">this</a>
     </div>
 
                 </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="DOM简单操作实现多选反选"><a href="#DOM简单操作实现多选反选" class="headerlink" title="DOM简单操作实现多选反选"></a>DOM简单操作实现多选反选</h4><a id="more"></a>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">          Choose one:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby1"</span>&gt;</span>  音乐</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby2"</span>&gt;</span>  登山</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby3"</span>&gt;</span>  游泳</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby4"</span>&gt;</span>  阅读</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby5"</span>&gt;</span>  打球</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby6"</span>&gt;</span>  跑步 <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"全选"</span> <span class="attr">onclick</span> = <span class="string">"checkall();"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"全不选"</span> <span class="attr">onclick</span> = <span class="string">"clearall();"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>input your number，number1 to 6:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"wb"</span> <span class="attr">name</span>=<span class="string">"wb"</span> <span class="attr">type</span>=<span class="string">"text"</span> &gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ok"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"确定"</span> <span class="attr">onclick</span> = <span class="string">"checkone();"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkall</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);          </div><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;hobby.length; i++)</div><div class="line"><span class="keyword">if</span>(hobby[i].type ==<span class="string">"checkbox"</span>)&#123;</div><div class="line">    hobby[i].checked = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearall</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByName(<span class="string">"hobby"</span>);</div><div class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; hobby.length; i++)&#123;</div><div class="line">    hobby[i].checked =<span class="literal">false</span>;</div><div class="line">&#125;         </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkone</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> j=<span class="built_in">document</span>.getElementById(<span class="string">"wb"</span>).value;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementById(<span class="string">"hobby"</span> + j);</div><div class="line">hobby.checked = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/" data-id="cj1d4js2e0008b5heb0afj9gk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2015/09/07/MySQL写入中文乱码/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    MySQL写入中文乱码
-                
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2015/08/24/使用navigator.userAgent简单判断浏览器/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">使用navigator.userAgent简单判断浏览器</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
-    
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
-    </section>
-
+</div>
 </section>
             
                 <aside id="sidebar">
@@ -626,13 +495,11 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'kingzez';
     
     
-    var disqus_url = 'http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

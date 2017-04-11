@@ -3,20 +3,18 @@
 <head>
 <meta charset="utf-8">
 
-<title>DOM 简单操作实现多选反选 | the kingzez blog</title>
+<title>深入浅出this的理解 | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="DOM简单操作实现多选反选">
+<meta name="description" content="this在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的this。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM 简单操作实现多选反选">
-<meta property="og:url" content="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/index.html">
+<meta property="og:title" content="深入浅出this的理解">
+<meta property="og:url" content="http://kingzez.com/2017/04/11/深入浅出this的理解/index.html">
 <meta property="og:site_name" content="the kingzez blog">
-<meta property="og:description" content="DOM简单操作实现多选反选">
-<meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png">
-<meta property="og:updated_time" content="2016-05-17T16:45:50.000Z">
+<meta property="og:description" content="this在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的this。">
+<meta property="og:updated_time" content="2017-04-11T05:47:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM 简单操作实现多选反选">
-<meta name="twitter:description" content="DOM简单操作实现多选反选">
-<meta name="twitter:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png">
+<meta name="twitter:title" content="深入浅出this的理解">
+<meta name="twitter:description" content="this在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的this。">
 
 
 
@@ -219,26 +217,16 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-DOM 简单操作实现多选反选" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-深入浅出this的理解" class="hvr-float-shadow article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
-<div class="article-gallery">
-    <div class="article-gallery-photos">
-        
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" rel="gallery_cj1d4js2e0008b5heb0afj9gk">
-                <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/dom.png" itemprop="image">
-            </a>
-        
-    </div>
-</div>
-
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-            DOM 简单操作实现多选反选
+            深入浅出this的理解
         </h1>
     
 
@@ -246,8 +234,8 @@ var _hmt = _hmt || [];
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2015/08/24/DOM 简单操作实现多选反选/">
-            <time datetime="2015-08-24T15:59:11.000Z" itemprop="datePublished">2015-08-24</time>
+        <a href="/2017/04/11/深入浅出this的理解/">
+            <time datetime="2017-04-11T02:45:18.000Z" itemprop="datePublished">2017-04-11</time>
         </a>
     </div>
 
@@ -261,7 +249,7 @@ var _hmt = _hmt || [];
                     
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/js/">js</a>
+        <a class="tag-link" href="/tags/this/">this</a>
     </div>
 
                 </div>
@@ -270,8 +258,44 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="DOM简单操作实现多选反选"><a href="#DOM简单操作实现多选反选" class="headerlink" title="DOM简单操作实现多选反选"></a>DOM简单操作实现多选反选</h4><a id="more"></a>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">          Choose one:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby1"</span>&gt;</span>  音乐</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby2"</span>&gt;</span>  登山</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby3"</span>&gt;</span>  游泳</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby4"</span>&gt;</span>  阅读</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby5"</span>&gt;</span>  打球</div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">id</span>=<span class="string">"hobby6"</span>&gt;</span>  跑步 <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"全选"</span> <span class="attr">onclick</span> = <span class="string">"checkall();"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"全不选"</span> <span class="attr">onclick</span> = <span class="string">"clearall();"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>input your number，number1 to 6:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"wb"</span> <span class="attr">name</span>=<span class="string">"wb"</span> <span class="attr">type</span>=<span class="string">"text"</span> &gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ok"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"确定"</span> <span class="attr">onclick</span> = <span class="string">"checkone();"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkall</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);          </div><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;hobby.length; i++)</div><div class="line"><span class="keyword">if</span>(hobby[i].type ==<span class="string">"checkbox"</span>)&#123;</div><div class="line">    hobby[i].checked = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearall</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementsByName(<span class="string">"hobby"</span>);</div><div class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; hobby.length; i++)&#123;</div><div class="line">    hobby[i].checked =<span class="literal">false</span>;</div><div class="line">&#125;         </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkone</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> j=<span class="built_in">document</span>.getElementById(<span class="string">"wb"</span>).value;</div><div class="line"><span class="keyword">var</span> hobby = <span class="built_in">document</span>.getElementById(<span class="string">"hobby"</span> + j);</div><div class="line">hobby.checked = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+            <p><code>this</code>在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的<code>this</code>。<br><a id="more"></a>首先引入<a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">秘密花园</a>中对this的工作原理，文中指出有五种情况，分别是：</p>
+<ul>
+<li><p>全局范围内</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>;	<span class="comment">//在全局范围内使用`this`，它将会指向全局对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>函数调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">foo();	<span class="comment">//this指向全局对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>方法调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">test.foo();	<span class="comment">//this指向test对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>调用构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> foo();	<span class="comment">//函数与new一块使用即构造函数，this指向新创建的对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>显式的设置this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, c</span>) </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bar = &#123;&#125;;</div><div class="line">foo.apply(bar, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);	<span class="comment">//this被设置成bar</span></div><div class="line">foo.call(bar, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);	<span class="comment">//this被设置成bar</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="从函数调用理解this"><a href="#从函数调用理解this" class="headerlink" title="从函数调用理解this"></a>从函数调用理解this</h4><p>有这样一道题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = obj.func;</div><div class="line">obj.func() <span class="comment">//this是obj</span></div><div class="line">foo() <span class="comment">//this是window</span></div></pre></td></tr></table></figure></p>
+<p>解释函数结果为什么不一样？</p>
+<p>这道题可以从函数调用来理解，从我看到的博文中有这样的解释，秘密花园中的函数调用，方法调用，显式的设置this都属于函数调用，相当于函数调用的三种方式，可以写成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params);</div><div class="line">obj.child.foo(params);</div><div class="line">foo.call(context, params); <span class="comment">//apply同理</span></div></pre></td></tr></table></figure></p>
+<p>而且前两种都可以写成第三种形式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params); =&gt;&gt; foo.call(<span class="literal">undefined</span>, params);</div><div class="line"></div><div class="line">obj.child.foo(); =&gt;&gt; obj.child.foo.call(obj.child, params);</div></pre></td></tr></table></figure></p>
+<p>所以说函数调用都是<code>foo.call(context, params)</code>的变体，即函数调用只有一种。这样<code>this</code>的值就是文中的<code>context</code>，<code>this</code>就是你函数调用时传入的<code>context</code>。</p>
+<p>举例代码中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo();</div></pre></td></tr></table></figure></p>
+<p>当你无法确认<code>this</code>指代的值时，转化成<code>call</code>形式会更好理解<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo.call(<span class="literal">undefined</span>); <span class="comment">//or foo.call();</span></div></pre></td></tr></table></figure></p>
+<p>函数执行结果为<code>window</code>，在浏览器中有一条规定，传入<code>context</code>为<code>null</code>或<code>undefined</code>时，则为全局对象（window对象）；严格模式下<code>context</code>为<code>undefined</code>。</p>
+<p>举例代码中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.foo();</div></pre></td></tr></table></figure></p>
+<p>转化为<code>call</code>形式为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.foo.call(obj);</div></pre></td></tr></table></figure></p>
+<p>很明显，<code>this</code>指代obj。</p>
+<h4 id="Event-Handler-中的this"><a href="#Event-Handler-中的this" class="headerlink" title="Event Handler 中的this"></a>Event Handler 中的this</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">btn.addEventListener(<span class="string">'click'</span> ,<span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// 请问这里的 this 是什么</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>handler 中的<code>this</code>是什么？用上面的方法好像没法转化了，因为不知道<code>addEventListener</code>内源码实现，查看文档<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#The_value_of_this_within_the_handler" target="_blank" rel="external">MDN</a></p>
+<blockquote>
+<p>通常来说this的值是触发事件的元素的引用，这种特性在多个相似的元素使用同一个通用事件监听器时非常让人满意。</p>
+<p>当使用 addEventListener() 为一个元素注册事件的时候，句柄里的 this 值是该元素的引用。其与传递给句柄的 event 参数的 currentTarget 属性的值一样。</p>
+</blockquote>
+<p>所以可以假设浏览器addEventListener是这样实现的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当事件被触发时</span></div><div class="line">handler.call(event.currentTarget, event) <span class="comment">// this =&gt; event.currentTarget</span></div></pre></td></tr></table></figure></p>
+<p>以上就是对<code>this</code>的理解。</p>
+
         
         </div>
         <footer class="article-footer">
@@ -281,7 +305,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/" data-id="cj1d4js2e0008b5heb0afj9gk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kingzez.com/2017/04/11/深入浅出this的理解/" data-id="cj1d4js58003pb5heb8qszqk5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -349,7 +373,7 @@ var _hmt = _hmt || [];
 
             
     
-        <a href="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/">Comments</a>
+        <a href="http://kingzez.com/2017/04/11/深入浅出this的理解/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2017/04/11/深入浅出this的理解/">Comments</a>
     
 
         </footer>
@@ -358,19 +382,10 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2015/09/07/MySQL写入中文乱码/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    MySQL写入中文乱码
-                
-            </div>
-        </a>
     
-    
-        <a href="/2015/08/24/使用navigator.userAgent简单判断浏览器/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/04/10/git使用相关集锦/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">使用navigator.userAgent简单判断浏览器</div>
+            <div class="article-nav-title">Git使用相关集锦</div>
         </a>
     
 </nav>
@@ -626,7 +641,7 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'kingzez';
     
     
-    var disqus_url = 'http://kingzez.com/2015/08/24/DOM 简单操作实现多选反选/';
+    var disqus_url = 'http://kingzez.com/2017/04/11/深入浅出this的理解/';
     
     (function() {
     var dsq = document.createElement('script');
