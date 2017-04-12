@@ -35,17 +35,6 @@
     
     
     
-        <script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?2zYPn6o9x3";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-    
 
 <!-- growing IO -->
 <script type='text/javascript'>
@@ -266,7 +255,8 @@ var _hmt = _hmt || [];
 <p>接下来解释一下代码含义：这次的一个失误让我也发现了一个容易忽视的问题，在重装Mac后忘记了配置本地的git config，所以造成了我本地不合法的git用户邮箱（w@W-MacBook-Pro.local）其中上传的部分内容不在contributions上显示，（另外还有我的edu.cn的邮箱，针对我个人而言需要修改两次，）原因是contributions图是对应git用户配置显示的，这是我更改了邮箱后图消失的原因，Github系统找不到现在邮箱的git用户，所以我现在要操作的是</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">git</span> <span class="selector-tag">config</span> <span class="selector-tag">--global</span> <span class="selector-tag">user</span><span class="selector-class">.email</span> "<span class="selector-tag">kingzez</span>@<span class="keyword">sina</span>.<span class="keyword">com</span>"</div></pre></td></tr></table></figure>
-<p>操作后为了安全起见，在检查一遍<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config <span class="comment">--list</span></div></pre></td></tr></table></figure></p>
+<p>操作后为了安全起见，在检查一遍
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">config</span> <span class="comment">--list</span></div></pre></td></tr></table></figure></p>
 <p>然后操作核弹级的<code>filter-branch --commit-filter</code> 这个必须要小心，千万要确认自己修改的邮箱是正确的，这个会遍历并重写所有提交历史到你新的邮箱上，命令完成后需要强推 <code>git push -f</code>，到Github主页刷新，我的contributions图又回来了，但是其中可能是以前的操作不当恢复的不是很完整，能恢复大部分已经很好了，原本只是改了一个邮箱，结果折腾这么一大圈。</p>
 
         
@@ -401,7 +391,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -436,7 +426,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -471,7 +461,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -506,7 +496,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -541,7 +531,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    

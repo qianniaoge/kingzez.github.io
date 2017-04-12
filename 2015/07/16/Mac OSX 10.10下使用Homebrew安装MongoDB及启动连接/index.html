@@ -37,17 +37,6 @@
     
     
     
-        <script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?2zYPn6o9x3";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-    
 
 <!-- growing IO -->
 <script type='text/javascript'>
@@ -227,7 +216,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cj1d784kr0016fahelebhih18">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cj1edl0a4001k79hedojwslcb">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" itemprop="image">
             </a>
         
@@ -271,18 +260,26 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install <em>*</em>，不用再操心安装过程中软件的依赖问题。<br><a id="more"></a></p>
-<p>###Homebrew 安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)</span>"</span></div></pre></td></tr></table></figure>
-<p>###MongoDB 安装</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>mongodb</div></pre></td></tr></table></figure>
-<p>等待安装，我的是之前下载过所以直接安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$brew</span> install mongodb</div><div class="line">==&gt; Downloading https://homebrew.bintray.com/bottles/mongodb-3.0.2.yosemite.bott</div><div class="line">Already downloaded: /Library/Caches/Homebrew/mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Pouring mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Caveats</div><div class="line">To have launchd start mongodb at login:</div><div class="line">    ln -sfv /usr/<span class="built_in">local</span>/opt/mongodb/*.plist ~/Library/LaunchAgents</div><div class="line">Then to load mongodb now:</div><div class="line">    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist</div><div class="line">Or, <span class="keyword">if</span> you don<span class="string">'t want/need launchctl, you can just run:</span></div><div class="line">    mongod --config /usr/local/etc/mongod.conf</div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/mongodb/3.0.2: 17 files, 153M</div></pre></td></tr></table></figure></p>
-<p>需要测试是否安装成功，用mongod命令进行测试，执行mongod后会返回一顿错误、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$mongod</span></div><div class="line">2015-07-16T22:45:19.706+0800 I STORAGE  [initandlisten] exception <span class="keyword">in</span> initAndListen: 29 Data directory /data/db not found., terminating</div><div class="line">2015-07-16T22:45:19.706+0800 I CONTROL  [initandlisten] dbexit:  rc: 100</div></pre></td></tr></table></figure></p>
-<p>错误信息是dbpath /data/db不存在，需要创建/data/db这个目录或者使用–dbpath参数项指定一个已经存在的目录，dbpath /data/db这个目录是用来存储MongoDB的数据文件，既然不存在我们就创建<code>/data/db</code>这个目录或者使用<code>--dbpath</code>参数项指定一个已经存在的目录。<br>首先在终端输入<code>cd /</code>命令返回到磁盘根目录<br>然后输入<code>mkdir -p /data/db</code>创建<code>/data/db</code><br>再次输入<code>mongod</code>命令启动MongoDB的服务<br>又返回一堆错误信息</p>
+            <p>Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install <em>*</em>，不用再操心安装过程中软件的依赖问题。
+<a id="more"></a></p>
+<h3 id="Homebrew-安装"><a href="#Homebrew-安装" class="headerlink" title="Homebrew 安装"></a>Homebrew 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)</span>"</span></div></pre></td></tr></table></figure>
+<h3 id="MongoDB-安装"><a href="#MongoDB-安装" class="headerlink" title="MongoDB 安装"></a>MongoDB 安装</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>mongodb</div></pre></td></tr></table></figure>
+<p>等待安装，我的是之前下载过所以直接安装
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$brew</span> install mongodb</div><div class="line">==&gt; Downloading https://homebrew.bintray.com/bottles/mongodb-3.0.2.yosemite.bott</div><div class="line">Already downloaded: /Library/Caches/Homebrew/mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Pouring mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Caveats</div><div class="line">To have launchd start mongodb at login:</div><div class="line">    ln -sfv /usr/<span class="built_in">local</span>/opt/mongodb/*.plist ~/Library/LaunchAgents</div><div class="line">Then to load mongodb now:</div><div class="line">    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist</div><div class="line">Or, <span class="keyword">if</span> you don<span class="string">'t want/need launchctl, you can just run:</span></div><div class="line">    mongod --config /usr/local/etc/mongod.conf</div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/mongodb/3.0.2: 17 files, 153M</div></pre></td></tr></table></figure></p>
+<p>需要测试是否安装成功，用mongod命令进行测试，执行mongod后会返回一顿错误、
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$mongod</span></div><div class="line">2015-07-16T22:45:19.706+0800 I STORAGE  [initandlisten] exception <span class="keyword">in</span> initAndListen: 29 Data directory /data/db not found., terminating</div><div class="line">2015-07-16T22:45:19.706+0800 I CONTROL  [initandlisten] dbexit:  rc: 100</div></pre></td></tr></table></figure></p>
+<p>错误信息是dbpath /data/db不存在，需要创建/data/db这个目录或者使用–dbpath参数项指定一个已经存在的目录，dbpath /data/db这个目录是用来存储MongoDB的数据文件，既然不存在我们就创建<code>/data/db</code>这个目录或者使用<code>--dbpath</code>参数项指定一个已经存在的目录。
+首先在终端输入<code>cd /</code>命令返回到磁盘根目录
+然后输入<code>mkdir -p /data/db</code>创建<code>/data/db</code>
+再次输入<code>mongod</code>命令启动MongoDB的服务
+又返回一堆错误信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/ w<span class="variable">$mongod</span></div><div class="line">2015-07-16T22:55:10.232+0800 I STORAGE  [initandlisten] exception <span class="keyword">in</span> initAndListen: 98 Unable to create/open lock file: /data/db/mongod.lock errno:13 Permission denied Is a mongod instance already running?, terminating</div><div class="line">2015-07-16T22:55:10.232+0800 I CONTROL  [initandlisten] dbexit:  rc: 100</div></pre></td></tr></table></figure>
-<p>不能创建/打开/data/db/mongod.lock这个文件，原因是Permission denied（权限拒绝），原因是当前用户执行mongod这个命令时，对/data/db没有操作权限，给/data/db加上权限。<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">sudo</span> chown -<span class="type">R</span>  当前登录的用户名 /<span class="class"><span class="keyword">data</span></span></div></pre></td></tr></table></figure></p>
-<p>再次在终端输入<code>mongod</code>启动MongoDB的服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/ w<span class="variable">$sudo</span> chown -R w /data</div><div class="line">/ w<span class="variable">$mongod</span></div><div class="line">2015-07-16T22:55:49.058+0800 I JOURNAL  [initandlisten] journal dir=/data/db/journal</div><div class="line">2015-07-16T22:55:49.059+0800 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed</div><div class="line">2015-07-16T22:55:49.084+0800 I JOURNAL  [durability] Durability thread started</div><div class="line">2015-07-16T22:55:49.084+0800 I JOURNAL  [journal writer] Journal writer thread started</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] MongoDB starting : pid=2473 port=27017 dbpath=/data/db 64-bit host=W-MacBook-Pro.local</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] db version v3.0.2</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] git version: nogitversion</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] build info: Darwin yosemitevm.local 14.3.0 Darwin Kernel Version 14.3.0: Mon Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] allocator: system</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line">2015-07-16T22:55:49.086+0800 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...</div><div class="line">2015-07-16T22:55:49.423+0800 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...</div><div class="line">2015-07-16T22:55:49.423+0800 I STORAGE  [FileAllocator] creating directory /data/db/_tmp</div><div class="line">2015-07-16T22:55:50.063+0800 I STORAGE  [FileAllocator] <span class="keyword">done</span> allocating datafile /data/db/local.0, size: 64MB,  took 0.639 secs</div><div class="line">2015-07-16T22:55:50.412+0800 I NETWORK  [initandlisten] waiting <span class="keyword">for</span> connections on port 27017</div><div class="line">2015-07-16T22:56:05.218+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49580 <span class="comment">#1 (1 connection now open)</span></div></pre></td></tr></table></figure></p>
-<p>启动成功了，然后再打开一个新的终端窗口输入<code>mongo</code>命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/ w<span class="variable">$mongo</span></div><div class="line">MongoDB shell version: 3.0.2</div><div class="line">connecting to: <span class="built_in">test</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>不能创建/打开/data/db/mongod.lock这个文件，原因是Permission denied（权限拒绝），原因是当前用户执行mongod这个命令时，对/data/db没有操作权限，给/data/db加上权限。
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">sudo</span> chown -<span class="type">R</span>  当前登录的用户名 /<span class="class"><span class="keyword">data</span></span></div></pre></td></tr></table></figure></p>
+<p>再次在终端输入<code>mongod</code>启动MongoDB的服务
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/ w<span class="variable">$sudo</span> chown -R w /data</div><div class="line">/ w<span class="variable">$mongod</span></div><div class="line">2015-07-16T22:55:49.058+0800 I JOURNAL  [initandlisten] journal dir=/data/db/journal</div><div class="line">2015-07-16T22:55:49.059+0800 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed</div><div class="line">2015-07-16T22:55:49.084+0800 I JOURNAL  [durability] Durability thread started</div><div class="line">2015-07-16T22:55:49.084+0800 I JOURNAL  [journal writer] Journal writer thread started</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] MongoDB starting : pid=2473 port=27017 dbpath=/data/db 64-bit host=W-MacBook-Pro.local</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] db version v3.0.2</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] git version: nogitversion</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] build info: Darwin yosemitevm.local 14.3.0 Darwin Kernel Version 14.3.0: Mon Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] allocator: system</div><div class="line">2015-07-16T22:55:49.085+0800 I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line">2015-07-16T22:55:49.086+0800 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...</div><div class="line">2015-07-16T22:55:49.423+0800 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...</div><div class="line">2015-07-16T22:55:49.423+0800 I STORAGE  [FileAllocator] creating directory /data/db/_tmp</div><div class="line">2015-07-16T22:55:50.063+0800 I STORAGE  [FileAllocator] <span class="keyword">done</span> allocating datafile /data/db/local.0, size: 64MB,  took 0.639 secs</div><div class="line">2015-07-16T22:55:50.412+0800 I NETWORK  [initandlisten] waiting <span class="keyword">for</span> connections on port 27017</div><div class="line">2015-07-16T22:56:05.218+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49580 <span class="comment">#1 (1 connection now open)</span></div></pre></td></tr></table></figure></p>
+<p>启动成功了，然后再打开一个新的终端窗口输入<code>mongo</code>命令
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/ w<span class="variable">$mongo</span></div><div class="line">MongoDB shell version: 3.0.2</div><div class="line">connecting to: <span class="built_in">test</span></div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
 <p>OK 安装完成,可以使用。</p>
 
         
@@ -417,7 +414,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -452,7 +449,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -487,7 +484,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -522,7 +519,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -557,7 +554,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    

@@ -35,17 +35,6 @@
     
     
     
-        <script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?2zYPn6o9x3";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-    
 
 <!-- growing IO -->
 <script type='text/javascript'>
@@ -259,14 +248,14 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>刚刚升级了10.12，<code>sudo apachectl start</code>启动apache的时候瞬间懵逼了，<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apachectl start</div><div class="line">(48)Address already <span class="keyword">in</span> use: AH00072: make_sock: could not <span class="built_in">bind</span> to address [::]:80</div><div class="line">(48)Address already <span class="keyword">in</span> use: AH00072: make_sock: could not <span class="built_in">bind</span> to address 0.0.0.0:80</div><div class="line">no listening sockets available, shutting down</div><div class="line">AH00015: Unable to open logs</div></pre></td></tr></table></figure></p>
-<p>明明没有启动，也没做什么，后来发现原因是我使用的不是mac自带的apache，升级之后就悲剧，因为在新的系统中，apache是默认启动的，且不支持删除，所以解决方法是</p>
+            <p>刚刚升级了10.12，<code>sudo apachectl start</code>启动apache的时候瞬间懵逼了，
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apachectl start</div><div class="line">(48)Address already <span class="keyword">in</span> use: AH00072: make_sock: could not <span class="built_in">bind</span> to address [::]:80</div><div class="line">(48)Address already <span class="keyword">in</span> use: AH00072: make_sock: could not <span class="built_in">bind</span> to address 0.0.0.0:80</div><div class="line">no listening sockets available, shutting down</div><div class="line">AH00015: Unable to open logs</div></pre></td></tr></table></figure></p>
+<p>明明没有启动，也没做什么，后来发现原因是我使用的不是mac自带的apache，升级之后就悲剧，因为在新的系统中，apache是默认启动的，且不支持删除，所以解决方法是
+- 停止apache
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apachectl -k <span class="built_in">stop</span></div></pre></td></tr></table></figure></p>
 <ul>
-<li><p>停止apache</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apachectl -k <span class="built_in">stop</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>关闭apache随系统启动</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/org<span class="selector-class">.apache</span><span class="selector-class">.httpd</span><span class="selector-class">.plist</span></div></pre></td></tr></table></figure>
+<li>关闭apache随系统启动<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/org<span class="selector-class">.apache</span><span class="selector-class">.httpd</span><span class="selector-class">.plist</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>这样就可以了，再次<code>sudo apachectl start</code> 就是自己安装的apache服务了。</p>
@@ -403,7 +392,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -438,7 +427,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -473,7 +462,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -508,7 +497,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -543,7 +532,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    

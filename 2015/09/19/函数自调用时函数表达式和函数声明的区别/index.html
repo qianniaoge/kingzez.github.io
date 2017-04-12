@@ -37,17 +37,6 @@
     
     
     
-        <script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?2zYPn6o9x3";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-    
 
 <!-- growing IO -->
 <script type='text/javascript'>
@@ -227,7 +216,7 @@ var _hmt = _hmt || [];
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" rel="gallery_cj1d784m8003ifahep1xn4ptw">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" rel="gallery_cj1edl0bl003q79hewfa1i041">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/js-function.png" itemprop="image">
             </a>
         
@@ -272,9 +261,13 @@ var _hmt = _hmt || [];
         
             
             <h4 id="函数自调用时函数表达式和函数声明的区别"><a href="#函数自调用时函数表达式和函数声明的区别" class="headerlink" title="函数自调用时函数表达式和函数声明的区别"></a>函数自调用时函数表达式和函数声明的区别</h4><a id="more"></a>
-<p>所有的function 开头的都是函数声明，在解释的时候会预处理放入堆栈<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">//or</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这种写法的函数声明不会被执行，直到被显示的调用 foo();<br>函数表达式则不同，如：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">+<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">-<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//以上即为函数表达式</span></div></pre></td></tr></table></figure></p>
-<p>当以表达式(expression)开头时，语句被解释为一个表达式，自然而然会把后面的函数声明当做表达式去处理，这时候，如上，函数声明的部分会当做一个函数返回就像是<code>(return function() {})</code>。也只有这种情况才能在表达式的后面加括号来达到函数自调用的目的<br><figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+<span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'will be invoked'</span>);</div><div class="line">&#125;();</div><div class="line">-<span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'will be invoked'</span>);</div><div class="line">&#125;();</div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'will be invoked'</span>);</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//注意下面的区别</span></div><div class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'won'</span>t be invoked');</div><div class="line">&#125;()</div><div class="line"><span class="comment">//语句是函数声明，最后面的括号会被忽略</span></div></pre></td></tr></table></figure></p>
+<p>所有的function 开头的都是函数声明，在解释的时候会预处理放入堆栈
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">//or</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种写法的函数声明不会被执行，直到被显示的调用 foo();
+函数表达式则不同，如：
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">+<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">-<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//以上即为函数表达式</span></div></pre></td></tr></table></figure></p>
+<p>当以表达式(expression)开头时，语句被解释为一个表达式，自然而然会把后面的函数声明当做表达式去处理，这时候，如上，函数声明的部分会当做一个函数返回就像是<code>(return function() {})</code>。也只有这种情况才能在表达式的后面加括号来达到函数自调用的目的
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+<span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'will be invoked'</span>);</div><div class="line">&#125;();</div><div class="line">-<span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'will be invoked'</span>);</div><div class="line">&#125;();</div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'will be invoked'</span>);</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//注意下面的区别</span></div><div class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></div><div class="line">  console.<span class="built_in">log</span>(<span class="string">'won'</span>t be invoked');</div><div class="line">&#125;()</div><div class="line"><span class="comment">//语句是函数声明，最后面的括号会被忽略</span></div></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/dayuoba/my_nodejs_book/blob/master/javascripts.md" target="_blank" rel="external">from dayuoba</a></p>
 
         
@@ -409,7 +402,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -444,7 +437,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -479,7 +472,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -514,7 +507,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -549,7 +542,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
