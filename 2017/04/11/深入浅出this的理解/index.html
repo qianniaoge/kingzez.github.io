@@ -6,12 +6,13 @@
 <title>深入浅出this的理解 | the kingzez blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="this在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的this。">
+<meta name="keywords" content="this">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出this的理解">
 <meta property="og:url" content="http://kingzez.com/2017/04/11/深入浅出this的理解/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="this在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的this。">
-<meta property="og:updated_time" content="2017-04-11T06:58:19.000Z">
+<meta property="og:updated_time" content="2017-04-11T07:21:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出this的理解">
 <meta name="twitter:description" content="this在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的this。">
@@ -258,34 +259,45 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><code>this</code>在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的<code>this</code>。<br><a id="more"></a>首先引入<a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">秘密花园</a>中对this的工作原理，文中指出有五种情况，分别是：</p>
+            <p><code>this</code>在js中一直是谜一样的存在着，在面试中也是经常会被问道，接下来总结下我所理解的<code>this</code>。
+<a id="more"></a>首先引入<a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">秘密花园</a>中对this的工作原理，文中指出有五种情况，分别是：</p>
 <ul>
-<li><p>全局范围内</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>;	<span class="comment">//在全局范围内使用`this`，它将会指向全局对象</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>函数调用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">foo();	<span class="comment">//this指向全局对象</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>方法调用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">test.foo();	<span class="comment">//this指向test对象</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>调用构造函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> foo();	<span class="comment">//函数与new一块使用即构造函数，this指向新创建的对象</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>显式的设置this</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, c</span>) </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bar = &#123;&#125;;</div><div class="line">foo.apply(bar, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);	<span class="comment">//this被设置成bar</span></div><div class="line">foo.call(bar, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);	<span class="comment">//this被设置成bar</span></div></pre></td></tr></table></figure>
-</li>
+<li>全局范围内</li>
 </ul>
-<h4 id="从函数调用理解this"><a href="#从函数调用理解this" class="headerlink" title="从函数调用理解this"></a>从函数调用理解this</h4><p>有这样一道题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = obj.func;</div><div class="line">obj.func() <span class="comment">//this是obj</span></div><div class="line">foo() <span class="comment">//this是window</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>;	<span class="comment">//在全局范围内使用`this`，它将会指向全局对象</span></div></pre></td></tr></table></figure>
+<ul>
+<li>函数调用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">foo();	<span class="comment">//this指向全局对象</span></div></pre></td></tr></table></figure>
+<ul>
+<li>方法调用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">test.foo();	<span class="comment">//this指向test对象</span></div></pre></td></tr></table></figure>
+<ul>
+<li>调用构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> foo();	<span class="comment">//函数与new一块使用即构造函数，this指向新创建的对象</span></div></pre></td></tr></table></figure>
+<ul>
+<li>显式的设置this</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, c</span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> bar = &#123;&#125;;</div><div class="line">foo.apply(bar, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);	<span class="comment">//this被设置成bar</span></div><div class="line">foo.call(bar, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);	<span class="comment">//this被设置成bar</span></div></pre></td></tr></table></figure>
+<h4 id="从函数调用理解this"><a href="#从函数调用理解this" class="headerlink" title="从函数调用理解this"></a>从函数调用理解this</h4><p>有这样一道题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = obj.func;</div><div class="line">obj.func() <span class="comment">//this是obj</span></div><div class="line">foo() <span class="comment">//this是window</span></div></pre></td></tr></table></figure>
 <p>解释函数结果为什么不一样？</p>
-<p>这道题可以从函数调用来理解，从我看到的博文中有这样的解释，秘密花园中的函数调用，方法调用，显式的设置this都属于函数调用，相当于函数调用的三种方式，可以写成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params);</div><div class="line">obj.child.foo(params);</div><div class="line">foo.call(context, params); <span class="comment">//apply同理</span></div></pre></td></tr></table></figure></p>
-<p>而且前两种都可以写成第三种形式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params); =&gt;&gt; foo.call(<span class="literal">undefined</span>, params);</div><div class="line"></div><div class="line">obj.child.foo(); =&gt;&gt; obj.child.foo.call(obj.child, params);</div></pre></td></tr></table></figure></p>
+<p>这道题可以从函数调用来理解，从我看到的博文中有这样的解释，秘密花园中的函数调用，方法调用，显式的设置this都属于函数调用，相当于函数调用的三种方式，可以写成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(params);</div><div class="line">obj.child.foo(params);</div><div class="line">foo.call(context, params); <span class="comment">//apply同理</span></div></pre></td></tr></table></figure>
+<p>而且前两种都可以写成第三种形式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">foo(params); =&gt;&gt; foo.call(<span class="literal">undefined</span>, params);</div><div class="line">obj.child.foo(); =&gt;&gt; obj.child.foo.call(obj.child, params);</div></pre></td></tr></table></figure>
 <p>所以说函数调用都是<code>foo.call(context, params)</code>的变体，即函数调用只有一种。这样<code>this</code>的值就是文中的<code>context</code>，<code>this</code>就是你函数调用时传入的<code>context</code>。</p>
-<p>举例代码中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo();</div></pre></td></tr></table></figure></p>
-<p>当你无法确认<code>this</code>指代的值时，转化成<code>call</code>形式会更好理解<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">foo.call(<span class="literal">undefined</span>); <span class="comment">//or foo.call();</span></div></pre></td></tr></table></figure></p>
+<p>举例代码中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
+<p>当你无法确认<code>this</code>指代的值时，转化成<code>call</code>形式会更好理解</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">foo.call(<span class="literal">undefined</span>); <span class="comment">//or foo.call();</span></div></pre></td></tr></table></figure>
 <p>函数执行结果为<code>window</code>，在浏览器中有一条规定，传入<code>context</code>为<code>null</code>或<code>undefined</code>时，则为全局对象（window对象）；严格模式下<code>context</code>为<code>undefined</code>。</p>
-<p>举例代码中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.foo();</div></pre></td></tr></table></figure></p>
-<p>转化为<code>call</code>形式为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.foo.call(obj);</div></pre></td></tr></table></figure></p>
+<p>举例代码中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">obj.foo();</div></pre></td></tr></table></figure>
+<p>转化为<code>call</code>形式为</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">func</span>: <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">obj.foo.call(obj);</div></pre></td></tr></table></figure>
 <p>很明显，<code>this</code>指代obj。</p>
 <h4 id="Event-Handler-中的this"><a href="#Event-Handler-中的this" class="headerlink" title="Event Handler 中的this"></a>Event Handler 中的this</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">btn.addEventListener(<span class="string">'click'</span> ,<span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// 请问这里的 this 是什么</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>handler 中的<code>this</code>是什么？用上面的方法好像没法转化了，因为不知道<code>addEventListener</code>内源码实现，查看文档<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#The_value_of_this_within_the_handler" target="_blank" rel="external">MDN</a></p>
@@ -293,7 +305,8 @@ var _hmt = _hmt || [];
 <p>通常来说this的值是触发事件的元素的引用，这种特性在多个相似的元素使用同一个通用事件监听器时非常让人满意。</p>
 <p>当使用 addEventListener() 为一个元素注册事件的时候，句柄里的 this 值是该元素的引用。其与传递给句柄的 event 参数的 currentTarget 属性的值一样。</p>
 </blockquote>
-<p>所以可以假设浏览器addEventListener是这样实现的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当事件被触发时</span></div><div class="line">handler.call(event.currentTarget, event) <span class="comment">// this =&gt; event.currentTarget</span></div></pre></td></tr></table></figure></p>
+<p>所以可以假设浏览器addEventListener是这样实现的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当事件被触发时</span></div><div class="line">handler.call(event.currentTarget, event) <span class="comment">// this =&gt; event.currentTarget</span></div></pre></td></tr></table></figure>
 <p>以上就是对<code>this</code>的理解。</p>
 
         
@@ -301,79 +314,64 @@ var _hmt = _hmt || [];
         <footer class="article-footer">
             <div class="share-container">
 
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
 
 
 </div>
 
-    <a data-url="http://kingzez.com/2017/04/11/深入浅出this的理解/" data-id="cj1d742ay003rdmhe6qpyhot9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
             
     
-        <a href="http://kingzez.com/2017/04/11/深入浅出this的理解/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kingzez.com/2017/04/11/深入浅出this的理解/">Comments</a>
+        <a href="http://kingzez.com/2017/04/11/深入浅出this的理解/#comments" class="article-comment-link">Comments</a>
     
 
         </footer>
@@ -382,11 +380,15 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-    
-        <a href="/2017/04/10/git使用相关集锦/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Git使用相关集锦</div>
+        <a href="/2017/04/10/git使用相关集锦/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Git使用相关集锦
+                
+            </div>
         </a>
+    
     
 </nav>
 
@@ -399,9 +401,7 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    <div id="uyan_frame"></div>
 
     
     </section>
@@ -436,7 +436,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small9.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -471,7 +471,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -506,7 +506,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -541,7 +541,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small10.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small4.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -576,7 +576,7 @@ var _hmt = _hmt || [];
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -637,20 +637,7 @@ var _hmt = _hmt || [];
 </footer>
         
     
-    <script>
-    var disqus_shortname = 'kingzez';
-    
-    
-    var disqus_url = 'http://kingzez.com/2017/04/11/深入浅出this的理解/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130753"></script>
 
 
 
