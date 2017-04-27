@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2017-04-11T07:21:31.000Z</updated>
+  <updated>2017-04-27T09:20:33.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack 基础配置纪实</title>
+    <link href="http://kingzez.com/2017/04/27/webpack-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E7%BA%AA%E5%AE%9E/"/>
+    <id>http://kingzez.com/2017/04/27/webpack-基础配置纪实/</id>
+    <published>2017-04-27T08:37:08.000Z</published>
+    <updated>2017-04-27T09:20:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>webpack基础配置纪实
+<a id="more"></a></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="entry-打包入口配置"><a href="#entry-打包入口配置" class="headerlink" title="entry 打包入口配置"></a>entry 打包入口配置</h3><p>接受三种方式：string， array， object</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span>.exports = &#123;</div><div class="line">    entry: <span class="string">'./src/main.js'</span></div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span>.exports = &#123;</div><div class="line">    entry: [<span class="string">'./src/main.js'</span>, <span class="string">'./src/test.js'</span>]</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span>.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        main: <span class="string">'./src/main.js'</span>,</div><div class="line">        test: <span class="string">'./src/test.js'</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="output-打包导出配置"><a href="#output-打包导出配置" class="headerlink" title="output 打包导出配置"></a>output 打包导出配置</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">module<span class="selector-class">.exports</span> = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        main: <span class="string">'./src/main.js'</span>,</div><div class="line">        <span class="selector-tag">a</span>: <span class="string">'./src.a.js'</span></div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name]-[chunkhash].js'</span>,</div><div class="line">        publicPath: <span class="string">'http://cdn.com/'</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>path：打包后导出的文件路径</p>
+<p>filename：打包后的文件名</p>
+<pre><code>[name]对应文件名
+[hash]打包文件hash值
+[chunkhash]打包后每个单独文件的hash值
+</code></pre><p>publicPath：打包上线环境，用来替换文件路径</p>
+<h3 id="plugins-插件系统-数组"><a href="#plugins-插件系统-数组" class="headerlink" title="plugins 插件系统(数组)"></a>plugins 插件系统(数组)</h3><p>html-webpack-plugin 自动化生成项目中的html页面</p>
+<p>通过npm安装</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> html-webpack-<span class="keyword">plugin</span> <span class="comment">--save-dev</span></div></pre></td></tr></table></figure>
+<p>在webpack.config.js中</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">var htmlWebpackPlugin = require(<span class="string">'html-webpack-plugin'</span>);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        main: <span class="string">'./src/main.js'</span>,</div><div class="line">        a: <span class="string">'./src/a.js'</span>,</div><div class="line">        b: <span class="string">'./src/b.js'</span>,</div><div class="line">        c: <span class="string">'./src/c.js'</span></div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: [name]-[chunkhash].js,</div><div class="line">        <span class="keyword">public</span>: <span class="string">'http:cdn.com/'</span></div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="comment">//创建一个htmlWebpackPlugin对象，并传入值</span></div><div class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</div><div class="line">            template: <span class="string">'index.html'</span>, <span class="comment">//生成html文件的模板文件</span></div><div class="line">            filename: <span class="string">'a.html'</span>, <span class="comment">//目标文件的名称</span></div><div class="line">            <span class="keyword">inject</span>: <span class="keyword">false</span>,  <span class="comment">//插入html文档中的位置，value分别为 true，false，head，body</span></div><div class="line">            title: <span class="string">'this is a.html'</span>, <span class="comment">// 传入的html的title </span></div><div class="line">            excludeChunks: [<span class="string">'b'</span>, <span class="string">'c'</span>] <span class="comment">// 引入的除b.js 与c.js以外的js文件</span></div><div class="line">        &#125;),</div><div class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</div><div class="line">            template: <span class="string">'index.html'</span>,</div><div class="line">            filename: <span class="string">'b.html'</span>,</div><div class="line">            <span class="keyword">inject</span>: <span class="keyword">false</span>,</div><div class="line">            title: <span class="string">'this is b.html'</span>,</div><div class="line">            excludeChunks: [<span class="string">'a'</span>, <span class="string">'c'</span>]</div><div class="line">        &#125;),</div><div class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</div><div class="line">            template: <span class="string">'index.html'</span>,</div><div class="line">            filename: <span class="string">'c.html'</span>,</div><div class="line">            <span class="keyword">inject</span>: <span class="keyword">false</span>,</div><div class="line">            title: <span class="string">'this is c.html'</span>,</div><div class="line">            excludeChunks: [<span class="string">'a'</span>, <span class="string">'b'</span>]</div><div class="line">        &#125;)        </div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>index.html模板文件</p>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 在webpack中默认识别ejs --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- title的值为htmlWebpackPlugin传入的值 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby"> htmlWebpackPlugin.options.title </span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span></div><div class="line">        <span class="comment">// js的行内引入方法</span></div><div class="line">        &lt;%=<span class="ruby"> compilation.assets[htmlWebpackPlugin.files.chunks.main.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() </span><span class="xml"><span class="undefined">%&gt;</span></span></div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 再通过循环遍历除去main.js 外联引入对应的js --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">for</span> (var k <span class="keyword">in</span> htmlWebpackPlugin.files.chunks) &#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">if</span> (k != <span class="string">'main'</span>) &#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"&lt;%=</span></span><span class="ruby"> htmlWebpackPlugin.files.chunks[k].entry </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><p>html-webpack-plugin更多api移步<a href="https://github.com/jantimon/html-webpack-plugin" target="_blank" rel="external">官方api</a>查看</p>
+</li>
+<li><p>涉及webpack源码的<a href="https://github.com/jantimon/html-webpack-plugin/blob/master/examples/inline/template.jade#L10" target="_blank" rel="external">行内引入js</a></p>
+</li>
+</ul>
+</blockquote>
+<p>至此工程目录结构为</p>
+<p><img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/webpack-demo-1.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;webpack基础配置纪实
+    
+    </summary>
+    
+      <category term="webpack" scheme="http://kingzez.com/categories/webpack/"/>
+    
+    
+      <category term="webpack" scheme="http://kingzez.com/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>深入浅出this的理解</title>
@@ -2988,32 +3040,6 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
     <summary type="html">
     
       &lt;p&gt;有的文章中没有添加如上这种banner图，所以呢，博客右侧的Recent的缩略图只会显示默认的图，
-    
-    </summary>
-    
-      <category term="js" scheme="http://kingzez.com/categories/js/"/>
-    
-    
-      <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js通过hash方式数组去重</title>
-    <link href="http://kingzez.com/2016/05/17/js%E9%80%9A%E8%BF%87hash%E6%96%B9%E5%BC%8F%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"/>
-    <id>http://kingzez.com/2016/05/17/js通过hash方式数组去重/</id>
-    <published>2016-05-17T14:53:15.000Z</published>
-    <updated>2016-05-19T10:57:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：
-<a id="more"></a></p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">9</span>];</div><div class="line"></div><div class="line">function killArray(arr)&#123;</div><div class="line">	var hash = &#123;&#125;,</div><div class="line">	    result = [];</div><div class="line"></div><div class="line">	for(var i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">		if(!hash[arr[i]])&#123;</div><div class="line">		    hash[arr[i]] = true;</div><div class="line">		    result.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">killArray(newArr); <span class="comment">//输出[1,2,3,4,5,6,7,8,9]</span></div></pre></td></tr></table></figure>
-<p>完成~</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前面试中遇到过数组去重的问题，方法很多，但是相对来说比较好的方式是通过hash方式来进行去重，这样的效率要高很多，以下是具体代码：
     
     </summary>
     

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kingzez.com/2017/04/27/webpack-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E7%BA%AA%E5%AE%9E/</loc>
+    
+    <lastmod>2017-04-27T09:20:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://kingzez.com/2017/04/11/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAthis%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
     
     <lastmod>2017-04-11T07:21:31.000Z</lastmod>
@@ -310,14 +317,14 @@
   </url>
   
   <url>
-    <loc>http://kingzez.com/categories/index.html</loc>
+    <loc>http://kingzez.com/tags/index.html</loc>
     
     <lastmod>2015-12-20T14:14:24.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://kingzez.com/tags/index.html</loc>
+    <loc>http://kingzez.com/categories/index.html</loc>
     
     <lastmod>2015-12-20T14:14:24.000Z</lastmod>
     
