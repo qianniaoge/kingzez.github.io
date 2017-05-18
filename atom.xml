@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingzez.com/"/>
-  <updated>2017-04-30T01:56:32.000Z</updated>
+  <updated>2017-05-18T16:56:24.000Z</updated>
   <id>http://kingzez.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git stash 用于保存和恢复工作进度</title>
+    <link href="http://kingzez.com/2017/05/19/git-stash-%E7%94%A8%E4%BA%8E%E4%BF%9D%E5%AD%98%E5%92%8C%E6%81%A2%E5%A4%8D%E5%B7%A5%E4%BD%9C%E8%BF%9B%E5%BA%A6/"/>
+    <id>http://kingzez.com/2017/05/19/git-stash-用于保存和恢复工作进度/</id>
+    <published>2017-05-18T16:50:44.000Z</published>
+    <updated>2017-05-18T16:56:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>git stash 用于保存和恢复工作进度
+<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash</div></pre></td></tr></table></figure>
+<p>保存当前的工作进度。会分别对暂存区和工作区的状态进行保存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash save &quot;message...&quot;</div></pre></td></tr></table></figure>
+<p>这条命令实际上是第一条 <code>git stash</code> 命令的完整版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash list</div></pre></td></tr></table></figure>
+<p>显示进度列表。此命令显然暗示了git stash 可以多次保存工作进度，并用在恢复时候进行选择</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash pop [--index] [\&lt;stash&gt;]</div></pre></td></tr></table></figure>
+<p>如果不使用任何参数，会恢复最新保存的工作进度，并将恢复的工作进度从存储的工作进度列表中清除。</p>
+<p>如果提供<stash>参数（来自 <code>git stash list</code> 显示的列表），则从该 <code>&lt;stash&gt;</code> 中恢复。恢复完毕也将从进度列表中删除 <code>&lt;stash&gt;</code>。</stash></p>
+<p>选项–index 除了恢复工作区的文件外，还尝试恢复暂存区。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash apply [--index] [\&lt;stash&gt;]</div></pre></td></tr></table></figure>
+<p>除了不删除恢复的进度之外，其余和 <code>git stash pop</code> 命令一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git stash clear</div></pre></td></tr></table></figure>
+<p>删除所有存储的进度</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git stash 用于保存和恢复工作进度
+    
+    </summary>
+    
+      <category term="git" scheme="http://kingzez.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://kingzez.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>webpack 基础配置纪实</title>
@@ -230,7 +268,7 @@
     <link href="http://kingzez.com/2017/04/10/git%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3%E9%9B%86%E9%94%A6/"/>
     <id>http://kingzez.com/2017/04/10/git使用相关集锦/</id>
     <published>2017-04-10T07:30:38.000Z</published>
-    <updated>2017-04-10T07:27:25.000Z</updated>
+    <updated>2017-05-18T16:57:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>总结之前写过的git相关文章，编成目录，也方便自己查看
 <a id="more"></a></p>
@@ -243,6 +281,7 @@
 <li><a href="/2017/03/20/git-pull-强制覆盖local/">git-pull-强制覆盖local</a></li>
 <li><a href="/2017/04/10/git重写最近一次历史/">Git重写最近一次历史</a></li>
 <li><a href="/2017/04/10/Git-忽略已跟踪文件的改动/">Git忽略已跟踪文件的改动</a></li>
+<li><a href="/2017/05/19/git-stash-用于保存和恢复工作进度/">git stash 用于保存和恢复工作进度</a></li>
 </ol>
 ]]></content>
     
@@ -3096,37 +3135,6 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
     <summary type="html">
     
       &lt;p&gt;js中的&lt;code&gt;undefined&lt;/code&gt;和&lt;code&gt;null&lt;/code&gt;是何等的相似，几乎是一样的，所以要说一下细微的区别，先动手操作一下，在浏览器Console中执行：
-    
-    </summary>
-    
-      <category term="js" scheme="http://kingzez.com/categories/js/"/>
-    
-    
-      <category term="js" scheme="http://kingzez.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Blog无图片时添加随机thumbnail</title>
-    <link href="http://kingzez.com/2016/05/18/Blog%E6%97%A0%E5%9B%BE%E7%89%87%E6%97%B6%E6%B7%BB%E5%8A%A0%E9%9A%8F%E6%9C%BAthumbnail/"/>
-    <id>http://kingzez.com/2016/05/18/Blog无图片时添加随机thumbnail/</id>
-    <published>2016-05-18T11:03:25.000Z</published>
-    <updated>2016-05-22T14:01:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>有的文章中没有添加如上这种banner图，所以呢，博客右侧的Recent的缩略图只会显示默认的图，<a id="more"></a>有时候连续五篇文章都没有图那就连续五张缩略图一样了，很不美观，不喜欢~所以就把它改成没有缩略图情况下随机变换缩略图，不多说，上代码：
-首先需要通过Math对象生成出一个随机数，random方法可以生成一个0~1之间的随机数，得到的数再乘10，结果即为0~10之间的一个随机数，再通过round方法对该随机数进行四舍五入得到一个整数
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> randomBgIndex = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div></pre></td></tr></table></figure></p>
-<p>再声明一个数组用来存放缩略图的路径
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var thumbnailBg = []<span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">0</span>] = <span class="string">"css/images/thumb-default-small.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">1</span>] = <span class="string">"css/images/thumb-default-small1.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">2</span>] = <span class="string">"css/images/thumb-default-small2.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">3</span>] = <span class="string">"css/images/thumb-default-small3.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">4</span>] = <span class="string">"css/images/thumb-default-small4.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">5</span>] = <span class="string">"css/images/thumb-default-small5.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">6</span>] = <span class="string">"css/images/thumb-default-small6.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">7</span>] = <span class="string">"css/images/thumb-default-small7.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">8</span>] = <span class="string">"css/images/thumb-default-small8.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">9</span>] = <span class="string">"css/images/thumb-default-small9.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">10</span>] = <span class="string">"css/images/thumb-default-small10.png"</span><span class="comment">; </span></div><div class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></p>
-<p>&lt;% %&gt;这里是blog用的ejs语法<code>thumbnailBg[randomBgIndex]</code>用来取随机产生的值。</p>
-<p>完整的代码：
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var randomBgIndex = Math.round(Math.random() * <span class="number">10</span>)<span class="comment">;</span></div><div class="line">var thumbnailBg = []<span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">0</span>] = <span class="string">"css/images/thumb-default-small.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">1</span>] = <span class="string">"css/images/thumb-default-small1.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">2</span>] = <span class="string">"css/images/thumb-default-small2.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">3</span>] = <span class="string">"css/images/thumb-default-small3.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">4</span>] = <span class="string">"css/images/thumb-default-small4.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">5</span>] = <span class="string">"css/images/thumb-default-small5.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">6</span>] = <span class="string">"css/images/thumb-default-small6.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">7</span>] = <span class="string">"css/images/thumb-default-small7.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">8</span>] = <span class="string">"css/images/thumb-default-small8.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">9</span>] = <span class="string">"css/images/thumb-default-small9.png"</span><span class="comment">; </span></div><div class="line">	thumbnailBg[<span class="number">10</span>] = <span class="string">"css/images/thumb-default-small10.png"</span><span class="comment">; </span></div><div class="line">&lt;span style=<span class="string">"background-image:url(&lt;%= thumbnailBg[randomBgIndex] %&gt;)"</span>  class=<span class="string">"thumbnail-image thumbnail-none"</span>&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></p>
-<p>OK~</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有的文章中没有添加如上这种banner图，所以呢，博客右侧的Recent的缩略图只会显示默认的图，
     
     </summary>
     
