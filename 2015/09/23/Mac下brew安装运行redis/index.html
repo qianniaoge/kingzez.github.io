@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="打开终端 1brew install redis">
 <meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/redis.png">
-<meta property="og:updated_time" content="2016-05-17T16:44:37.000Z">
+<meta property="og:updated_time" content="2017-09-13T10:28:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下brew安装运行redis">
 <meta name="twitter:description" content="打开终端 1brew install redis">
@@ -212,7 +212,7 @@
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/redis.png" rel="gallery_cj3562a6x001duphe8eqbke0i">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/redis.png" rel="gallery_cj3wdnjda001g09hexthdko16">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/redis.png" itemprop="image">
             </a>
         
@@ -264,10 +264,12 @@
 <p>安装成功，启动redis
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server</div></pre></td></tr></table></figure></p>
 <p>如下
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">~ w$ redis-server</div><div class="line">3002:C 23 Sep 22:29:50.895 <span class="comment"># Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf</span></div><div class="line">3002:M 23 Sep 22:29:50.897 * Increased maximum number of open files to 10032 (it was originally <span class="built_in">set</span> to 2560).</div><div class="line">                _._                                                  </div><div class="line">           _.-``__ <span class="string">''</span>-._                                             </div><div class="line">      _.-``    `.  `_.  <span class="string">''</span>-._           Redis 3.0.0 (00000000/0) 64 bit</div><div class="line">  .-`` .-```.  ```\/    _.,_ <span class="string">''</span>-._                                   </div><div class="line"> (    <span class="string">'      ,       .-`  | `,    )     Running in standalone mode</span></div><div class="line"> |`-._`-...-` __...-.``-._|'` _.-<span class="string">'|     Port: 6379</span></div><div class="line"> |    `-._   `._    /     _.-'    |     PID: 3002</div><div class="line">  `-._    `-._  `-./  _.-<span class="string">'    _.-'</span>                                   </div><div class="line"> |`-._`-._    `-.__.-<span class="string">'    _.-'</span>_.-<span class="string">'|                                  </span></div><div class="line"> |    `-._`-._        _.-'_.-<span class="string">'    |           http://redis.io        </span></div><div class="line">  `-._    `-._`-.__.-'_.-<span class="string">'    _.-'</span>                                   </div><div class="line"> |`-._`-._    `-.__.-<span class="string">'    _.-'</span>_.-<span class="string">'|                                  </span></div><div class="line"> |    `-._`-._        _.-'_.-<span class="string">'    |                                  </span></div><div class="line">  `-._    `-._`-.__.-'_.-<span class="string">'    _.-'</span>                                   </div><div class="line">      `-._    `-.__.-<span class="string">'    _.-'</span>                                       </div><div class="line">          `-._        _.-<span class="string">'                                           </span></div><div class="line">              `-.__.-'                                               </div><div class="line"></div><div class="line">3002:M 23 Sep 22:29:50.898 <span class="comment"># Server started, Redis version 3.0.0</span></div><div class="line">3002:M 23 Sep 22:29:50.898 * The server is now ready to accept connections on port 6379</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">~ w$ redis-server</div><div class="line">3002:C 23 Sep 22:29:50.895 <span class="comment"># Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf</span></div><div class="line">3002:M 23 Sep 22:29:50.897 * Increased maximum number of open files to 10032 (it was originally <span class="built_in">set</span> to 2560).</div><div class="line">                _._</div><div class="line">           _.-``__ <span class="string">''</span>-._</div><div class="line">      _.-``    `.  `_.  <span class="string">''</span>-._           Redis 3.0.0 (00000000/0) 64 bit</div><div class="line">  .-`` .-```.  ```\/    _.,_ <span class="string">''</span>-._</div><div class="line"> (    <span class="string">'      ,       .-`  | `,    )     Running in standalone mode</span></div><div class="line"> |`-._`-...-` __...-.``-._|'` _.-<span class="string">'|     Port: 6379</span></div><div class="line"> |    `-._   `._    /     _.-'    |     PID: 3002</div><div class="line">  `-._    `-._  `-./  _.-<span class="string">'    _.-'</span></div><div class="line"> |`-._`-._    `-.__.-<span class="string">'    _.-'</span>_.-<span class="string">'|</span></div><div class="line"> |    `-._`-._        _.-'_.-<span class="string">'    |           http://redis.io</span></div><div class="line">  `-._    `-._`-.__.-'_.-<span class="string">'    _.-'</span></div><div class="line"> |`-._`-._    `-.__.-<span class="string">'    _.-'</span>_.-<span class="string">'|</span></div><div class="line"> |    `-._`-._        _.-'_.-<span class="string">'    |</span></div><div class="line">  `-._    `-._`-.__.-'_.-<span class="string">'    _.-'</span></div><div class="line">      `-._    `-.__.-<span class="string">'    _.-'</span></div><div class="line">          `-._        _.-<span class="string">'</span></div><div class="line">              `-.__.-'</div><div class="line"></div><div class="line">3002:M 23 Sep 22:29:50.898 <span class="comment"># Server started, Redis version 3.0.0</span></div><div class="line">3002:M 23 Sep 22:29:50.898 * The server is now ready to accept connections on port 6379</div></pre></td></tr></table></figure></p>
 <p>服务端启动，测试客户端，打开新的终端窗口
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">~ w$ redis-cli</div><div class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> foo bar</div><div class="line">OK</div><div class="line">127.0.0.1:6379&gt; get foo</div><div class="line"><span class="string">"bar"</span></div></pre></td></tr></table></figure></p>
 <p>ok.成功连接服务端，测试成功。</p>
+<p>关闭redis
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-cli shutdown</div></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -278,7 +280,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/09/23/Mac下brew安装运行redis/" data-id="cj3562a6x001duphe8eqbke0i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2015/09/23/Mac下brew安装运行redis/" data-id="cj3wdnjda001g09hexthdko16" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -355,19 +357,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2015/10/18/CentOS下搭建git服务器/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    函数自调用时函数表达式和函数声明的区别
+                    CentOS下搭建git服务器
                 
             </div>
         </a>
     
     
-        <a href="/2015/10/18/CentOS下搭建git服务器/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2015/09/19/函数自调用时函数表达式和函数声明的区别/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">CentOS下搭建git服务器</div>
+            <div class="article-nav-title">函数自调用时函数表达式和函数声明的区别</div>
         </a>
     
 </nav>
@@ -416,7 +418,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small1.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -451,7 +453,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small6.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -486,7 +488,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -521,7 +523,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -556,7 +558,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
